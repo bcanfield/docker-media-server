@@ -18,5 +18,6 @@
       "commitBody": "Change-type: {{updateType}}",
       "automerge": true
     }
-  ]
+  ],
+  "prHourlyLimit": 8
 }
