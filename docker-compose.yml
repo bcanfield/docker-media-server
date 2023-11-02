@@ -1,0 +1,182 @@
+version: "3.4"
+services:
+  # https://docs.linuxserver.io/images/docker-plex
+  plex:
+    image: lscr.io/linuxserver/plex:1.32.6@sha256:76042b2cc58e85047aca29a00ef33ba838fa29382a74b2405fe2d9c151af1eed
+    container_name: plex
+    restart: always
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - VERSION=docker
+      - PLEX_CLAIM=${PLEX_CLAIM}
+    networks:
+      - brandin-media-stack
+    ports:
+      - 32400:32400/tcp
+      - 3005:3005/tcp
+      - 8324:8324/tcp
+      - 32469:32469/tcp
+      - 1900:1900/udp
+      - 32410:32410/udp
+      - 32412:32412/udp
+      - 32413:32413/udp
+      - 32414:32414/udp
+    volumes:
+      - ${CONFIG_ROOT}/config/plex/db:/config 
+      - ${CONFIG_ROOT}/config/plex/transcode:/transcode
+      - ${MEDIA_ROOT}/complete:/data 
+  # https://docs.linuxserver.io/images/docker-sonarr
+  sonarr:
+    container_name: sonarr
+    image: lscr.io/linuxserver/sonarr:3.0.10@sha256:01ed3f3368017f90d3911efc205621ce09639a0aeac1d07dddea7f1f7fc5e728
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID} 
+      - TZ=${TZ} 
+    ports:
+      - 8989:8989
+    networks:
+      - brandin-media-stack
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${CONFIG_ROOT}/config/sonarr:/config
+      - ${MEDIA_ROOT}/complete/tv:/tv 
+      - ${MEDIA_ROOT}/downloads:/downloads 
+  # https://docs.linuxserver.io/images/docker-radarr
+  radarr:
+    container_name: radarr
+    image: lscr.io/linuxserver/radarr:4.7.5@sha256:dffd4e1ad10b6621e676876a374cc934f95b4e9235fc9f76d124a6d9418899f9    
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID} 
+      - TZ=${TZ} 
+    ports:
+      - 7878:7878
+    networks:
+      - brandin-media-stack
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${CONFIG_ROOT}/config/radarr:/config 
+      - ${MEDIA_ROOT}/complete/movies:/movies
+      - ${MEDIA_ROOT}/downloads:/downloads 
+  # https://docs.linuxserver.io/images/docker-overseerr
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:1.33.2@sha256:4e79535b6012bd79df1b70c88c7f88ec9514a71550d3887f5b75ef6688909a66
+    container_name: overseerr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=Etc/UTC
+    networks:
+      - brandin-media-stack
+    volumes:
+      - ${CONFIG_ROOT}/config/overseerr:/config 
+    ports:
+      - 5055:5055
+    restart: unless-stopped
+  # https://docs.linuxserver.io/images/docker-swag
+  swag:
+    image: lscr.io/linuxserver/swag:2.7.4@sha256:d635fab8e536cd2c55a92d2ceb0d09271a910ef12bf39c2a836c855e21f3e774
+    container_name: swag
+    networks:
+      - brandin-media-stack
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - URL=${SWAG_URL}
+      - VALIDATION=http
+      - SUBDOMAINS=www,overseerr #optional
+    volumes:
+      - ${CONFIG_ROOT}/config/swag:/config
+    ports:
+      - 443:443
+      - 80:80 
+    restart: unless-stopped
+  # https://docs.linuxserver.io/images/docker-tautulli
+  tautulli:
+    container_name: tautulli
+    image: lscr.io/linuxserver/tautulli:2.13.2@sha256:225f4de841cbe5cada7f9ce26b2fcb0386edb45dd37254df5286073b48d7d047
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 8181:8181
+    networks:
+      - brandin-media-stack
+    volumes:
+      - ${CONFIG_ROOT}/config/tautulli:/config
+  # https://docs.linuxserver.io/images/docker-bazarr
+  bazarr:
+    container_name: bazarr
+    image: lscr.io/linuxserver/bazarr:1.3.1@sha256:b1f90370b7baf6795e639319fadf3d93d9385e702b3dfd17b77879b37cc1f05b
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID} 
+      - PGID=${PGID} 
+      - TZ=${TZ} 
+      - UMASK_SET=022 #optional
+    ports:
+      - 6767:6767
+    networks:
+      - brandin-media-stack
+    volumes:
+      - ${CONFIG_ROOT}/config/bazarr:/config 
+      - ${MEDIA_ROOT}/complete/movies:/movies 
+      - ${MEDIA_ROOT}/complete/tv:/tv
+  # https://docs.linuxserver.io/images/docker-duckdns
+  duckdns:
+    image: lscr.io/linuxserver/duckdns:version-256b24bf@sha256:f8cc95c15a64a5c90e29640b77260d5692c0ad92dc57f97c374d26eb6eb43204
+    container_name: duckdns
+    network_mode: host 
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ} 
+      - SUBDOMAINS=${DUCK_DNS_SUBDOMAINS}
+      - TOKEN=${DUCK_DNS_TOKEN}
+      - UPDATE_IP=ipv4 #optional
+      - LOG_FILE=false #optional
+    volumes:
+      - ${CONFIG_ROOT}/config/duckdns:/config 
+    restart: unless-stopped
+  # https://www.authelia.com/integration/deployment/docker
+  authelia:
+    container_name: authelia
+    image: authelia/authelia:4.37@sha256:82831059ce5c1151d4ccd37f803cdf35fccbd488c80fe7f9f8de6b76adf40447
+    restart: unless-stopped
+    networks:
+      - brandin-media-stack
+    expose:
+      - 9091
+    volumes:
+      - ${CONFIG_ROOT}/config/authelia:/config
+    environment:
+      - TZ=${TZ}
+  # https://docs.linuxserver.io/deprecated_images/docker-nzbget
+  nzbget:
+    container_name: nzbget
+    image: lscr.io/linuxserver/nzbget:21.1.20230119@sha256:ed58a6471591126adee01e704d35264979640bede1fca7ffa13a21d6643c5a18
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 6789:6789
+    networks:
+      - brandin-media-stack
+    volumes:
+      - ${MEDIA_ROOT}/downloads:/downloads 
+      - ${CONFIG_ROOT}/config/nzbget:/config 
+networks:
+  brandin-media-stack:
+    name: brandin-media-stack
