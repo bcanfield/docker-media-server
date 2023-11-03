@@ -1,0 +1,34 @@
+name: Versioning
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Get the last version
+      id: last_version
+      run: echo "::set-output name=version::$(git describe --tags --abbrev=0)"
+
+    - name: Determine the new version
+      id: bump_version
+      run: |
+        current_version=$(cat v)
+        last_version=${{ steps.last_version.outputs.version }}
+        new_version=$(npm version --git-tag-version=last "$current_version")
+        echo $new_version > v
+        echo "::set-output name=new_version::$new_version"
+
+    - name: Commit and push updated version
+      run: |
+        git config user.email "bcanfield@gmail.com"
+        git config user.name "B"
+        git commit -am "Version ${{ steps.bump_version.outputs.new_version }}"
+        git push
