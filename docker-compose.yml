@@ -2,7 +2,7 @@ version: "3.4"
 services:
   # https://docs.linuxserver.io/images/docker-plex
   plex:
-    image: lscr.io/linuxserver/plex:1.32.6@sha256:76042b2cc58e85047aca29a00ef33ba838fa29382a74b2405fe2d9c151af1eed
+    image: lscr.io/linuxserver/plex:1.32.7@sha256:7e6a0373673b9991a465f744d4b482a66360b6354a8f62473b7597f4c10255b4
     container_name: plex
     restart: always
     environment:
@@ -10,7 +10,6 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
       - VERSION=docker
-      - PLEX_CLAIM=${PLEX_CLAIM}
     networks:
       - brandin-media-stack
     ports:
