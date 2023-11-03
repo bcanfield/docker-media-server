@@ -13,22 +13,27 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Get the last version
-      id: last_version
-      run: echo "::set-output name=version::$(git describe --tags --abbrev=0)"
+    - name: Install Conventional Changelog CLI
+      run: npm install -g conventional-changelog-cli
+
+    - name: Generate changelog
+      run: conventional-changelog -p angular -i CHANGELOG.md -s
+
+    - name: Set up Git
+      run: |
+        git config user.email "brandincanfield@gmail.com"
+        git config user.name "B"
+        git add CHANGELOG.md
+        git commit -m "chore(release): bump version based on commit messages"
+        git push
 
     - name: Determine the new version
       id: bump_version
       run: |
-        current_version=$(cat v)
-        last_version=${{ steps.last_version.outputs.version }}
-        new_version=$(npm version --git-tag-version=last "$current_version")
-        echo $new_version > v
-        echo "::set-output name=new_version::$new_version"
+        current_version=$(grep -o -E "[0-9]+\.[0-9]+\.[0-9]+" CHANGELOG.md | head -n 1)
+        echo "::set-output name=new_version::$current_version"
 
-    - name: Commit and push updated version
+    - name: Create and push a new tag
       run: |
-        git config user.email "bcanfield@gmail.com"
-        git config user.name "B"
-        git commit -am "Version ${{ steps.bump_version.outputs.new_version }}"
-        git push
+        git tag ${{ steps.bump_version.outputs.new_version }}
+        git push origin --tags
