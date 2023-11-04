@@ -1,18 +1,12 @@
-name: 'Yamllint'
+name: 'Docker Compose Lint'
 on:
   - pull_request
 jobs:
-  yamllint:
-    name: 'Yamllint'
+  lint:
+    name: 'Docker Compose Lint'
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: 'Yamllint'
-        uses: karancode/yamllint-github-action@master
-        with:
-          yamllint_file_or_dir: 'docker-compose.yml'
-          yamllint_strict: false
-          yamllint_comment: true
-        env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Docker Compose Lint'
+        run: docker-compose config
