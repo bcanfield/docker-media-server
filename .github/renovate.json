@@ -1,6 +1,7 @@
 {
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":semanticCommits"
   ],
   "packageRules": [
     {
@@ -13,6 +14,7 @@
       "matchUpdateTypes": [
         "minor",
         "patch",
+        "pin",
         "digest"
       ],
       "commitBody": "Change-type: {{updateType}}",
