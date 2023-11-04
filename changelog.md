@@ -22,3 +22,7 @@
 - Commit Message: Test2
 - Commit Body: 
 
+## Version 0.0.7
+- Commit Message: Test
+- Commit Body: 
+
