@@ -1,0 +1,58 @@
+name: Create Git Tag
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Extract version and commit message
+      id: extract-info
+      run: |
+        version=$(cat version.txt)  # Replace with the path to your version file
+        commit_message=$(git log -1 --pretty=%s)
+        echo "::set-output name=version::$version"
+        echo "::set-output name=commit_message::$commit_message"
+
+    - name: Determine version increment
+      id: increment-version
+      run: |
+        commit_message="${{ steps.extract-info.outputs.commit_message }}"
+        if [[ $commit_message == *"major"* ]]; then
+          version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
+          major=$((version_parts[0] + 1))
+          new_version="$major.0.0"
+        elif [[ $commit_message == *"minor"* ]]; then
+          version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
+          major=${version_parts[0]}
+          minor=$((version_parts[1] + 1))
+          new_version="$major.$minor.0"
+        else
+          version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
+          major=${version_parts[0]}
+          minor=${version_parts[1]}
+          patch=$((version_parts[2] + 1))
+          new_version="$major.$minor.$patch"
+        fi
+        echo "::set-output name=new_version::$new_version"
+
+    - name: Update version.txt
+      run: |
+        echo "${{ steps.increment-version.outputs.new_version }}" > version.txt
+        git config user.name "Your Username"
+        git config user.email "your.email@example.com"
+        git add version.txt
+        git commit -m "Bump version to ${{ steps.increment-version.outputs.new_version }}"
+        git push
+
+    - name: Create Git Tag
+      run: |
+        git tag -a -m "Version ${{ steps.increment-version.outputs.new_version }} ${{ steps.extract-info.outputs.commit_message }}" v${{ steps.increment-version.outputs.new_version }}
+        git push origin v${{ steps.increment-version.outputs.new_version }}
