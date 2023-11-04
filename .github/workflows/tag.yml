@@ -17,7 +17,7 @@ jobs:
       id: extract-info
       run: |
         version=$(cat version.txt)  # Replace with the path to your version file
-        commit_message="${{ github.event.head_commit.message }}""
+        commit_message="${{ github.event.head_commit.message }}"
         commit_body="${{ github.event.head_commit.body }}"
         echo "::set-output name=version::$version"
         echo "::set-output name=commit_message::$commit_message"
