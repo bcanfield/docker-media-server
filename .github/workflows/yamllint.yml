@@ -11,7 +11,7 @@ jobs:
       - name: 'Yamllint'
         uses: karancode/yamllint-github-action@master
         with:
-          yamllint_file_or_dir: 'docker-ccompose.yml'
+          yamllint_file_or_dir: 'docker-compose.yml'
           yamllint_strict: false
           yamllint_comment: true
         env:
