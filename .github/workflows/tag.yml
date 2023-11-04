@@ -52,6 +52,16 @@ jobs:
         git commit -m "Version ${{ steps.increment-version.outputs.new_version }}"
         git push
 
+    - name: Update changelog.md
+      run: |
+        echo "## Version ${{ steps.increment-version.outputs.new_version }}" >> changelog.md
+        echo "- Commit Message: ${{ steps.extract-info.outputs.commit_message }}" >> changelog.md
+        echo "- Commit Body: ${{ steps.extract-info.outputs.commit_message }}" >> changelog.md
+        echo "" >> changelog.md
+        git add changelog.md
+        git commit -m "Update changelog for version ${{ steps.increment-version.outputs.new_version }}"
+        git push
+
     - name: Create Git Tag
       run: |
         git tag -a -m "Version ${{ steps.increment-version.outputs.new_version }} ${{ steps.extract-info.outputs.commit_message }}" v${{ steps.increment-version.outputs.new_version }}
