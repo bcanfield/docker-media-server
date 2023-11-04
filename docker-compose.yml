@@ -2,7 +2,7 @@ version: "3.4"
 services:
   # https://docs.linuxserver.io/images/docker-plex
   plex:
-    image: lscr.io/linuxserver/plex:1.32.7@sha256:7e6a0373673b9991a465f744d4b482a66360b6354a8f62473b7597f4c10255b4
+    image: linuxserver/plex:1.32.7@sha256:7e6a0373673b9991a465f744d4b482a66360b6354a8f62473b7597f4c10255b4
     container_name: plex
     restart: always
     environment:
@@ -29,7 +29,7 @@ services:
   # https://docs.linuxserver.io/images/docker-sonarr
   sonarr:
     container_name: sonarr
-    image: lscr.io/linuxserver/sonarr:3.0.10@sha256:01ed3f3368017f90d3911efc205621ce09639a0aeac1d07dddea7f1f7fc5e728
+    image: linuxserver/sonarr:3.0.10@sha256:01ed3f3368017f90d3911efc205621ce09639a0aeac1d07dddea7f1f7fc5e728
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -47,7 +47,7 @@ services:
   # https://docs.linuxserver.io/images/docker-radarr
   radarr:
     container_name: radarr
-    image: lscr.io/linuxserver/radarr:4.7.5@sha256:dffd4e1ad10b6621e676876a374cc934f95b4e9235fc9f76d124a6d9418899f9    
+    image: linuxserver/radarr:4.7.5@sha256:dffd4e1ad10b6621e676876a374cc934f95b4e9235fc9f76d124a6d9418899f9    
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -64,7 +64,7 @@ services:
       - ${MEDIA_ROOT}/downloads:/downloads 
   # https://docs.linuxserver.io/images/docker-overseerr
   overseerr:
-    image: lscr.io/linuxserver/overseerr:1.33.2@sha256:4e79535b6012bd79df1b70c88c7f88ec9514a71550d3887f5b75ef6688909a66
+    image: linuxserver/overseerr:1.33.2@sha256:4e79535b6012bd79df1b70c88c7f88ec9514a71550d3887f5b75ef6688909a66
     container_name: overseerr
     environment:
       - PUID=${PUID}
@@ -79,7 +79,7 @@ services:
     restart: unless-stopped
   # https://docs.linuxserver.io/images/docker-swag
   swag:
-    image: lscr.io/linuxserver/swag:2.7.4@sha256:d635fab8e536cd2c55a92d2ceb0d09271a910ef12bf39c2a836c855e21f3e774
+    image: linuxserver/swag:2.7.4@sha256:d635fab8e536cd2c55a92d2ceb0d09271a910ef12bf39c2a836c855e21f3e774
     container_name: swag
     networks:
       - brandin-media-stack
@@ -101,7 +101,7 @@ services:
   # https://docs.linuxserver.io/images/docker-tautulli
   tautulli:
     container_name: tautulli
-    image: lscr.io/linuxserver/tautulli:2.13.2@sha256:225f4de841cbe5cada7f9ce26b2fcb0386edb45dd37254df5286073b48d7d047
+    image: linuxserver/tautulli:2.13.2@sha256:225f4de841cbe5cada7f9ce26b2fcb0386edb45dd37254df5286073b48d7d047
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -116,7 +116,7 @@ services:
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
-    image: lscr.io/linuxserver/bazarr:1.3.1@sha256:b1f90370b7baf6795e639319fadf3d93d9385e702b3dfd17b77879b37cc1f05b
+    image: linuxserver/bazarr:1.3.1@sha256:b1f90370b7baf6795e639319fadf3d93d9385e702b3dfd17b77879b37cc1f05b
     restart: unless-stopped
     environment:
       - PUID=${PUID} 
@@ -133,7 +133,7 @@ services:
       - ${MEDIA_ROOT}/complete/tv:/tv
   # https://docs.linuxserver.io/images/docker-duckdns
   duckdns:
-    image: lscr.io/linuxserver/duckdns:version-256b24bf@sha256:f8cc95c15a64a5c90e29640b77260d5692c0ad92dc57f97c374d26eb6eb43204
+    image: linuxserver/duckdns:version-256b24bf@sha256:f8cc95c15a64a5c90e29640b77260d5692c0ad92dc57f97c374d26eb6eb43204
     container_name: duckdns
     network_mode: host 
     environment:
@@ -163,7 +163,7 @@ services:
   # https://docs.linuxserver.io/deprecated_images/docker-nzbget
   nzbget:
     container_name: nzbget
-    image: lscr.io/linuxserver/nzbget:21.1.20230119@sha256:ed58a6471591126adee01e704d35264979640bede1fca7ffa13a21d6643c5a18
+    image: linuxserver/nzbget:21.1.20230119@sha256:ed58a6471591126adee01e704d35264979640bede1fca7ffa13a21d6643c5a18
     restart: unless-stopped
     environment:
       - PUID=${PUID}
