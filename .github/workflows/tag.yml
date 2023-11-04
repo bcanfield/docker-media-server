@@ -17,10 +17,12 @@ jobs:
       id: extract-info
       run: |
         version=$(cat version.txt)  # Replace with the path to your version file
-        commit_message=$(git log -1 --pretty=%s)
-        commit_body=$(git log -1 --pretty=%b)
+        commit_message=${{ github.event.head_commit.message }}
+        commit_body=${{ github.event.head_commit.body }}
+        # commit_body=$(git log -1 --pretty=%b)
         echo "::set-output name=version::$version"
         echo "::set-output name=commit_message::$commit_message"
+        echo "::set-output name=commit_body::$commit_body"
 
     - name: Determine version increment
       id: increment-version
