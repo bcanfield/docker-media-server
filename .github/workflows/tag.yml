@@ -18,18 +18,19 @@ jobs:
       run: |
         version=$(cat version.txt)  # Replace with the path to your version file
         commit_message=$(git log -1 --pretty=%s)
+        commit_body=$(git log -1 --pretty=%b)
         echo "::set-output name=version::$version"
         echo "::set-output name=commit_message::$commit_message"
 
     - name: Determine version increment
       id: increment-version
       run: |
-        commit_message="${{ steps.extract-info.outputs.commit_message }}"
-        if [[ $commit_message == *"major"* ]]; then
+        commit_body="${{ steps.extract-info.outputs.commit_body }}"
+        if [[ $commit_body == *"major"* ]]; then
           version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
           major=$((version_parts[0] + 1))
           new_version="$major.0.0"
-        elif [[ $commit_message == *"minor"* ]]; then
+        elif [[ $commit_body == *"minor"* ]]; then
           version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
           major=${version_parts[0]}
           minor=$((version_parts[1] + 1))
@@ -49,17 +50,17 @@ jobs:
         git config user.name "bcanfield"
         git config user.email "brandincanfield@gmail.com"
         git add version.txt
-        git commit -m "Version ${{ steps.increment-version.outputs.new_version }}"
-        git push
+        # git commit -m "Version ${{ steps.increment-version.outputs.new_version }}"
+        # git push
 
     - name: Update changelog.md
       run: |
         echo "## Version ${{ steps.increment-version.outputs.new_version }}" >> changelog.md
         echo "- Commit Message: ${{ steps.extract-info.outputs.commit_message }}" >> changelog.md
-        echo "- Commit Body: ${{ steps.extract-info.outputs.commit_message }}" >> changelog.md
+        echo "- Commit Body: ${{ steps.extract-info.outputs.commit_body }}" >> changelog.md
         echo "" >> changelog.md
         git add changelog.md
-        git commit -m "Update changelog for version ${{ steps.increment-version.outputs.new_version }}"
+        git commit -m "Version ${{ steps.increment-version.outputs.new_version }}"
         git push
 
     - name: Create Git Tag
