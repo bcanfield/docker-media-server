@@ -1,7 +1,6 @@
 {
   "extends": [
-    "config:recommended",
-    ":semanticCommits"
+    "config:recommended"
   ],
   "packageRules": [
     {
