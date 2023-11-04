@@ -26,6 +26,7 @@ jobs:
       id: increment-version
       run: |
         commit_body="${{ steps.extract-info.outputs.commit_body }}"
+        echo "BRANDIN $commit_body"
         if [[ $commit_body == *"major"* ]]; then
           version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
           major=$((version_parts[0] + 1))
