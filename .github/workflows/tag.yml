@@ -30,10 +30,12 @@ jobs:
         minor_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $2}')
 
         if [[ $commit_message == *"major"* ]]; then
+          echo "New major version"
           new_major_version=$((major_version + 1))
           new_version="$new_major_version.0"
         else
-          new_minor_version=$((major_version + 1))
+          echo "New minor version"
+          new_minor_version=$((minor + 1))
           new_version="$major_version.$new_minor_version"
         fi
         echo "::set-output name=new_version::$new_version"
@@ -58,6 +60,6 @@ jobs:
 
     - name: Create Git Tag
       run: |
-        git tag -a -m "Version ${{ steps.increment-version.outputs.new_version }} ${{ steps.extract-info.outputs.commit_message }}" v${{ steps.increment-version.outputs.new_version }}
+        git tag -a -m "v${{ steps.increment-version.outputs.new_version }}" v${{ steps.increment-version.outputs.new_version }}
         git push origin v${{ steps.increment-version.outputs.new_version }}
 
