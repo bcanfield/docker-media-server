@@ -25,16 +25,15 @@ jobs:
     - name: Determine version increment
       id: increment-version
       run: |
+        major_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $1}')
+        minor_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $2}')
+
         if [[ $commit_message == *"major"* ]]; then
-          version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
-          major=$((version_parts[0] + 1))
-          new_version="$major.0"
+          new_major_version=$((major_version + 1))
+          new_version="$new_major_version.0"
         else
-          version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
-          cat ${version_parts}
-          major=${version_parts[0]}
-          minor=${version_parts[1] + 1}
-          new_version="$major.$minor"
+          new_minor_version=$((major_version + 1))
+          new_version="$major_version.$new_minor_version"
         fi
         echo "::set-output name=new_version::$new_version"
 
