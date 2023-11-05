@@ -57,3 +57,6 @@
 ## v1.1
 - Change: 
 
+## v1.0
+- Change: 
+
