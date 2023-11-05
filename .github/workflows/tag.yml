@@ -49,11 +49,11 @@ jobs:
 
     - name: Update changelog.md
       run: |
-        echo "## Version ${{ steps.increment-version.outputs.new_version }}" >> changelog.md
+        echo "## v${{ steps.increment-version.outputs.new_version }}" >> changelog.md
         echo "- Change: ${{ steps.extract-info.outputs.commit_message }}" >> changelog.md
         echo "" >> changelog.md
         git add changelog.md
-        git commit -m "Version ${{ steps.increment-version.outputs.new_version }}"
+        git commit -m "v${{ steps.increment-version.outputs.new_version }}"
         git push
 
     - name: Create Git Tag

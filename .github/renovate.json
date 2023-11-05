@@ -17,7 +17,8 @@
         "digest"
       ],
       "commitBody": "Change-type: {{updateType}}",
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     }
   ],
   "prHourlyLimit": 8
