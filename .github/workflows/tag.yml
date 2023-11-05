@@ -31,7 +31,7 @@ jobs:
           new_version="$major.0"
         else
           version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
-          cat version_parts
+          cat ${version_parts}
           major=${version_parts[0]}
           minor=${version_parts[1] + 1}
           new_version="$major.$minor"
