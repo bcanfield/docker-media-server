@@ -18,7 +18,6 @@ jobs:
       run: |
         version=$(cat version.txt)  # Replace with the path to your version file
         commit_message="${{ github.event.head_commit.message }}"
-        commit_body="${{ github.event.head_commit.body }}"
         echo "::set-output name=version::$version"
         echo "::set-output name=commit_message::$commit_message"
         echo "::set-output name=commit_body::$commit_body"
@@ -26,23 +25,15 @@ jobs:
     - name: Determine version increment
       id: increment-version
       run: |
-        commit_body="${{ steps.extract-info.outputs.commit_body }}"
-        echo "BRANDIN $commit_body"
-        if [[ $commit_body == *"major"* ]]; then
+        if [[ $commit_message == *"major"* ]]; then
           version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
           major=$((version_parts[0] + 1))
-          new_version="$major.0.0"
-        elif [[ $commit_body == *"minor"* ]]; then
-          version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
-          major=${version_parts[0]}
-          minor=$((version_parts[1] + 1))
-          new_version="$major.$minor.0"
+          new_version="$major.0"
         else
           version_parts=($(echo ${{ steps.extract-info.outputs.version }} | tr '.' ' '))
           major=${version_parts[0]}
-          minor=${version_parts[1]}
-          patch=$((version_parts[2] + 1))
-          new_version="$major.$minor.$patch"
+          minor=${version_parts[1] + 1}
+          new_version="$major.$minor"
         fi
         echo "::set-output name=new_version::$new_version"
 
@@ -58,8 +49,7 @@ jobs:
     - name: Update changelog.md
       run: |
         echo "## Version ${{ steps.increment-version.outputs.new_version }}" >> changelog.md
-        echo "- Commit Message: ${{ steps.extract-info.outputs.commit_message }}" >> changelog.md
-        echo "- Commit Body: ${{ steps.extract-info.outputs.commit_body }}" >> changelog.md
+        echo "- Change: ${{ steps.extract-info.outputs.commit_message }}" >> changelog.md
         echo "" >> changelog.md
         git add changelog.md
         git commit -m "Version ${{ steps.increment-version.outputs.new_version }}"
