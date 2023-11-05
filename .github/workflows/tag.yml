@@ -19,7 +19,7 @@ jobs:
       run: |
         cat version.txt
         version=$(cat version.txt)  # Replace with the path to your version file
-        commit_message="${{ github.event.head_commit.message }}"
+        commit_message=$(git log -1 --pretty=%s)
         echo "::set-output name=version::$version"
         echo "::set-output name=commit_message::$commit_message"
 
