@@ -19,17 +19,17 @@ jobs:
       run: |
         cat version.txt
         version=$(cat version.txt)  # Replace with the path to your version file
-        commit_message=$(git log -1 --pretty=%s)
         echo "::set-output name=version::$version"
         echo "::set-output name=commit_message::$commit_message"
 
     - name: Determine version increment
       id: increment-version
       run: |
+        commit_message=$(git log -1 --pretty=%s)
         major_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $1}')
         minor_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $2}')
         echo "$commit_message"
-        if [[ $commit_message == *"major"* ]]; then
+        if [[ { steps.extract-info.outputs.commit_message } == *"major"* ]]; then
           echo "New major version"
           new_major_version=$((major_version + 1))
           new_version="$new_major_version.0"
