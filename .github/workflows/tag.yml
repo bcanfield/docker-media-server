@@ -46,8 +46,6 @@ jobs:
         git config user.name "bcanfield"
         git config user.email "brandincanfield@gmail.com"
         git add version.txt
-        # git commit -m "Version ${{ steps.increment-version.outputs.new_version }}"
-        # git push
 
     - name: Update changelog.md
       run: |
