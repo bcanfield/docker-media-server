@@ -28,7 +28,7 @@ jobs:
       run: |
         major_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $1}')
         minor_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $2}')
-
+        echo "${{commit_message}}"
         if [[ $commit_message == *"major"* ]]; then
           echo "New major version"
           new_major_version=$((major_version + 1))
