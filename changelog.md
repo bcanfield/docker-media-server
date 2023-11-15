@@ -93,3 +93,6 @@
 ## v1.1
 - Change: 
 
+## v1.2
+- Change: 
+
