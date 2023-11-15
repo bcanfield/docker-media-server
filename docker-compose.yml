@@ -160,22 +160,22 @@ services:
       - ${CONFIG_ROOT}/config/authelia:/config
     environment:
       - TZ=${TZ}
-  # https://docs.linuxserver.io/deprecated_images/docker-nzbget
-  nzbget:
-    container_name: nzbget
-    image: linuxserver/nzbget:21.1.20230119@sha256:ed58a6471591126adee01e704d35264979640bede1fca7ffa13a21d6643c5a18
-    restart: unless-stopped
+  # https://docs.linuxserver.io/images/docker-sabnzbd/
+  sabnzbd:
+    image: linuxserver/sabnzbd:4.1.0@sha256:4dd1f2b0ac6bac63b2942c03257a5642ce3f127c1429aa45420bd6f61c2ca68e
+    container_name: sabnzbd
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+    volumes:
+      - ${CONFIG_ROOT}/config/sabnzbd:/config
+      - ${MEDIA_ROOT}/downloads:/downloads #optional
     ports:
-      - 6789:6789
+      - 8080:8080
+    restart: unless-stopped
     networks:
       - brandin-media-stack
-    volumes:
-      - ${MEDIA_ROOT}/downloads:/downloads 
-      - ${CONFIG_ROOT}/config/nzbget:/config 
 networks:
   brandin-media-stack:
     name: brandin-media-stack
