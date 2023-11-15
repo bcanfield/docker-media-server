@@ -26,6 +26,11 @@ jobs:
         commit_description=$(git log --format=%B -n 1 ${{ github.sha }})
         major_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $1}')
         minor_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $2}')
+        echo "Major"
+        echo "$major_version"
+        echo "Minor"
+        echo "$minor_version"
+        echo "Desccription"
         echo "$commit_description"
         if [[ $commit_description == *"major"* ]]; then
           echo "New major version"
