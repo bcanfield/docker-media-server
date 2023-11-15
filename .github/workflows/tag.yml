@@ -19,16 +19,15 @@ jobs:
         cat version.txt
         version=$(cat version.txt)  # Replace with the path to your version file
         echo "::set-output name=version::$version"
-        echo "::set-output name=commit_message::$commit_message"
 
     - name: Determine version increment
       id: increment-version
       run: |
-        commit_message=$(git log -1 --pretty=%s)
+        commit_description=$(git log --format=%B -n 1 ${{ github.sha }})
         major_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $1}')
         minor_version=$(echo ${{ steps.extract-info.outputs.version }} | awk -F'.' '{print $2}')
-        echo "$commit_message"
-        if [[ $commit_message == *"major"* ]]; then
+        echo "$commit_description"
+        if [[ $commit_description == *"major"* ]]; then
           echo "New major version"
           new_major_version=$((major_version + 1))
           new_version="$new_major_version.0"
@@ -36,6 +35,7 @@ jobs:
           echo "New minor version"
           new_minor_version=$((minor + 1))
           new_version="$major_version.$new_minor_version"
+          echo "$new_version"
         fi
         echo "::set-output name=new_version::$new_version"
 
@@ -49,7 +49,7 @@ jobs:
     - name: Update changelog.md
       run: |
         echo "## v${{ steps.increment-version.outputs.new_version }}" >> changelog.md
-        echo "- Change: ${{ steps.extract-info.outputs.commit_message }}" >> changelog.md
+        echo "- Change: ${{ steps.extract-info.outputs.commit_description }}" >> changelog.md
         echo "" >> changelog.md
         git add changelog.md
         git commit -m "v${{ steps.increment-version.outputs.new_version }}"
