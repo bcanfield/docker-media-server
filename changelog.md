@@ -4,3 +4,6 @@
 ## v3.5
 - Change: Clean up changelog.md
 
+## v3.6
+- Change: Remove excess files
+
