@@ -7,3 +7,6 @@
 ## v3.6
 - Change: Remove excess files
 
+## v3.7
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to b4ec9fc
+
