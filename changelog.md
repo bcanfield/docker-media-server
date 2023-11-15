@@ -102,3 +102,6 @@
 ## v3.0
 - Change: 
 
+## v3.1
+- Change: Update changelog action
+
