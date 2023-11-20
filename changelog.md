@@ -28,3 +28,6 @@
 ## v3.13
 - Change: chore(deps): update linuxserver/radarr:5.1.3 docker digest to 216f0a1
 
+## v3.14
+- Change: chore(deps): update linuxserver/plex:1.32.7 docker digest to ead806c
+
