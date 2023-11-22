@@ -31,3 +31,6 @@
 ## v3.14
 - Change: chore(deps): update linuxserver/plex:1.32.7 docker digest to ead806c
 
+## v3.15
+- Change: chore(deps): update linuxserver/bazarr:1.3.1 docker digest to 189943b
+
