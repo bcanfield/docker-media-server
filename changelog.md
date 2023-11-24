@@ -40,3 +40,6 @@
 ## v3.17
 - Change: chore(deps): update linuxserver/sabnzbd:4.1.0 docker digest to 0bf6bb6
 
+## v3.18
+- Change: chore(deps): update linuxserver/sabnzbd:4.1.0 docker digest to e21cc05
+
