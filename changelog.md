@@ -43,3 +43,6 @@
 ## v3.18
 - Change: chore(deps): update linuxserver/sabnzbd:4.1.0 docker digest to e21cc05
 
+## v3.19
+- Change: chore(deps): update linuxserver/tautulli:2.13.2 docker digest to 01d3cee
+
