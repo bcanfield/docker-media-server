@@ -46,3 +46,6 @@
 ## v3.19
 - Change: chore(deps): update linuxserver/tautulli:2.13.2 docker digest to 01d3cee
 
+## v3.20
+- Change: chore(deps): update linuxserver/sonarr:3.0.10 docker digest to 667e27c
+
