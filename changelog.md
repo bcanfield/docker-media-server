@@ -52,3 +52,6 @@
 ## v3.21
 - Change: chore(deps): update linuxserver/swag:2.7.4 docker digest to 6ad70db
 
+## v3.22
+- Change: chore(deps): update linuxserver/swag:2.7.4 docker digest to 4d55b4d
+
