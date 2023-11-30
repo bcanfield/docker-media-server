@@ -58,3 +58,6 @@
 ## v3.23
 - Change: chore(deps): update linuxserver/bazarr docker tag to v1.4.0
 
+## v3.24
+- Change: chore(deps): update linuxserver/sabnzbd:4.1.0 docker digest to 2648edb
+
