@@ -61,3 +61,6 @@
 ## v3.24
 - Change: chore(deps): update linuxserver/sabnzbd:4.1.0 docker digest to 2648edb
 
+## v3.25
+- Change: chore(deps): update linuxserver/swag:2.7.4 docker digest to c7df290
+
