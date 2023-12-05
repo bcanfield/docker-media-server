@@ -82,3 +82,6 @@
 ## v3.31
 - Change: chore(deps): update linuxserver/plex:1.32.7 docker digest to 16fdcc2
 
+## v3.32
+- Change: chore(deps): update linuxserver/plex docker tag to v1.32.8
+
