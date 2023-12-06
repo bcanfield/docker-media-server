@@ -64,7 +64,7 @@ services:
       - ${MEDIA_ROOT}/downloads:/downloads 
   # https://docs.linuxserver.io/images/docker-overseerr
   overseerr:
-    image: linuxserver/overseerr:1.33.2@sha256:5f61a3b58b79bea860bdb78c13971464338487cb8b8312dc35af853a3084c91a
+    image: linuxserver/overseerr:1.33.2@sha256:9360e386f287206c7ff367c4f8ef947bd24f6a2a169cc14d7e7b8832258edbd1
     container_name: overseerr
     environment:
       - PUID=${PUID}
