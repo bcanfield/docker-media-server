@@ -91,3 +91,6 @@
 ## v3.34
 - Change: chore(deps): update linuxserver/swag docker tag to v2.8.0
 
+## v3.35
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 9360e38
+
