@@ -103,3 +103,6 @@
 ## v3.38
 - Change: chore(deps): update linuxserver/tautulli docker tag to v2.13.4
 
+## v3.39
+- Change: chore(deps): update linuxserver/sonarr:3.0.10 docker digest to 13fbee7
+
