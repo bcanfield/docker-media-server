@@ -127,3 +127,6 @@
 ## v3.46
 - Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to 45ec930
 
+## v3.47
+- Change: chore(deps): update linuxserver/sonarr:3.0.10 docker digest to 8ddef33
+
