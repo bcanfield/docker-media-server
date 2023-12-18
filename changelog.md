@@ -133,3 +133,6 @@
 ## v3.48
 - Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to 8430d3e
 
+## v3.49
+- Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to 5ab4302
+
