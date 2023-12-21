@@ -139,3 +139,6 @@
 ## v3.50
 - Change: chore(deps): update linuxserver/bazarr:1.4.0 docker digest to cdafeeb
 
+## v3.51
+- Change: chore(deps): update linuxserver/sabnzbd:4.1.0 docker digest to 545c828
+
