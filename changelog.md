@@ -148,3 +148,6 @@
 ## v3.53
 - Change: chore(deps): update linuxserver/sonarr:3.0.10 docker digest to 4f69472
 
+## v3.54
+- Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to d05dd00
+
