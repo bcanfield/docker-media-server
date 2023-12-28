@@ -160,3 +160,6 @@
 ## v3.57
 - Change: chore(deps): update linuxserver/bazarr:1.4.0 docker digest to 4adac2d
 
+## v3.58
+- Change: chore(deps): update linuxserver/sabnzbd:4.1.0 docker digest to fa1337c
+
