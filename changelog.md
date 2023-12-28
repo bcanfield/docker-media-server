@@ -163,3 +163,6 @@
 ## v3.58
 - Change: chore(deps): update linuxserver/sabnzbd:4.1.0 docker digest to fa1337c
 
+## v3.59
+- Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to 20fc05c
+
