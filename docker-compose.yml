@@ -2,7 +2,7 @@ version: "3.4"
 services:
   # https://docs.linuxserver.io/images/docker-plex
   plex:
-    image: linuxserver/plex:1.32.7@sha256:fedd6ee2ba80c509e6433a23d3dcbbade12bda0162c879bc1a64d7c75a2810fc
+    image: linuxserver/plex:1.32.8@sha256:aaf5fb92f2d5dd3c81e4f8f8654baf76ed7baf0b6c01efccef5151c775a03a4c
     container_name: plex
     restart: always
     environment:
@@ -29,7 +29,7 @@ services:
   # https://docs.linuxserver.io/images/docker-sonarr
   sonarr:
     container_name: sonarr
-    image: linuxserver/sonarr:3.0.10@sha256:cb695458b280551a4b2e8b925c4deba1772dabe82cd15a2c684ff36bca7fa9f8
+    image: linuxserver/sonarr:3.0.10@sha256:4f69472a0cdea29e23967db6a3395487539b759def3920327d1f49ae00b9dfd4
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -47,7 +47,7 @@ services:
   # https://docs.linuxserver.io/images/docker-radarr
   radarr:
     container_name: radarr
-    image: linuxserver/radarr:5.1.3@sha256:ee96728ead2d3e6d7ccd32a96e16c13ea3818ffa7579fb0c11fe205f9733ae74    
+    image: linuxserver/radarr:5.2.6@sha256:89168fef2fba0704da8803a466e3668a92b119a544db5c5e2dba88723d41e240    
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -64,7 +64,7 @@ services:
       - ${MEDIA_ROOT}/downloads:/downloads 
   # https://docs.linuxserver.io/images/docker-overseerr
   overseerr:
-    image: linuxserver/overseerr:1.33.2@sha256:1a7a05fea6e87a89d073166066108d8070aebf21c4a554ab37142e139a5cbc94
+    image: linuxserver/overseerr:1.33.2@sha256:a36bcc36ae644f1b4a3470dd64d3fabf8ef6a255f37ff669c4030a7166f2c174
     container_name: overseerr
     environment:
       - PUID=${PUID}
@@ -79,7 +79,7 @@ services:
     restart: unless-stopped
   # https://docs.linuxserver.io/images/docker-swag
   swag:
-    image: linuxserver/swag:2.7.4@sha256:6239cc1646cbcaed599b8bb4c203fa9778730580e00cf7bebd33fb3653f55f3e
+    image: linuxserver/swag:2.8.0@sha256:a09f2690adac5af5652471161d0dff20ae6a8577646fe4a135f70cadaf7d7503
     container_name: swag
     networks:
       - brandin-media-stack
@@ -103,7 +103,7 @@ services:
   # https://docs.linuxserver.io/images/docker-tautulli
   tautulli:
     container_name: tautulli
-    image: linuxserver/tautulli:2.13.2@sha256:6195b187030637f5588c33988b3686b96f003c726b22958ee0d589549c6fb50f
+    image: linuxserver/tautulli:2.13.4@sha256:20fc05cad3c300f3cab16be60180f1d230ba8a33f10c66315e591ea8a5d5ea39
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -118,7 +118,7 @@ services:
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
-    image: linuxserver/bazarr:1.3.1@sha256:dedc43e90ca36e034f7e4fa3b119e6d4f70f5f82823e532c7ac3678fc1f950d8
+    image: linuxserver/bazarr:1.4.0@sha256:4adac2da277bbd85139bae62da8b7916db09afbc3dd91ff1168404626819c1e7
     restart: unless-stopped
     environment:
       - PUID=${PUID} 
@@ -164,7 +164,7 @@ services:
       - TZ=${TZ}
   # https://docs.linuxserver.io/images/docker-sabnzbd/
   sabnzbd:
-    image: linuxserver/sabnzbd:4.1.0@sha256:d43f9f1fac38b3b6b1bbd45855141a78a6e2758bc56dacf22d07858a0cc1f382
+    image: linuxserver/sabnzbd:4.1.0@sha256:4b654fcb49a6301305dc8db42ef119734ed35fd2ef1d3b9144cce90f0cc64a09
     container_name: sabnzbd
     environment:
       - PUID=${PUID}
