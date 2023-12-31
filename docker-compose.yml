@@ -92,11 +92,13 @@ services:
       - URL=${SWAG_URL}
       - VALIDATION=http
       - SUBDOMAINS=www,overseerr #optional
+      - DOCKER_MODS=linuxserver/mods:swag-dashboard
     volumes:
       - ${CONFIG_ROOT}/config/swag:/config
     ports:
       - 443:443
       - 80:80 
+      - 81:81
     restart: unless-stopped
   # https://docs.linuxserver.io/images/docker-tautulli
   tautulli:
