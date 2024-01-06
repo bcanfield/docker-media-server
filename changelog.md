@@ -190,3 +190,6 @@
 ## v3.67
 - Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.2.1
 
+## v3.68
+- Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to 1aa236f
+
