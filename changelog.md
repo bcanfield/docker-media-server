@@ -193,3 +193,6 @@
 ## v3.68
 - Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to 1aa236f
 
+## v3.69
+- Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to bebc448
+
