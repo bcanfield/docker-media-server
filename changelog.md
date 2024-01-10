@@ -199,3 +199,6 @@
 ## v3.70
 - Change: chore(deps): update linuxserver/bazarr:1.4.0 docker digest to 8b82985
 
+## v3.71
+- Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to 41e37e7
+
