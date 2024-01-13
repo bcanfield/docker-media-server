@@ -214,3 +214,6 @@
 ## v3.75
 - Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to a239476
 
+## v3.76
+- Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to 02eb900
+
