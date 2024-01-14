@@ -217,3 +217,6 @@
 ## v3.76
 - Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to 02eb900
 
+## v3.77
+- Change: chore(deps): update linuxserver/radarr:5.2.6 docker digest to cd9d09c
+
