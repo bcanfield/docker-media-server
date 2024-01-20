@@ -232,3 +232,6 @@
 ## v3.81
 - Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to b265e48
 
+## v3.82
+- Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to 7887e25
+
