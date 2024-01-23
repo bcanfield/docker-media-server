@@ -241,3 +241,6 @@
 ## v3.84
 - Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to 9f87f22
 
+## v3.85
+- Change: Update README.md
+
