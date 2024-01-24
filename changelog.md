@@ -244,3 +244,6 @@
 ## v3.85
 - Change: Update README.md
 
+## v3.86
+- Change: chore(deps): update linuxserver/bazarr:1.4.0 docker digest to 240fd7f
+
