@@ -247,3 +247,6 @@
 ## v3.86
 - Change: chore(deps): update linuxserver/bazarr:1.4.0 docker digest to 240fd7f
 
+## v3.87
+- Change: chore(deps): update linuxserver/bazarr:1.4.0 docker digest to 13c3f5a
+
