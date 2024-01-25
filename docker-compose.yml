@@ -116,7 +116,7 @@ services:
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
-    image: linuxserver/bazarr:1.4.0@sha256:240fd7f1ce5a193c0534138e29101e5ee827ce130a3521a47efe7535e014a7f2
+    image: linuxserver/bazarr:1.4.0@sha256:13c3f5ad5ef8701d2070cff29d3567dc06c65f24e073363340efdcaa2297a377
     restart: unless-stopped
     environment:
       - PUID=${PUID} 
