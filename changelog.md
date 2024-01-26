@@ -253,3 +253,6 @@
 ## v3.88
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to dfe56c2
 
+## v3.89
+- Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to 5114189
+
