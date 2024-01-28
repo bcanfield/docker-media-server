@@ -259,3 +259,6 @@
 ## v3.90
 - Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to d516002
 
+## v3.91
+- Change: chore(deps): update linuxserver/swag:2.8.0 docker digest to 6e5b895
+
