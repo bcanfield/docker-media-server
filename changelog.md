@@ -274,3 +274,6 @@
 ## v3.95
 - Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.2.2
 
+## v3.96
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to ec7d421
+
