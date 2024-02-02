@@ -277,3 +277,6 @@
 ## v3.96
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to ec7d421
 
+## v3.97
+- Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to a6fab47
+
