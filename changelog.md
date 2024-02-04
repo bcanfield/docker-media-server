@@ -286,3 +286,6 @@
 ## v3.99
 - Change: chore(deps): update linuxserver/bazarr docker tag to v1.4.1
 
+## v3.100
+- Change: chore(deps): update linuxserver/radarr:5.2.6 docker digest to b461ecc
+
