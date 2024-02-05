@@ -289,3 +289,6 @@
 ## v3.100
 - Change: chore(deps): update linuxserver/radarr:5.2.6 docker digest to b461ecc
 
+## v3.101
+- Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to e7b7103
+
