@@ -292,3 +292,6 @@
 ## v3.101
 - Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to e7b7103
 
+## v3.102
+- Change: chore(deps): update linuxserver/bazarr:1.4.1 docker digest to c037e29
+
