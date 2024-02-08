@@ -295,3 +295,6 @@
 ## v3.102
 - Change: chore(deps): update linuxserver/bazarr:1.4.1 docker digest to c037e29
 
+## v3.103
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 884c81c
+
