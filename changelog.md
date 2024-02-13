@@ -316,3 +316,6 @@
 ## v3.109
 - Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to a7df608
 
+## v3.110
+- Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to e495036
+
