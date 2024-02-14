@@ -319,3 +319,6 @@
 ## v3.110
 - Change: chore(deps): update linuxserver/plex:1.32.8 docker digest to e495036
 
+## v3.111
+- Change: chore(deps): update linuxserver/plex docker tag to v1.40.0
+
