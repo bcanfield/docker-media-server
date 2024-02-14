@@ -322,3 +322,6 @@
 ## v3.111
 - Change: chore(deps): update linuxserver/plex docker tag to v1.40.0
 
+## v3.112
+- Change: chore(deps): update linuxserver/bazarr:1.4.1 docker digest to 2886d89
+
