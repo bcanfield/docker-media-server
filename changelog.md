@@ -337,3 +337,6 @@
 ## v3.116
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.3.6
 
+## v3.117
+- Change: chore(deps): update linuxserver/bazarr docker tag to v1.4.2
+
