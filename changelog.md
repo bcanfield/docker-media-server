@@ -340,3 +340,6 @@
 ## v3.117
 - Change: chore(deps): update linuxserver/bazarr docker tag to v1.4.2
 
+## v3.118
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 27bbf04
+
