@@ -367,3 +367,6 @@
 ## v3.126
 - Change: chore(deps): update linuxserver/sabnzbd:4.2.2 docker digest to c3a1f22
 
+## v3.127
+- Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to bba5d29
+
