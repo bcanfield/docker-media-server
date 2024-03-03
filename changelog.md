@@ -370,3 +370,6 @@
 ## v3.127
 - Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to bba5d29
 
+## v3.128
+- Change: chore(deps): update linuxserver/radarr:5.3.6 docker digest to ea775bc
+
