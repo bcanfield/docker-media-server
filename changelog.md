@@ -388,3 +388,6 @@
 ## v3.133
 - Change: chore(deps): update linuxserver/swag:2.9.0 docker digest to 061c866
 
+## v3.134
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 254ed3a
+
