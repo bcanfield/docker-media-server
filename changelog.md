@@ -394,3 +394,6 @@
 ## v3.135
 - Change: chore(deps): update linuxserver/swag:2.9.0 docker digest to e3174cf
 
+## v3.136
+- Change: chore(deps): update linuxserver/swag:2.9.0 docker digest to b351ec7
+
