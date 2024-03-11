@@ -400,3 +400,6 @@
 ## v3.137
 - Change: chore(deps): update linuxserver/plex:1.40.0 docker digest to ecb029d
 
+## v3.138
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.2.3
+
