@@ -406,3 +406,6 @@
 ## v3.139
 - Change: chore(deps): update linuxserver/bazarr:1.4.2 docker digest to 8981610
 
+## v3.140
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 807d740
+
