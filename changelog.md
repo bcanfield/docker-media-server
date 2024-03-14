@@ -412,3 +412,6 @@
 ## v3.141
 - Change: chore(deps): update linuxserver/sabnzbd:4.2.3 docker digest to 62f8f7f
 
+## v3.142
+- Change: chore(deps): update authelia/authelia docker tag to v4.38
+
