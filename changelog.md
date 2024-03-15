@@ -415,3 +415,6 @@
 ## v3.142
 - Change: chore(deps): update authelia/authelia docker tag to v4.38
 
+## v3.143
+- Change: chore(deps): update linuxserver/plex docker tag to v1.40.1
+
