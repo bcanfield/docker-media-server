@@ -418,3 +418,6 @@
 ## v3.143
 - Change: chore(deps): update linuxserver/plex docker tag to v1.40.1
 
+## v3.144
+- Change: chore(deps): update authelia/authelia:4.38 docker digest to 71229b3
+
