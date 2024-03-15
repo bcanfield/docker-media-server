@@ -421,3 +421,6 @@
 ## v3.144
 - Change: chore(deps): update authelia/authelia:4.38 docker digest to 71229b3
 
+## v3.145
+- Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to fd67edc
+
