@@ -150,7 +150,7 @@ services:
   # https://www.authelia.com/integration/deployment/docker
   authelia:
     container_name: authelia
-    image: authelia/authelia:4.38@sha256:71229b371952f47098cbf00f8eaf8fbd6268e791534592fa6d79e1d210ea51d9
+    image: authelia/authelia:4.38@sha256:a1a2d1b2befab7faa0bb8c68c791c26b28c517b1fd6e1eec05d4335ffbf9aeaa
     restart: unless-stopped
     networks:
       - brandin-media-stack
