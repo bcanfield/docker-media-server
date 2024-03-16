@@ -79,7 +79,7 @@ services:
     restart: unless-stopped
   # https://docs.linuxserver.io/images/docker-swag
   swag:
-    image: linuxserver/swag:2.9.0@sha256:b351ec7ece0e21c4991c8456a008845707e053ed7874493aee4665b1f80b04c7
+    image: linuxserver/swag:2.9.0@sha256:f25dc24d863e89f0e8397d224e6b5a3d501e86e7b694bab4801e121f3bd454a0
     container_name: swag
     networks:
       - brandin-media-stack
