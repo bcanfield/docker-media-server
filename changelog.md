@@ -427,3 +427,6 @@
 ## v3.146
 - Change: chore(deps): update authelia/authelia:4.38 docker digest to a1a2d1b
 
+## v3.147
+- Change: chore(deps): update linuxserver/swag:2.9.0 docker digest to f25dc24
+
