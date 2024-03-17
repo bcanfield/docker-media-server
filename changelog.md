@@ -433,3 +433,6 @@
 ## v3.148
 - Change: chore(deps): update authelia/authelia:4.38 docker digest to 2405f5c
 
+## v3.149
+- Change: chore(deps): update linuxserver/radarr:5.3.6 docker digest to d5cd492
+
