@@ -463,3 +463,6 @@
 ## v3.158
 - Change: chore(deps): update linuxserver/swag:2.9.0 docker digest to 710f4a2
 
+## v3.159
+- Change: chore(deps): update linuxserver/swag:2.9.0 docker digest to da04953
+
