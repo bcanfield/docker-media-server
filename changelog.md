@@ -502,3 +502,6 @@
 ## v3.171
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 9e6ac53
 
+## v3.172
+- Change: chore(deps): update linuxserver/swag docker tag to v2.10.0
+
