@@ -505,3 +505,6 @@
 ## v3.172
 - Change: chore(deps): update linuxserver/swag docker tag to v2.10.0
 
+## v3.173
+- Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to 9cd5982
+
