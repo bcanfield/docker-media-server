@@ -508,3 +508,6 @@
 ## v3.173
 - Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to 9cd5982
 
+## v3.174
+- Change: chore(deps): update linuxserver/swag:2.10.0 docker digest to 2c6e00d
+
