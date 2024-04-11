@@ -520,3 +520,6 @@
 ## v3.177
 - Change: chore(deps): update linuxserver/bazarr:1.4.2 docker digest to 563a496
 
+## v3.178
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to ce5f943
+
