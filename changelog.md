@@ -538,3 +538,6 @@
 ## v3.183
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.4.6
 
+## v3.184
+- Change: chore(deps): update linuxserver/radarr:5.4.6 docker digest to de7e511
+
