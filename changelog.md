@@ -547,3 +547,6 @@
 ## v3.186
 - Change: chore(deps): update linuxserver/bazarr:1.4.2 docker digest to a17e094
 
+## v3.187
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to edac397
+
