@@ -556,3 +556,6 @@
 ## v3.189
 - Change: chore(deps): update linuxserver/plex docker tag to v1.40.2
 
+## v3.190
+- Change: chore(deps): update linuxserver/swag:2.10.0 docker digest to 8740020
+
