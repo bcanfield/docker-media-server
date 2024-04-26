@@ -571,3 +571,6 @@
 ## v3.194
 - Change: chore(deps): update linuxserver/bazarr:1.4.2 docker digest to 2268b45
 
+## v3.195
+- Change: chore(deps): update linuxserver/tautulli:2.13.4 docker digest to dc846a9
+
