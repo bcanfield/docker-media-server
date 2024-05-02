@@ -586,3 +586,6 @@
 ## v3.199
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 711c465
 
+## v3.200
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.3.0
+
