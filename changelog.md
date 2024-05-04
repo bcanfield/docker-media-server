@@ -595,3 +595,6 @@
 ## v3.202
 - Change: chore(deps): update linuxserver/swag:2.10.0 docker digest to 488f268
 
+## v3.203
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.3.1
+
