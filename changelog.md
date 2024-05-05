@@ -598,3 +598,6 @@
 ## v3.203
 - Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.3.1
 
+## v3.204
+- Change: chore(deps): update linuxserver/radarr:5.4.6 docker digest to 1c2f2ab
+
