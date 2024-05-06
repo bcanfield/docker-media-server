@@ -601,3 +601,6 @@
 ## v3.204
 - Change: chore(deps): update linuxserver/radarr:5.4.6 docker digest to 1c2f2ab
 
+## v3.205
+- Change: chore(deps): update linuxserver/plex:1.40.2 docker digest to 114bc15
+
