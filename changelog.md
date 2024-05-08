@@ -604,3 +604,6 @@
 ## v3.205
 - Change: chore(deps): update linuxserver/plex:1.40.2 docker digest to 114bc15
 
+## v3.206
+- Change: chore(deps): update linuxserver/bazarr:1.4.2 docker digest to 081575b
+
