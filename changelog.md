@@ -652,3 +652,6 @@
 ## v3.221
 - Change: chore(deps): update linuxserver/radarr:5.6.0 docker digest to b84ed4a
 
+## v3.222
+- Change: chore(deps): update linuxserver/bazarr:1.4.2 docker digest to 7387c96
+
