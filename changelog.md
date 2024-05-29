@@ -676,3 +676,6 @@
 ## v3.229
 - Change: chore(deps): update linuxserver/bazarr:1.4.2 docker digest to 9ede46a
 
+## v3.230
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.3.2 (#258)
+
