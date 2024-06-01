@@ -694,3 +694,6 @@
 ## v3.235
 - Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to 6c25ce4
 
+## v3.236
+- Change: chore(deps): update linuxserver/swag:2.10.0 docker digest to abfff78
+
