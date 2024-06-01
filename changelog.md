@@ -688,3 +688,6 @@
 ## v3.233
 - Change: chore(deps): update linuxserver/radarr:5.6.0 docker digest to 4b8d611
 
+## v3.234
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 9e13ecb
+
