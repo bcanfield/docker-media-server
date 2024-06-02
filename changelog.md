@@ -697,3 +697,6 @@
 ## v3.236
 - Change: chore(deps): update linuxserver/swag:2.10.0 docker digest to abfff78
 
+## v3.237
+- Change: chore(deps): update linuxserver/bazarr docker tag to v1.4.3
+
