@@ -700,3 +700,6 @@
 ## v3.237
 - Change: chore(deps): update linuxserver/bazarr docker tag to v1.4.3
 
+## v3.238
+- Change: chore(deps): update linuxserver/swag docker tag to v2.11.0
+
