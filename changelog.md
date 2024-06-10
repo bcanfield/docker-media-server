@@ -712,3 +712,6 @@
 ## v3.241
 - Change: chore(deps): update linuxserver/radarr:5.6.0 docker digest to 594fab7
 
+## v3.242
+- Change: chore(deps): update linuxserver/plex:1.40.2 docker digest to dce27d6
+
