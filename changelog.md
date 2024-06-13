@@ -721,3 +721,6 @@
 ## v3.244
 - Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to ab89014
 
+## v3.245
+- Change: chore(deps): update linuxserver/plex docker tag to v1.40.3
+
