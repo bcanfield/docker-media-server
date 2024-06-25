@@ -757,3 +757,6 @@
 ## v3.256
 - Change: chore(deps): update linuxserver/radarr:5.7.0 docker digest to 3e64efc
 
+## v3.257
+- Change: chore(deps): update linuxserver/tautulli:2.14.3 docker digest to be513bb
+
