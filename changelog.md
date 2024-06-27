@@ -760,3 +760,6 @@
 ## v3.257
 - Change: chore(deps): update linuxserver/tautulli:2.14.3 docker digest to be513bb
 
+## v3.258
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 5d19219
+
