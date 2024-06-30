@@ -772,3 +772,6 @@
 ## v3.261
 - Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to 676272d
 
+## v3.262
+- Change: chore(deps): update linuxserver/radarr:5.7.0 docker digest to c5b78b1
+
