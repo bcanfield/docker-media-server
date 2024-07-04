@@ -781,3 +781,6 @@
 ## v3.264
 - Change: chore(deps): update linuxserver/bazarr:1.4.3 docker digest to a113dca
 
+## v3.265
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to ed32f91
+
