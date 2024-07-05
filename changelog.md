@@ -793,3 +793,6 @@
 ## v3.268
 - Change: chore(deps): update linuxserver/bazarr:1.4.3 docker digest to 86ad012
 
+## v3.269
+- Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to db76abd
+
