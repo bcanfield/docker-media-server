@@ -805,3 +805,6 @@
 ## v3.272
 - Change: chore(deps): update linuxserver/tautulli:2.14.3 docker digest to bdd1712
 
+## v3.273
+- Change: chore(deps): update linuxserver/plex:1.40.3 docker digest to 3a449d9
+
