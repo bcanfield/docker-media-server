@@ -2,7 +2,7 @@ version: "3.4"
 services:
   # https://docs.linuxserver.io/images/docker-plex
   plex:
-    image: linuxserver/plex:1.40.3@sha256:c0d40a44980f33169fb341a6aa7cb45dc294e2817537b81d0677a15288b05c99
+    image: linuxserver/plex:1.40.3@sha256:3a449d946fdaabc2e05591cfcafc03dbc42ecd5fa4538da6956860f1e6368cad
     container_name: plex
     restart: always
     environment:
