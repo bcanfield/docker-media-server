@@ -811,3 +811,6 @@
 ## v3.274
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to dafb573
 
+## v3.275
+- Change: chore(deps): update linuxserver/bazarr:1.4.3 docker digest to 5da74fc
+
