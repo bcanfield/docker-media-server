@@ -820,3 +820,6 @@
 ## v3.277
 - Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to cd0e0de
 
+## v3.278
+- Change: chore(deps): update linuxserver/tautulli:2.14.3 docker digest to 3234e3c
+
