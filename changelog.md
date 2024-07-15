@@ -829,3 +829,6 @@
 ## v3.280
 - Change: chore(deps): update linuxserver/radarr:5.7.0 docker digest to 1eaf9e8
 
+## v3.281
+- Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to d9ad6d8
+
