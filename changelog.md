@@ -838,3 +838,6 @@
 ## v3.283
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to aaba9e5
 
+## v3.284
+- Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to 31ea64a
+
