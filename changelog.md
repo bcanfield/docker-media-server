@@ -850,3 +850,6 @@
 ## v3.287
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.8.3
 
+## v3.288
+- Change: chore(deps): update linuxserver/plex:1.40.4 docker digest to 97d5d64
+
