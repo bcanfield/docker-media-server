@@ -865,3 +865,6 @@
 ## v3.292
 - Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to 9aefabd
 
+## v3.293
+- Change: chore(deps): update linuxserver/radarr:5.8.3 docker digest to 9d6f054
+
