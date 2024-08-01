@@ -874,3 +874,6 @@
 ## v3.295
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 3543bcc
 
+## v3.296
+- Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to dda7003
+
