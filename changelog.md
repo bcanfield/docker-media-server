@@ -877,3 +877,6 @@
 ## v3.296
 - Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to dda7003
 
+## v3.297
+- Change: chore(fix): Bugfixes (#333)
+
