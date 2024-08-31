@@ -2,7 +2,7 @@ version: "3.4"
 services:
   # https://docs.linuxserver.io/images/docker-plex
   plex:
-    image: linuxserver/plex:1.32.8@sha256:aaf5fb92f2d5dd3c81e4f8f8654baf76ed7baf0b6c01efccef5151c775a03a4c
+    image: linuxserver/plex:1.40.4@sha256:97d5d64e10850c67a2a694374b536a02f0e62bfae3b292ccfb8c07d6b1f0a79f
     container_name: plex
     restart: always
     environment:
@@ -47,7 +47,7 @@ services:
   # https://docs.linuxserver.io/images/docker-radarr
   radarr:
     container_name: radarr
-    image: linuxserver/radarr:5.2.6@sha256:89168fef2fba0704da8803a466e3668a92b119a544db5c5e2dba88723d41e240
+    image: linuxserver/radarr:5.8.3@sha256:9d6f0548fd805edb30108fdd06d0fc5a4436c9bd708b57bd4119d7aefa815fe4
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -64,7 +64,7 @@ services:
       - ${MEDIA_ROOT}/downloads:/downloads
   # https://docs.linuxserver.io/images/docker-overseerr
   overseerr:
-    image: linuxserver/overseerr:1.33.2@sha256:a36bcc36ae644f1b4a3470dd64d3fabf8ef6a255f37ff669c4030a7166f2c174
+    image: linuxserver/overseerr:1.33.2@sha256:3543bcc57aaa74842d8d88c6a0a6805b166d89e2dfc0db74b703ee59f8d7266e
     container_name: overseerr
     environment:
       - PUID=${PUID}
@@ -79,7 +79,7 @@ services:
     restart: unless-stopped
   # https://docs.linuxserver.io/images/docker-swag
   swag:
-    image: linuxserver/swag:2.8.0@sha256:a09f2690adac5af5652471161d0dff20ae6a8577646fe4a135f70cadaf7d7503
+    image: linuxserver/swag:2.11.0@sha256:9aefabdc07d7d918cbf0d6aec0a42fa9d933e82d108798cee7c5bc9919c64bd1
     container_name: swag
     networks:
       - sofa-squad
@@ -103,7 +103,7 @@ services:
   # https://docs.linuxserver.io/images/docker-tautulli
   tautulli:
     container_name: tautulli
-    image: linuxserver/tautulli:2.13.4@sha256:20fc05cad3c300f3cab16be60180f1d230ba8a33f10c66315e591ea8a5d5ea39
+    image: linuxserver/tautulli:2.14.3@sha256:05521bf5fbab6d9297fed5ae8525b4ff24dec3773bce40c0d0b831a8708a13e2
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -118,7 +118,7 @@ services:
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
-    image: linuxserver/bazarr:1.4.0@sha256:4adac2da277bbd85139bae62da8b7916db09afbc3dd91ff1168404626819c1e7
+    image: linuxserver/bazarr:1.4.3@sha256:e70de8a714ac57395d45052392001ec433b8f48aa1c204f13dae312cbcbe43af
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -152,7 +152,7 @@ services:
   # https://www.authelia.com/integration/deployment/docker
   authelia:
     container_name: authelia
-    image: authelia/authelia:4.37@sha256:25fc5423238b6f3a1fc967fda3f6a9212846aeb4a720327ef61c8ccff52dbbe2
+    image: authelia/authelia:4.38@sha256:491745686a70863b33a9978795e13fdeb8bc82e4fcfa456bf30f788827114cb0
     restart: unless-stopped
     networks:
       - sofa-squad
@@ -164,7 +164,7 @@ services:
       - TZ=${TZ}
   # https://docs.linuxserver.io/images/docker-sabnzbd/
   sabnzbd:
-    image: linuxserver/sabnzbd:4.1.0@sha256:4b654fcb49a6301305dc8db42ef119734ed35fd2ef1d3b9144cce90f0cc64a09
+    image: linuxserver/sabnzbd:4.3.2@sha256:dda700370ad4281d8ffda4fbdad8ac3f720a2829936eafc794fca652095ed4be
     container_name: sabnzbd
     environment:
       - PUID=${PUID}
