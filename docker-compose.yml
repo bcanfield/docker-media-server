@@ -11,7 +11,7 @@ services:
       - TZ=${TZ}
       - VERSION=docker
     networks:
-      - brandin-media-stack
+      - sofa-squad
     ports:
       - 32400:32400/tcp
       - 3005:3005/tcp
@@ -23,9 +23,9 @@ services:
       - 32413:32413/udp
       - 32414:32414/udp
     volumes:
-      - ${CONFIG_ROOT}/config/plex/db:/config 
+      - ${CONFIG_ROOT}/config/plex/db:/config
       - ${CONFIG_ROOT}/config/plex/transcode:/transcode
-      - ${MEDIA_ROOT}/complete:/data 
+      - ${MEDIA_ROOT}/complete:/data
   # https://docs.linuxserver.io/images/docker-sonarr
   sonarr:
     container_name: sonarr
@@ -33,35 +33,35 @@ services:
     restart: unless-stopped
     environment:
       - PUID=${PUID}
-      - PGID=${PGID} 
-      - TZ=${TZ} 
+      - PGID=${PGID}
+      - TZ=${TZ}
     ports:
       - 8989:8989
     networks:
-      - brandin-media-stack
+      - sofa-squad
     volumes:
-      - /etc/localtime:/etc/localtime:ro
+      - /etc/localtime:/etc/localtime
       - ${CONFIG_ROOT}/config/sonarr:/config
-      - ${MEDIA_ROOT}/complete/tv:/tv 
-      - ${MEDIA_ROOT}/downloads:/downloads 
+      - ${MEDIA_ROOT}/complete/tv:/tv
+      - ${MEDIA_ROOT}/downloads:/downloads
   # https://docs.linuxserver.io/images/docker-radarr
   radarr:
     container_name: radarr
-    image: linuxserver/radarr:5.8.3@sha256:9d6f0548fd805edb30108fdd06d0fc5a4436c9bd708b57bd4119d7aefa815fe4    
+    image: linuxserver/radarr:5.8.3@sha256:9d6f0548fd805edb30108fdd06d0fc5a4436c9bd708b57bd4119d7aefa815fe4
     restart: unless-stopped
     environment:
       - PUID=${PUID}
-      - PGID=${PGID} 
-      - TZ=${TZ} 
+      - PGID=${PGID}
+      - TZ=${TZ}
     ports:
       - 7878:7878
     networks:
-      - brandin-media-stack
+      - sofa-squad
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${CONFIG_ROOT}/config/radarr:/config 
+      - /etc/localtime:/etc/localtime
+      - ${CONFIG_ROOT}/config/radarr:/config
       - ${MEDIA_ROOT}/complete/movies:/movies
-      - ${MEDIA_ROOT}/downloads:/downloads 
+      - ${MEDIA_ROOT}/downloads:/downloads
   # https://docs.linuxserver.io/images/docker-overseerr
   overseerr:
     image: linuxserver/overseerr:1.33.2@sha256:3543bcc57aaa74842d8d88c6a0a6805b166d89e2dfc0db74b703ee59f8d7266e
@@ -71,9 +71,9 @@ services:
       - PGID=${PGID}
       - TZ=Etc/UTC
     networks:
-      - brandin-media-stack
+      - sofa-squad
     volumes:
-      - ${CONFIG_ROOT}/config/overseerr:/config 
+      - ${CONFIG_ROOT}/config/overseerr:/config
     ports:
       - 5055:5055
     restart: unless-stopped
@@ -82,7 +82,7 @@ services:
     image: linuxserver/swag:2.11.0@sha256:9aefabdc07d7d918cbf0d6aec0a42fa9d933e82d108798cee7c5bc9919c64bd1
     container_name: swag
     networks:
-      - brandin-media-stack
+      - sofa-squad
     cap_add:
       - NET_ADMIN
     environment:
@@ -92,11 +92,13 @@ services:
       - URL=${SWAG_URL}
       - VALIDATION=http
       - SUBDOMAINS=www,overseerr #optional
+      - DOCKER_MODS=linuxserver/mods:swag-dashboard
     volumes:
       - ${CONFIG_ROOT}/config/swag:/config
     ports:
       - 443:443
-      - 80:80 
+      - 80:80
+      - 81:81
     restart: unless-stopped
   # https://docs.linuxserver.io/images/docker-tautulli
   tautulli:
@@ -110,7 +112,7 @@ services:
     ports:
       - 8181:8181
     networks:
-      - brandin-media-stack
+      - sofa-squad
     volumes:
       - ${CONFIG_ROOT}/config/tautulli:/config
   # https://docs.linuxserver.io/images/docker-bazarr
@@ -119,33 +121,33 @@ services:
     image: linuxserver/bazarr:1.4.3@sha256:e70de8a714ac57395d45052392001ec433b8f48aa1c204f13dae312cbcbe43af
     restart: unless-stopped
     environment:
-      - PUID=${PUID} 
-      - PGID=${PGID} 
-      - TZ=${TZ} 
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
       - UMASK_SET=022 #optional
     ports:
       - 6767:6767
     networks:
-      - brandin-media-stack
+      - sofa-squad
     volumes:
-      - ${CONFIG_ROOT}/config/bazarr:/config 
-      - ${MEDIA_ROOT}/complete/movies:/movies 
+      - ${CONFIG_ROOT}/config/bazarr:/config
+      - ${MEDIA_ROOT}/complete/movies:/movies
       - ${MEDIA_ROOT}/complete/tv:/tv
   # https://docs.linuxserver.io/images/docker-duckdns
   duckdns:
     image: linuxserver/duckdns:version-256b24bf@sha256:f8cc95c15a64a5c90e29640b77260d5692c0ad92dc57f97c374d26eb6eb43204
     container_name: duckdns
-    network_mode: host 
+    network_mode: host
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=${TZ} 
+      - TZ=${TZ}
       - SUBDOMAINS=${DUCK_DNS_SUBDOMAINS}
       - TOKEN=${DUCK_DNS_TOKEN}
       - UPDATE_IP=ipv4 #optional
       - LOG_FILE=false #optional
     volumes:
-      - ${CONFIG_ROOT}/config/duckdns:/config 
+      - ${CONFIG_ROOT}/config/duckdns:/config
     restart: unless-stopped
   # https://www.authelia.com/integration/deployment/docker
   authelia:
@@ -153,7 +155,7 @@ services:
     image: authelia/authelia:4.38@sha256:491745686a70863b33a9978795e13fdeb8bc82e4fcfa456bf30f788827114cb0
     restart: unless-stopped
     networks:
-      - brandin-media-stack
+      - sofa-squad
     expose:
       - 9091
     volumes:
@@ -175,7 +177,7 @@ services:
       - 8080:8080
     restart: unless-stopped
     networks:
-      - brandin-media-stack
+      - sofa-squad
 networks:
-  brandin-media-stack:
-    name: brandin-media-stack
+  sofa-squad:
+    name: sofa-squad

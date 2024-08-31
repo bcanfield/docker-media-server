@@ -1,12 +1,12 @@
-name: 'Docker Compose Lint'
+name: "Docker Compose Lint"
 on:
   - pull_request
 jobs:
   lint:
-    name: 'Docker Compose Lint'
+    name: "Docker Compose Lint"
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout'
+      - name: "Checkout"
         uses: actions/checkout@master
-      - name: 'Docker Compose Lint'
-        run: docker-compose config
+      - name: "Docker Compose Lint"
+        run: docker compose config
