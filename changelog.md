@@ -880,3 +880,6 @@
 ## v3.297
 - Change: chore(fix): Bugfixes (#333)
 
+## v3.298
+- Change: chore(deps): update linuxserver/radarr:5.8.3 docker digest to 938281e (#332)
+
