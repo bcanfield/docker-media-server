@@ -889,3 +889,6 @@
 ## v3.300
 - Change: chore(deps): update linuxserver/bazarr:1.4.3 docker digest to aa904c1
 
+## v3.301
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 24c902e
+
