@@ -898,3 +898,6 @@
 ## v3.303
 - Change: chore(deps): update linuxserver/sabnzbd:4.3.2 docker digest to 95179d6
 
+## v3.304
+- Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to d33fd68
+
