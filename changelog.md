@@ -907,3 +907,6 @@
 ## v3.306
 - Change: chore(deps): update linuxserver/plex docker tag to v1.40.5
 
+## v3.307
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.3.3
+
