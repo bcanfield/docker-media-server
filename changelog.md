@@ -910,3 +910,6 @@
 ## v3.307
 - Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.3.3
 
+## v3.308
+- Change: chore(deps): update linuxserver/tautulli docker tag to v2.14.4
+
