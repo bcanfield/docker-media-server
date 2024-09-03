@@ -919,3 +919,6 @@
 ## v3.310
 - Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to 6ed737b
 
+## v3.311
+- Change: chore(deps): update linuxserver/plex:1.40.5 docker digest to a37d8cd
+
