@@ -931,3 +931,6 @@
 ## v3.314
 - Change: chore(deps): update linuxserver/sabnzbd:4.3.3 docker digest to 66576a7
 
+## v3.315
+- Change: chore(deps): update linuxserver/tautulli:2.14.4 docker digest to d2a93f8
+
