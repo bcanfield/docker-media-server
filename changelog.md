@@ -949,3 +949,6 @@
 ## v3.320
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 51cc014
 
+## v3.321
+- Change: chore(deps): update linuxserver/sabnzbd:4.3.3 docker digest to cf7743a
+
