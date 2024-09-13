@@ -955,3 +955,6 @@
 ## v3.322
 - Change: chore(deps): update linuxserver/plex docker tag to v1.41.0
 
+## v3.323
+- Change: chore(deps): update linuxserver/tautulli:2.14.4 docker digest to 752f03d
+
