@@ -964,3 +964,6 @@
 ## v3.325
 - Change: chore(deps): update linuxserver/radarr:5.9.1 docker digest to 3bee8fb
 
+## v3.326
+- Change: chore(deps): update linuxserver/bazarr docker tag to v1.4.4
+
