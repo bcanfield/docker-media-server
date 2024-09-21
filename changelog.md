@@ -982,3 +982,6 @@
 ## v3.331
 - Change: chore(deps): update authelia/authelia:4.38 docker digest to b4d09f0
 
+## v3.332
+- Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to 27a8b37
+
