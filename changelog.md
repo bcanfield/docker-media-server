@@ -991,3 +991,6 @@
 ## v3.334
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.10.4
 
+## v3.335
+- Change: chore(deps): update authelia/authelia:4.38 docker digest to 83993be
+
