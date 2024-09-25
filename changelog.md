@@ -1000,3 +1000,6 @@
 ## v3.337
 - Change: chore(deps): update linuxserver/plex:1.41.0 docker digest to 6facc48
 
+## v3.338
+- Change: chore(deps): update linuxserver/bazarr:1.4.4 docker digest to 68efaf4
+
