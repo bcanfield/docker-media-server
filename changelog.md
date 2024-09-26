@@ -1006,3 +1006,6 @@
 ## v3.339
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.11.0
 
+## v3.340
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to f63f746
+
