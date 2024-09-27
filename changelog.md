@@ -1015,3 +1015,6 @@
 ## v3.342
 - Change: chore(deps): update linuxserver/plex:1.41.0 docker digest to a623829
 
+## v3.343
+- Change: chore(deps): update linuxserver/tautulli:2.14.5 docker digest to ff87ded
+
