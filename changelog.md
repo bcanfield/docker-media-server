@@ -1018,3 +1018,6 @@
 ## v3.343
 - Change: chore(deps): update linuxserver/tautulli:2.14.5 docker digest to ff87ded
 
+## v3.344
+- Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to cf801cc
+
