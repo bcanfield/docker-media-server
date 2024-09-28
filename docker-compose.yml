@@ -152,7 +152,7 @@ services:
   # https://www.authelia.com/integration/deployment/docker
   authelia:
     container_name: authelia
-    image: authelia/authelia:4.38@sha256:83993be7edaa1868d987cdafbd87bb1578892a3fcbbfdd4741a52e4e90473b9a
+    image: authelia/authelia:4.38@sha256:34bb9303a53ccc7a3e8b2a6336033d9c6f1b60604f02402e73ac1621a79bf7b6
     restart: unless-stopped
     networks:
       - sofa-squad
