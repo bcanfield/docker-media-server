@@ -1024,3 +1024,6 @@
 ## v3.345
 - Change: chore(deps): update authelia/authelia:4.38 docker digest to 34bb930
 
+## v3.346
+- Change: chore(deps): update authelia/authelia:4.38 docker digest to 023fbe7
+
