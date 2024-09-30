@@ -1033,3 +1033,6 @@
 ## v3.348
 - Change: chore(deps): update linuxserver/plex:1.41.0 docker digest to 519cb67
 
+## v3.349
+- Change: chore(deps): update authelia/authelia:4.38 docker digest to 5badc1e
+
