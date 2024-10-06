@@ -1054,3 +1054,6 @@
 ## v3.355
 - Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to 896ae3d
 
+## v3.356
+- Change: chore(deps): update authelia/authelia:4.38 docker digest to 172c9b2
+
