@@ -1075,3 +1075,6 @@
 ## v3.362
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.12.2
 
+## v3.363
+- Change: chore(deps): update linuxserver/tautulli docker tag to v2.14.6
+
