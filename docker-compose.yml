@@ -79,7 +79,7 @@ services:
     restart: unless-stopped
   # https://docs.linuxserver.io/images/docker-swag
   swag:
-    image: linuxserver/swag:2.11.0@sha256:00af3c476205cf093df46769e7ebcca1b96e0c235b806d5fa4a7c11f893d12fa
+    image: linuxserver/swag:2.11.0@sha256:67174f462515aae545fd5b3aa54594df924d7d5f960ec69a910270606ed27132
     container_name: swag
     networks:
       - sofa-squad
