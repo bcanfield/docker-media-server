@@ -1096,3 +1096,6 @@
 ## v3.369
 - Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to ae2516c
 
+## v3.370
+- Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to 76af374
+
