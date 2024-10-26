@@ -1114,3 +1114,6 @@
 ## v3.375
 - Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to 4e46dc1
 
+## v3.376
+- Change: chore(deps): update linuxserver/radarr docker tag to v5.13.1
+
