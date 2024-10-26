@@ -1111,3 +1111,6 @@
 ## v3.374
 - Change: chore(deps): update linuxserver/tautulli:2.14.6 docker digest to 56754aa
 
+## v3.375
+- Change: chore(deps): update linuxserver/swag:2.11.0 docker digest to 4e46dc1
+
