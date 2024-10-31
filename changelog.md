@@ -1126,3 +1126,6 @@
 ## v3.379
 - Change: chore(deps): update authelia/authelia:4.38 docker digest to bd0b56a
 
+## v3.380
+- Change: chore(deps): update linuxserver/sabnzbd:4.3.3 docker digest to 5ae714b
+
