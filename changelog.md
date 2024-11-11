@@ -1141,3 +1141,6 @@
 ## v3.384
 - Change: chore(deps): update linuxserver/bazarr:1.4.5 docker digest to 8868433
 
+## v3.385
+- Change: chore(deps): update linuxserver/radarr:5.14.0 docker digest to 3329fbf (#414)
+
