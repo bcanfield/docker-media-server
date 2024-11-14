@@ -1150,3 +1150,6 @@
 ## v3.387
 - Change: chore(deps): update linuxserver/bazarr:1.4.5 docker digest to 7391c8c (#416)
 
+## v3.388
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 54cd6f5 (#417)
+
