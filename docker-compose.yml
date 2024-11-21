@@ -1,31 +1,31 @@
 version: "3.4"
 services:
   # https://docs.linuxserver.io/images/docker-plex
-  plex:
-    image: linuxserver/plex:1.41.2@sha256:a3a3a850a64fb747c59f85dbc19b157781c3b9c921a83799127894b0ebdf3a68
-    container_name: plex
-    restart: always
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - VERSION=docker
-    networks:
-      - sofa-squad
-    ports:
-      - 32400:32400/tcp
-      - 3005:3005/tcp
-      - 8324:8324/tcp
-      - 32469:32469/tcp
-      - 1900:1900/udp
-      - 32410:32410/udp
-      - 32412:32412/udp
-      - 32413:32413/udp
-      - 32414:32414/udp
-    volumes:
-      - ${CONFIG_ROOT}/config/plex/db:/config
-      - ${CONFIG_ROOT}/config/plex/transcode:/transcode
-      - ${MEDIA_ROOT}/complete:/data
+  # plex:
+  #   image: linuxserver/plex:1.41.1@sha256:8e4e0c2348eed53aed2ee7136dc58b733d5edd50dd0e65eeb2dc42eeb978bb0f
+  #   container_name: plex
+  #   restart: always
+  #   environment:
+  #     - PUID=${PUID}
+  #     - PGID=${PGID}
+  #     - TZ=${TZ}
+  #     - VERSION=docker
+  #   networks:
+  #     - sofa-squad
+  #   ports:
+  #     - 32400:32400/tcp
+  #     - 3005:3005/tcp
+  #     - 8324:8324/tcp
+  #     - 32469:32469/tcp
+  #     - 1900:1900/udp
+  #     - 32410:32410/udp
+  #     - 32412:32412/udp
+  #     - 32413:32413/udp
+  #     - 32414:32414/udp
+  #   volumes:
+  #     - ${CONFIG_ROOT}/config/plex/db:/config
+  #     - ${CONFIG_ROOT}/config/plex/transcode:/transcode
+  #     - ${MEDIA_ROOT}/complete:/data
   # https://docs.linuxserver.io/images/docker-sonarr
   sonarr:
     container_name: sonarr
@@ -47,7 +47,7 @@ services:
   # https://docs.linuxserver.io/images/docker-radarr
   radarr:
     container_name: radarr
-    image: linuxserver/radarr:5.14.0@sha256:3329fbf778701cf53703b342b3a84da31caafec970ef9310be5723dd057666dc
+    image: linuxserver/radarr:5.14.0@sha256:a5a1fdf02aa14abc33a507eafa125ff57cb83f251a519536bce331ce9e008ef7
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -64,7 +64,7 @@ services:
       - ${MEDIA_ROOT}/downloads:/downloads
   # https://docs.linuxserver.io/images/docker-overseerr
   overseerr:
-    image: linuxserver/overseerr:1.33.2@sha256:54cd6f5510c781a385c4d471364402d9cc5ecefad2728f32dd150d9333f67a65
+    image: linuxserver/overseerr:1.33.2@sha256:a6eb6e6471a1c5440712ae8c7efeb5febc57678cfd16594eda98858fc29c80bf
     container_name: overseerr
     environment:
       - PUID=${PUID}
@@ -72,6 +72,8 @@ services:
       - TZ=Etc/UTC
     networks:
       - sofa-squad
+    labels:
+      - swag=enable
     volumes:
       - ${CONFIG_ROOT}/config/overseerr:/config
     ports:
@@ -90,9 +92,19 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
       - URL=${SWAG_URL}
-      - VALIDATION=http
-      - SUBDOMAINS=www,overseerr #optional
-      - DOCKER_MODS=linuxserver/mods:swag-dashboard
+      - VALIDATION=dns
+      - SUBDOMAINS=wildcard
+      - DNSPLUGIN=cloudflare
+      - DOCKER_MODS=linuxserver/mods:swag-auto-proxy|linuxserver/mods:universal-docker|linuxserver/mods:universal-cloudflared
+      - DOCKER_HOST=socket-proxy
+      - CF_ZONE_ID=${CF_ZONE_ID}
+      - CF_ACCOUNT_ID=${CF_ACCOUNT_ID}
+      - CF_API_TOKEN=${CF_API_TOKEN}
+      - CF_TUNNEL_NAME=${CF_TUNNEL_NAME}
+      - CF_TUNNEL_PASSWORD=${CF_TUNNEL_PASSWORD}
+      - FILE__CF_TUNNEL_CONFIG=/config/tunnelconfig.yml
+    extra_hosts:
+      - ${SWAG_URL}:127.0.0.1
     volumes:
       - ${CONFIG_ROOT}/config/swag:/config
     ports:
@@ -103,7 +115,7 @@ services:
   # https://docs.linuxserver.io/images/docker-tautulli
   tautulli:
     container_name: tautulli
-    image: linuxserver/tautulli:2.14.6@sha256:2d23cb2eef35f3c53007fd598d73c7c55e12ff7a9e60e3169f9e24b071d86c4b
+    image: linuxserver/tautulli:2.14.6@sha256:4836ba19262074a552681eecd4d071f94f895de0f1fa8eccdf1227f39124db03
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -118,7 +130,7 @@ services:
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
-    image: linuxserver/bazarr:1.4.5@sha256:7391c8c31a190aa676ca3596b54c243e731411cb8bdfef50f94f3e5c559520b8
+    image: linuxserver/bazarr:1.4.5@sha256:81e922037f03d40c77220d20ed73591b0ef9995638d5c68ff2c5d82ae36eea8d
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -133,22 +145,70 @@ services:
       - ${CONFIG_ROOT}/config/bazarr:/config
       - ${MEDIA_ROOT}/complete/movies:/movies
       - ${MEDIA_ROOT}/complete/tv:/tv
-  # https://docs.linuxserver.io/images/docker-duckdns
-  duckdns:
-    image: linuxserver/duckdns:version-256b24bf@sha256:f8cc95c15a64a5c90e29640b77260d5692c0ad92dc57f97c374d26eb6eb43204
-    container_name: duckdns
-    network_mode: host
+  socket-proxy:
+    image: lscr.io/linuxserver/socket-proxy:latest
+    container_name: socket-proxy
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - SUBDOMAINS=${DUCK_DNS_SUBDOMAINS}
-      - TOKEN=${DUCK_DNS_TOKEN}
-      - UPDATE_IP=ipv4 #optional
-      - LOG_FILE=false #optional
+      - ALLOW_START=0 #optional
+      - ALLOW_STOP=0 #optional
+      - ALLOW_RESTARTS=0 #optional
+      - AUTH=0 #optional
+      - BUILD=0 #optional
+      - COMMIT=0 #optional
+      - CONFIGS=0 #optional
+      - CONTAINERS=1 #optional
+      - DISABLE_IPV6=0 #optional
+      - DISTRIBUTION=0 #optional
+      - EVENTS=1 #optional
+      - EXEC=0 #optional
+      - IMAGES=0 #optional
+      - INFO=0 #optional
+      - NETWORKS=0 #optional
+      - NODES=0 #optional
+      - PING=1 #optional
+      - POST=0 #optional
+      - PLUGINS=0 #optional
+      - SECRETS=0 #optional
+      - SERVICES=0 #optional
+      - SESSION=0 #optional
+      - SWARM=0 #optional
+      - SYSTEM=0 #optional
+      - TASKS=0 #optional
+      - VERSION=1 #optional
+      - VOLUMES=0 #optional
     volumes:
-      - ${CONFIG_ROOT}/config/duckdns:/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
+    networks:
+      - sofa-squad
+    read_only: true
+    tmpfs:
+      - /run
+  # dockerproxy:
+  #   image: ghcr.io/tecnativa/docker-socket-proxy
+  #   container_name: dockerproxy
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #   environment:
+  #     - CONTAINERS=1
+  #     - POST=0
+  #   restart: unless-stopped
+  # https://docs.linuxserver.io/images/docker-duckdns
+  # duckdns:
+  #   image: linuxserver/duckdns:version-256b24bf@sha256:f8cc95c15a64a5c90e29640b77260d5692c0ad92dc57f97c374d26eb6eb43204
+  #   container_name: duckdns
+  #   network_mode: host
+  #   environment:
+  #     - PUID=${PUID}
+  #     - PGID=${PGID}
+  #     - TZ=${TZ}
+  #     - SUBDOMAINS=${DUCK_DNS_SUBDOMAINS}
+  #     - TOKEN=${DUCK_DNS_TOKEN}
+  #     - UPDATE_IP=ipv4 #optional
+  #     - LOG_FILE=false #optional
+  #   volumes:
+  #     - ${CONFIG_ROOT}/config/duckdns:/config
+  #   restart: unless-stopped
   # https://www.authelia.com/integration/deployment/docker
   authelia:
     container_name: authelia
@@ -164,7 +224,7 @@ services:
       - TZ=${TZ}
   # https://docs.linuxserver.io/images/docker-sabnzbd/
   sabnzbd:
-    image: linuxserver/sabnzbd:4.3.3@sha256:d9eda6d9bd651886631f01f3ebb1ff33f9f5d04f0fd95be8fb22bc1a779a3d84
+    image: linuxserver/sabnzbd:4.3.3@sha256:5ae714b1a941a38471c2cc381ec407f93b3d7823c5a77a9a651502036b70ad69
     container_name: sabnzbd
     environment:
       - PUID=${PUID}
