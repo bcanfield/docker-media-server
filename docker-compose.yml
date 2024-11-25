@@ -103,7 +103,7 @@ services:
   # https://docs.linuxserver.io/images/docker-tautulli
   tautulli:
     container_name: tautulli
-    image: linuxserver/tautulli:2.14.6@sha256:2f68096053131939bff668adeffc2511baf0e01e0c140248ab220e08b2d85151
+    image: linuxserver/tautulli:2.15.0@sha256:b2a2a615485103eb1e2b10bd0e29088be36b827495a643e433249c5dc945f1e6
     restart: unless-stopped
     environment:
       - PUID=${PUID}
