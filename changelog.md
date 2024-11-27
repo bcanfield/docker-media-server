@@ -1180,3 +1180,6 @@
 ## v3.397
 - Change: chore(deps): update linuxserver/tautulli docker tag to v2.15.0 (#426)
 
+## v3.398
+- Change: chore(deps): update linuxserver/bazarr:1.4.5 docker digest to 5805d6a (#427)
+
