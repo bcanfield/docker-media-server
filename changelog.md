@@ -1198,3 +1198,6 @@
 ## v3.403
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 6eb9f12 (#432)
 
+## v3.404
+- Change: chore(deps): update linuxserver/sabnzbd:4.3.3 docker digest to ff682be (#433)
+
