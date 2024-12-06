@@ -1201,3 +1201,6 @@
 ## v3.404
 - Change: chore(deps): update linuxserver/sabnzbd:4.3.3 docker digest to ff682be (#433)
 
+## v3.405
+- Change: chore(deps): update linuxserver/tautulli:2.15.0 docker digest to 5fea798 (#434)
+
