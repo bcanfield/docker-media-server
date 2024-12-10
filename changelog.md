@@ -1210,3 +1210,6 @@
 ## v3.407
 - Change: chore(deps): update linuxserver/plex:1.41.2 docker digest to 19aa927 (#436)
 
+## v3.408
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.4.0 (#437)
+
