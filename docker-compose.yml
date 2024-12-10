@@ -164,7 +164,7 @@ services:
       - TZ=${TZ}
   # https://docs.linuxserver.io/images/docker-sabnzbd/
   sabnzbd:
-    image: linuxserver/sabnzbd:4.3.3@sha256:ff682bedd109c45dbad25ab8edcc4f3b837b9ac48c39751fbbb33a858eab97d0
+    image: linuxserver/sabnzbd:4.4.0@sha256:d0e307ed7ddbda9c93872f02fed402d538aab52b2605e71a2f80c26f5ba8d3c7
     container_name: sabnzbd
     environment:
       - PUID=${PUID}
