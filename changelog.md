@@ -1231,3 +1231,6 @@
 ## v3.414
 - Change: chore(deps): update linuxserver/plex:1.41.3 docker digest to e124650 (#443)
 
+## v3.415
+- Change: chore(deps): update linuxserver/radarr docker tag to v5.16.3 (#444)
+
