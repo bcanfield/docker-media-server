@@ -1237,3 +1237,6 @@
 ## v3.416
 - Change: chore(deps): update linuxserver/bazarr:1.4.5 docker digest to a602332 (#445)
 
+## v3.417
+- Change: chore(deps): update linuxserver/plex:1.41.3 docker digest to 8a64a1a (#446)
+
