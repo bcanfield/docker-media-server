@@ -1252,3 +1252,6 @@
 ## v3.421
 - Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.4.1 (#450)
 
+## v3.422
+- Change: chore(deps): update linuxserver/plex:1.41.3 docker digest to 3d2ed27 (#451)
+
