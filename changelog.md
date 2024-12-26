@@ -1261,3 +1261,6 @@
 ## v3.424
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to ba4e6e0 (#453)
 
+## v3.425
+- Change: chore(deps): update linuxserver/bazarr:1.5.0 docker digest to c99ddc0 (#454)
+
