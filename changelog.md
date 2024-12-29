@@ -1270,3 +1270,6 @@
 ## v3.427
 - Change: chore(deps): update linuxserver/sabnzbd:4.4.1 docker digest to 76a15e8 (#456)
 
+## v3.428
+- Change: chore(deps): update linuxserver/radarr:5.16.3 docker digest to eb894bd (#457)
+
