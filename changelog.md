@@ -1279,3 +1279,6 @@
 ## v3.430
 - Change: chore(deps): update authelia/authelia:4.38 docker digest to a5e6fa4 (#459)
 
+## v3.431
+- Change: chore(deps): update linuxserver/bazarr docker tag to v1.5.1 (#460)
+
