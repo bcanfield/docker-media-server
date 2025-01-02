@@ -1288,3 +1288,6 @@
 ## v3.433
 - Change: chore(deps): update linuxserver/plex:1.41.3 docker digest to dda062e (#462)
 
+## v3.434
+- Change: chore(deps): update linuxserver/sabnzbd:4.4.1 docker digest to 8024214 (#463)
+
