@@ -1282,3 +1282,6 @@
 ## v3.431
 - Change: chore(deps): update linuxserver/bazarr docker tag to v1.5.1 (#460)
 
+## v3.432
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 9a4ccc2 (#461)
+
