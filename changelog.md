@@ -1294,3 +1294,6 @@
 ## v3.435
 - Change: chore(deps): update linuxserver/tautulli:2.15.0 docker digest to 459d9b8 (#464)
 
+## v3.436
+- Change: chore(deps): update linuxserver/radarr docker tag to v5.17.2 (#465)
+
