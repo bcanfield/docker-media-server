@@ -1309,3 +1309,6 @@
 ## v3.440
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 6baa11c (#469)
 
+## v3.441
+- Change: chore(deps): update linuxserver/tautulli:2.15.0 docker digest to b262df9 (#470)
+
