@@ -1312,3 +1312,6 @@
 ## v3.441
 - Change: chore(deps): update linuxserver/tautulli:2.15.0 docker digest to b262df9 (#470)
 
+## v3.442
+- Change: chore(deps): update linuxserver/tautulli docker tag to v2.15.1 (#471)
+
