@@ -1327,3 +1327,6 @@
 ## v3.446
 - Change: chore(deps): update linuxserver/sabnzbd:4.4.1 docker digest to 5f323d7 (#475)
 
+## v3.447
+- Change: chore(deps): update linuxserver/tautulli:2.15.1 docker digest to 73f9712 (#476)
+
