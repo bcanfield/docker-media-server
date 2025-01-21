@@ -1333,3 +1333,6 @@
 ## v3.448
 - Change: chore(deps): update linuxserver/radarr:5.17.2 docker digest to 7a25fac (#477)
 
+## v3.449
+- Change: chore(deps): update linuxserver/bazarr:1.5.1 docker digest to 67039e2 (#478)
+
