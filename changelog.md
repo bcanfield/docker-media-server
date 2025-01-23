@@ -1342,3 +1342,6 @@
 ## v3.451
 - Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 83e6fc7 (#479)
 
+## v3.452
+- Change: chore(deps): update linuxserver/radarr:5.17.2 docker digest to 6edb323 (#481)
+
