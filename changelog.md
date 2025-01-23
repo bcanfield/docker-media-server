@@ -1339,3 +1339,6 @@
 ## v3.450
 - Change: chore(deps): update linuxserver/plex:1.41.3 docker digest to e671d57 (#480)
 
+## v3.451
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 83e6fc7 (#479)
+
