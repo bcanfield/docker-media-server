@@ -1351,3 +1351,6 @@
 ## v3.454
 - Change: chore(deps): update linuxserver/tautulli:2.15.1 docker digest to 5e35401 (#483)
 
+## v3.455
+- Change: chore(deps): update linuxserver/bazarr:1.5.1 docker digest to 8415caa (#484)
+
