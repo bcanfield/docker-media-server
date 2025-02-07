@@ -1372,3 +1372,6 @@
 ## v3.461
 - Change: chore(deps): update linuxserver/tautulli:2.15.1 docker digest to 153056c (#490)
 
+## v3.462
+- Change: chore(deps): update linuxserver/tautulli:2.15.1 docker digest to 1280f7c (#491)
+
