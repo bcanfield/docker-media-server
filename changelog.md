@@ -1378,3 +1378,6 @@
 ## v3.463
 - Change: chore(deps): update linuxserver/plex:1.41.3 docker digest to ec54f85 (#492)
 
+## v3.464
+- Change: chore(deps): update linuxserver/radarr:5.18.4 docker digest to f4c9c64 (#493)
+
