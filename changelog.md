@@ -1387,3 +1387,6 @@
 ## v3.466
 - Change: chore(deps): update linuxserver/plex docker tag to v1.41.4 (#495)
 
+## v3.467
+- Change: chore(deps): update linuxserver/overseerr:1.33.2 docker digest to 2719984 (#496)
+
