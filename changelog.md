@@ -1429,3 +1429,6 @@
 ## v3.480
 - Change: chore(deps): update linuxserver/tautulli:2.15.1 docker digest to f0b8701 (#509)
 
+## v3.481
+- Change: chore(deps): update linuxserver/plex:1.41.4 docker digest to d4ea24c (#510)
+
