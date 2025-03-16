@@ -1459,3 +1459,6 @@
 ## v3.490
 - Change: chore(deps): update linuxserver/tautulli:2.15.1 docker digest to fa8f573 (#519)
 
+## v3.491
+- Change: chore(deps): update authelia/authelia docker tag to v4.39 (#520)
+
