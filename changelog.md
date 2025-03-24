@@ -1486,3 +1486,6 @@
 ## v3.499
 - Change: chore(deps): update linuxserver/plex:1.41.5 docker digest to fab6be1 (#529)
 
+## v3.500
+- Change: chore(deps): update linuxserver/radarr docker tag to v5.21.1 (#530)
+
