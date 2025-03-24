@@ -1480,3 +1480,6 @@
 ## v3.497
 - Change: chore(deps): update linuxserver/tautulli:2.15.1 docker digest to cda58fe (#527)
 
+## v3.498
+- Change: chore(deps): update linuxserver/radarr:5.20.2 docker digest to de82a83 (#528)
+
