@@ -1528,3 +1528,6 @@
 ## v3.513
 - Change: chore(deps): update linuxserver/bazarr:1.5.1 docker digest to d6c430b (#544)
 
+## v3.514
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.0 docker digest to 00cccf6 (#545)
+
