@@ -1537,3 +1537,6 @@
 ## v3.516
 - Change: chore(deps): update linuxserver/tautulli:2.15.1 docker digest to 3ddfce7 (#547)
 
+## v3.517
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.5.1 (#548)
+
