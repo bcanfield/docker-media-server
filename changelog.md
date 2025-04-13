@@ -1540,3 +1540,6 @@
 ## v3.517
 - Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.5.1 (#548)
 
+## v3.518
+- Change: chore(deps): update linuxserver/tautulli docker tag to v2.15.2 (#549)
+
