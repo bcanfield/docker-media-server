@@ -1570,3 +1570,6 @@
 ## v3.527
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.22.4 (#558)
 
+## v3.528
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.1 docker digest to 219f9d2 (#559)
+
