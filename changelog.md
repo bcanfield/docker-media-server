@@ -1585,3 +1585,6 @@
 ## v3.532
 - Change: chore(deps): update linuxserver/bazarr:1.5.1 docker digest to f17f033 (#563)
 
+## v3.533
+- Change: chore(deps): update linuxserver/duckdns:version-256b24bf docker digest to b9e271b (#564)
+
