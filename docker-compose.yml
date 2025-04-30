@@ -135,7 +135,7 @@ services:
       - ${MEDIA_ROOT}/complete/tv:/tv
   # https://docs.linuxserver.io/images/docker-duckdns
   duckdns:
-    image: linuxserver/duckdns:version-256b24bf@sha256:f8cc95c15a64a5c90e29640b77260d5692c0ad92dc57f97c374d26eb6eb43204
+    image: linuxserver/duckdns:version-256b24bf@sha256:b9e271bf35238f7c843dd033a0c579dfb6b28f5a50b739cc4aba43e86bf0d586
     container_name: duckdns
     network_mode: host
     environment:
