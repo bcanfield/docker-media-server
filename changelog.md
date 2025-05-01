@@ -1588,3 +1588,6 @@
 ## v3.533
 - Change: chore(deps): update linuxserver/duckdns:version-256b24bf docker digest to b9e271b (#564)
 
+## v3.534
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.1 docker digest to 47f4b5d (#565)
+
