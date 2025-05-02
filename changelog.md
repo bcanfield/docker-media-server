@@ -1594,3 +1594,6 @@
 ## v3.535
 - Change: chore(deps): update linuxserver/radarr:5.22.4 docker digest to 3a220dd (#566)
 
+## v3.536
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.1 docker digest to 64fef49 (#567)
+
