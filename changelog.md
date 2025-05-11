@@ -1615,3 +1615,6 @@
 ## v3.542
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to 7422c90 (#573)
 
+## v3.543
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to 7045ca3 (#574)
+
