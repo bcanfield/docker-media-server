@@ -1621,3 +1621,6 @@
 ## v3.544
 - Change: chore(deps): update linuxserver/radarr:5.22.4 docker digest to 105b7ff (#575)
 
+## v3.545
+- Change: chore(deps): update linuxserver/bazarr docker tag to v1.5.2 (#576)
+
