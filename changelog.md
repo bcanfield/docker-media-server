@@ -1633,3 +1633,6 @@
 ## v3.548
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.23.3 (#579)
 
+## v3.549
+- Change: chore(deps): update linuxserver/plex docker tag to v1.41.7 (#580)
+
