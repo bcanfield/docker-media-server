@@ -1648,3 +1648,6 @@
 ## v3.553
 - Change: chore(deps): update linuxserver/tautulli:2.15.2 docker digest to 1bb2b36 (#584)
 
+## v3.554
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to 64b356c (#585)
+
