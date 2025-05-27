@@ -1654,3 +1654,6 @@
 ## v3.555
 - Change: chore(deps): update linuxserver/radarr docker tag to v5.24.1 (#586)
 
+## v3.556
+- Change: chore(deps): update linuxserver/radarr docker tag to v5.25.0 (#587)
+
