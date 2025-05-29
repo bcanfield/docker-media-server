@@ -1663,3 +1663,6 @@
 ## v3.558
 - Change: chore(deps): update linuxserver/plex:1.41.7 docker digest to 6e473f7 (#589)
 
+## v3.559
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.1 docker digest to 5a46efd (#590)
+
