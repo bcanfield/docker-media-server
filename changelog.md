@@ -1675,3 +1675,6 @@
 ## v3.562
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to e958969 (#593)
 
+## v3.563
+- Change: chore(deps): update linuxserver/tautulli:2.15.2 docker digest to 565d2ac (#594)
+
