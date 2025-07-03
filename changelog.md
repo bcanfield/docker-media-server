@@ -1708,3 +1708,6 @@
 ## v3.573
 - Change: chore(deps): update linuxserver/bazarr:1.5.2 docker digest to 7fa7791 (#604)
 
+## v3.574
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.1 docker digest to 8d45757 (#605)
+
