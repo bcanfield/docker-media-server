@@ -1723,3 +1723,6 @@
 ## v3.578
 - Change: chore(deps): update linuxserver/radarr:5.26.2 docker digest to 3f6c13c (#608)
 
+## v3.579
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.1 docker digest to ff713ec (#610)
+
