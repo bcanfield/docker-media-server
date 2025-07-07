@@ -1726,3 +1726,6 @@
 ## v3.579
 - Change: chore(deps): update linuxserver/sabnzbd:4.5.1 docker digest to ff713ec (#610)
 
+## v3.580
+- Change: chore(deps): update linuxserver/plex:1.41.8 docker digest to 2bae650 (#611)
+
