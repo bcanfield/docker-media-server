@@ -115,6 +115,37 @@ services:
       - sofa-squad
     volumes:
       - ${CONFIG_ROOT}/config/tautulli:/config
+  # https://docs.linuxserver.io/images/docker-jackett
+  jackett:
+    container_name: jackett
+    image: linuxserver/jackett:0.22.1660@sha256:46fabab0e2478948d354e12372e75cc60fbcb2e3f122715218a7be516cf6ba4b
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 9117:9117
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/jackett:/config
+      - ${MEDIA_ROOT}/downloads:/downloads
+  # https://docs.linuxserver.io/images/docker-prowlarr
+  prowlarr:
+    container_name: prowlarr
+    image: linuxserver/prowlarr:1.33.0-nightly@sha256:6b8b40604a92a64f256e2764ce6de372961b3212dd2f6ee773b01accc35a7eec
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 9696:9696
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/prowlarr:/config
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
