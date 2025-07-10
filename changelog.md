@@ -1729,3 +1729,6 @@
 ## v3.580
 - Change: chore(deps): update linuxserver/plex:1.41.8 docker digest to 2bae650 (#611)
 
+## v3.581
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.5.2 (#612)
+
