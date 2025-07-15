@@ -1744,3 +1744,6 @@
 ## v3.585
 - Change: chore(deps): update linuxserver/plex:1.41.8 docker digest to e16ec1d (#616)
 
+## v3.586
+- Change: chore(deps): update linuxserver/plex docker tag to v1.41.9 (#617)
+
