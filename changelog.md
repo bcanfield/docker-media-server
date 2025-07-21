@@ -1750,3 +1750,6 @@
 ## v3.587
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to 4fe319b (#618)
 
+## v3.588
+- Change: chore(deps): update linuxserver/radarr:5.26.2 docker digest to ae89f05 (#619)
+
