@@ -1768,3 +1768,6 @@
 ## v3.593
 - Change: chore(deps): update linuxserver/tautulli:2.15.2 docker digest to 12361f8 (#624)
 
+## v3.594
+- Change: chore(deps): update linuxserver/plex:1.41.9 docker digest to 3f124bb (#625)
+
