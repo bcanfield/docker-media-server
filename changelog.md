@@ -1780,3 +1780,6 @@
 ## v3.597
 - Change: chore(deps): update linuxserver/tautulli:2.15.2 docker digest to c118255 (#628)
 
+## v3.598
+- Change: chore(deps): update linuxserver/tautulli docker tag to v2.15.3 (#629)
+
