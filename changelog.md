@@ -1837,3 +1837,6 @@
 ## v3.616
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to eb9c0ad (#648)
 
+## v3.617
+- Change: chore(deps): update linuxserver/radarr docker tag to v5.27.5 (#650)
+
