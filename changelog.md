@@ -1843,3 +1843,6 @@
 ## v3.618
 - Change: chore(deps): update linuxserver/tautulli docker tag to v2.16.0 (#651)
 
+## v3.619
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to a0a6b55 (#652)
+
