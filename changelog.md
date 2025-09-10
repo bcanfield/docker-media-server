@@ -1846,3 +1846,6 @@
 ## v3.619
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to a0a6b55 (#652)
 
+## v3.620
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to edf6820 (#653)
+
