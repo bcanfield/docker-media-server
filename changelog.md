@@ -1852,3 +1852,6 @@
 ## v3.621
 - Change: chore(deps): update linuxserver/bazarr:1.5.2 docker digest to fed1656 (#654)
 
+## v3.622
+- Change: chore(deps): update linuxserver/radarr:5.27.5 docker digest to 19474a6 (#655)
+
