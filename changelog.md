@@ -1861,3 +1861,6 @@
 ## v3.624
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to ed52a81 (#657)
 
+## v3.625
+- Change: chore(deps): update linuxserver/bazarr:1.5.2 docker digest to e1f05f6 (#659)
+
