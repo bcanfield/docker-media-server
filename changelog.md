@@ -1870,3 +1870,6 @@
 ## v3.627
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to bad1116 (#660)
 
+## v3.628
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.3 docker digest to 488becc (#661)
+
