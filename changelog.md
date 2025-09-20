@@ -1873,3 +1873,6 @@
 ## v3.628
 - Change: chore(deps): update linuxserver/sabnzbd:4.5.3 docker digest to 488becc (#661)
 
+## v3.629
+- Change: chore(deps): update linuxserver/bazarr docker tag to v1.5.3 (#662)
+
