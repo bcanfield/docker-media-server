@@ -1876,3 +1876,6 @@
 ## v3.629
 - Change: chore(deps): update linuxserver/bazarr docker tag to v1.5.3 (#662)
 
+## v3.630
+- Change: chore(deps): update linuxserver/plex docker tag to v1.42.2 (#663)
+
