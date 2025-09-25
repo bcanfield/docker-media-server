@@ -1882,3 +1882,6 @@
 ## v3.631
 - Change: chore(deps): update linuxserver/bazarr:1.5.3 docker digest to e424330 (#664)
 
+## v3.632
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.3 docker digest to 26b99fb (#665)
+
