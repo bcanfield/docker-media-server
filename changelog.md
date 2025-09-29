@@ -1888,3 +1888,6 @@
 ## v3.633
 - Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to ec6714a (#666)
 
+## v3.634
+- Change: chore(deps): update linuxserver/plex:1.42.2 docker digest to 57c690b (#667)
+
