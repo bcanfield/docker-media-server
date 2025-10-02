@@ -1897,3 +1897,6 @@
 ## v3.636
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to e0761ee (#670)
 
+## v3.637
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to 30e45ee (#669)
+
