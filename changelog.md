@@ -1894,3 +1894,6 @@
 ## v3.635
 - Change: chore(deps): update linuxserver/bazarr:1.5.3 docker digest to cf7a02a (#668)
 
+## v3.636
+- Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to e0761ee (#670)
+
