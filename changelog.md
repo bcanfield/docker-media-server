@@ -1900,3 +1900,6 @@
 ## v3.637
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to 30e45ee (#669)
 
+## v3.638
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.3 docker digest to 65aa549 (#671)
+
