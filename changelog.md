@@ -1921,3 +1921,6 @@
 ## v3.644
 - Change: chore(deps): update linuxserver/sabnzbd:4.5.3 docker digest to b425e5f (#677)
 
+## v3.645
+- Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to fb4002b (#678)
+
