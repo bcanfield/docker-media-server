@@ -1924,3 +1924,6 @@
 ## v3.645
 - Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to fb4002b (#678)
 
+## v3.646
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to 7adc2a9 (#679)
+
