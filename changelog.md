@@ -1954,3 +1954,6 @@
 ## v3.655
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to c5f3c0c (#688)
 
+## v3.656
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.5.4 (#689)
+
