@@ -1960,3 +1960,6 @@
 ## v3.657
 - Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to 6615694 (#690)
 
+## v3.658
+- Change: chore(deps): update linuxserver/sabnzbd docker tag to v4.5.5 (#691)
+
