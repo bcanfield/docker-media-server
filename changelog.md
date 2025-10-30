@@ -1972,3 +1972,6 @@
 ## v3.661
 - Change: chore(deps): update linuxserver/bazarr:1.5.3 docker digest to a42fef2 (#694)
 
+## v3.662
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 6e6e7ab (#695)
+
