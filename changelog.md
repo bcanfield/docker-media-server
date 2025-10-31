@@ -1975,3 +1975,6 @@
 ## v3.662
 - Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 6e6e7ab (#695)
 
+## v3.663
+- Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to f8b84be (#696)
+
