@@ -1978,3 +1978,6 @@
 ## v3.663
 - Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to f8b84be (#696)
 
+## v3.664
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to 88f1494 (#697)
+
