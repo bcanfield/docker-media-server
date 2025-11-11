@@ -1981,3 +1981,6 @@
 ## v3.664
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to 88f1494 (#697)
 
+## v3.665
+- Change: chore(deps): update linuxserver/plex:1.42.2 docker digest to a4749f3 (#698)
+
