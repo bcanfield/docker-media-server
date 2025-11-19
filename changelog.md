@@ -1984,3 +1984,6 @@
 ## v3.665
 - Change: chore(deps): update linuxserver/plex:1.42.2 docker digest to a4749f3 (#698)
 
+## v3.666
+- Change: Update README.md
+
