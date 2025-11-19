@@ -1,5 +1,5 @@
 <p align="center">
-  <br><h1 align="center">Docker Home Media Server (2024) 💪 </h1>
+  <br><h1 align="center">Docker Home Media Server 💪 </h1>
   <p align="center">
     <strong align="center">
       Sweet ass setup for a Home Media server that you and your family/friends will love
