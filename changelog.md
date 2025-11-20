@@ -1987,3 +1987,6 @@
 ## v3.666
 - Change: Update README.md
 
+## v3.667
+- Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to 19fe26c (#700)
+
