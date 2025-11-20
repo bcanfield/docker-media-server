@@ -1990,3 +1990,6 @@
 ## v3.667
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to 19fe26c (#700)
 
+## v3.668
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 0b4be87 (#701)
+
