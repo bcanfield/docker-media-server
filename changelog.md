@@ -2002,3 +2002,6 @@
 ## v3.671
 - Change: chore(deps): update linuxserver/bazarr:1.5.3 docker digest to 2be164c (#705)
 
+## v3.672
+- Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to feddc11 (#706)
+
