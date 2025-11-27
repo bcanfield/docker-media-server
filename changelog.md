@@ -2005,3 +2005,6 @@
 ## v3.672
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to feddc11 (#706)
 
+## v3.673
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 1c7be87 (#707)
+
