@@ -2008,3 +2008,6 @@
 ## v3.673
 - Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 1c7be87 (#707)
 
+## v3.674
+- Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to 4d764be (#708)
+
