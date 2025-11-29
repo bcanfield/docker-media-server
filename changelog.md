@@ -2011,3 +2011,6 @@
 ## v3.674
 - Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to 4d764be (#708)
 
+## v3.675
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to d23ee3c (#709)
+
