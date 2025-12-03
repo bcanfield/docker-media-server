@@ -2014,3 +2014,6 @@
 ## v3.675
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to d23ee3c (#709)
 
+## v3.676
+- Change: chore(deps): update linuxserver/bazarr:1.5.3 docker digest to ec11e98 (#710)
+
