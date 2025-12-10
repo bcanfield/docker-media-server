@@ -2017,3 +2017,6 @@
 ## v3.676
 - Change: chore(deps): update linuxserver/bazarr:1.5.3 docker digest to ec11e98 (#710)
 
+## v3.677
+- Change: chore(deps): update linuxserver/bazarr:1.5.3 docker digest to 4aa1e82 (#711)
+
