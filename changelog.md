@@ -2026,3 +2026,6 @@
 ## v3.679
 - Change: chore(deps): update linuxserver/bazarr:1.5.3 docker digest to 648f694 (#713)
 
+## v3.680
+- Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to f6a782e (#714)
+
