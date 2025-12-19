@@ -2032,3 +2032,6 @@
 ## v3.681
 - Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to ed10a7e (#715)
 
+## v3.682
+- Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to cb2226d (#716)
+
