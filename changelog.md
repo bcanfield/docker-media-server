@@ -2035,3 +2035,6 @@
 ## v3.682
 - Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to cb2226d (#716)
 
+## v3.683
+- Change: chore(deps): update linuxserver/plex:1.42.2 docker digest to 1720efa (#717)
+
