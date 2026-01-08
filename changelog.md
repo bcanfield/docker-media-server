@@ -2050,3 +2050,6 @@
 ## v3.687
 - Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to 876aae4 (#721)
 
+## v3.688
+- Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to 98bd286 (#722)
+
