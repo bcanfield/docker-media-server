@@ -2068,3 +2068,6 @@
 ## v3.693
 - Change: chore(deps): update linuxserver/bazarr:1.5.4 docker digest to 5af962a (#727)
 
+## v3.694
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to fba727f (#728)
+
