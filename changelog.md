@@ -2071,3 +2071,6 @@
 ## v3.694
 - Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to fba727f (#728)
 
+## v3.695
+- Change: chore(deps): update linuxserver/tautulli:2.16.0 docker digest to f55e949 (#729)
+
