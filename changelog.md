@@ -2080,3 +2080,6 @@
 ## v3.697
 - Change: chore(deps): update linuxserver/bazarr:1.5.4 docker digest to d6492cc (#731)
 
+## v3.698
+- Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to ad4c6a1 (#732)
+
