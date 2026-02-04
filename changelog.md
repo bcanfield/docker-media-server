@@ -2092,3 +2092,6 @@
 ## v3.701
 - Change: chore(deps): update linuxserver/bazarr docker tag to v1.5.5 (#735)
 
+## v3.702
+- Change: chore(deps): update linuxserver/bazarr:1.5.5 docker digest to d40ee61 (#736)
+
