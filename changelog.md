@@ -2098,3 +2098,6 @@
 ## v3.703
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to 987a6bd (#737)
 
+## v3.704
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to d4583bb (#738)
+
