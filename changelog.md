@@ -2113,3 +2113,6 @@
 ## v3.708
 - Change: chore(deps): update linuxserver/plex:1.43.0 docker digest to bbe0118 (#742)
 
+## v3.709
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 1a26f56 (#743)
+
