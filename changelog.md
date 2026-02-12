@@ -2110,3 +2110,6 @@
 ## v3.707
 - Change: chore(deps): update linuxserver/overseerr:1.34.0 docker digest to b21e066 (#741)
 
+## v3.708
+- Change: chore(deps): update linuxserver/plex:1.43.0 docker digest to bbe0118 (#742)
+
