@@ -2119,3 +2119,6 @@
 ## v3.710
 - Change: chore(deps): update linuxserver/overseerr docker tag to v1.35.0 (#744)
 
+## v3.711
+- Change: chore(deps): update linuxserver/tautulli docker tag to v2.16.1 (#745)
+
