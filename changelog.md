@@ -2122,3 +2122,6 @@
 ## v3.711
 - Change: chore(deps): update linuxserver/tautulli docker tag to v2.16.1 (#745)
 
+## v3.712
+- Change: chore(deps): update linuxserver/overseerr:1.35.0 docker digest to 6108ed0 (#746)
+
