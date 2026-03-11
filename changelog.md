@@ -2149,3 +2149,6 @@
 ## v3.720
 - Change: chore(deps): update linuxserver/tautulli:2.16.1 docker digest to c75d341 (#754)
 
+## v3.721
+- Change: chore(deps): update linuxserver/bazarr:1.5.6 docker digest to 05f9d5b (#755)
+
