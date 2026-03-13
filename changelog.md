@@ -2155,3 +2155,6 @@
 ## v3.722
 - Change: chore(deps): update linuxserver/tautulli:2.16.1 docker digest to 24594d6 (#756)
 
+## v3.723
+- Change: feat: Add recyclarr
+
