@@ -2158,3 +2158,6 @@
 ## v3.723
 - Change: feat: Add recyclarr
 
+## v3.724
+- Change: Merge branch 'main' of https://github.com/bcanfield/docker-media-server
+
