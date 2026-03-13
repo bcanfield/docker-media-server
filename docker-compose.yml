@@ -178,6 +178,19 @@ services:
     restart: unless-stopped
     networks:
       - sofa-squad
+  # https://recyclarr.dev/guide/installation/docker/
+  recyclarr:
+    image: ghcr.io/recyclarr/recyclarr:8
+    container_name: recyclarr
+    user: ${PUID}:${PGID}
+    restart: unless-stopped
+    networks:
+      - sofa-squad
+    environment:
+      - TZ=${TZ}
+      - CRON_SCHEDULE=@daily
+    volumes:
+      - ${CONFIG_ROOT}/config/recyclarr:/config
 networks:
   sofa-squad:
     name: sofa-squad
