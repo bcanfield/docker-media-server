@@ -2164,3 +2164,6 @@
 ## v3.725
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to edbce01 (#758)
 
+## v3.726
+- Change: Update (#759)
+
