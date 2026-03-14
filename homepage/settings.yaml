@@ -1,0 +1,17 @@
+title: Media Server
+theme: dark
+color: slate
+headerStyle: clean
+layout:
+  Media Management:
+    style: row
+    columns: 3
+  Downloads:
+    style: row
+    columns: 1
+  Requests & Monitoring:
+    style: row
+    columns: 2
+  Maintenance:
+    style: row
+    columns: 1
