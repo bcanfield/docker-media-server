@@ -2158,3 +2158,9 @@
 ## v3.723
 - Change: feat: Add recyclarr
 
+## v3.724
+- Change: Merge branch 'main' of https://github.com/bcanfield/docker-media-server
+
+## v3.725
+- Change: chore(deps): update authelia/authelia:4.39 docker digest to edbce01 (#758)
+
