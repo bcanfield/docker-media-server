@@ -100,6 +100,36 @@ services:
     restart: unless-stopped
     networks:
       - sofa-squad
+  # https://gethomepage.dev/installation/docker/
+  homepage:
+    container_name: homepage
+    image: ghcr.io/gethomepage/homepage:latest
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - HOMEPAGE_ALLOWED_HOSTS=${HOMEPAGE_ALLOWED_HOSTS}
+    ports:
+      - 3000:3000
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/homepage:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+  # https://docs.maintainerr.info/Installation/
+  maintainerr:
+    container_name: maintainerr
+    image: ghcr.io/maintainerr/maintainerr:2.9.0
+    restart: unless-stopped
+    user: ${PUID}:${PGID}
+    environment:
+      - TZ=${TZ}
+    ports:
+      - 6246:6246
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/maintainerr:/opt/data
   # https://recyclarr.dev/guide/installation/docker/
   recyclarr:
     image: ghcr.io/recyclarr/recyclarr:8
