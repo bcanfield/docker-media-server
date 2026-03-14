@@ -1,31 +1,31 @@
 version: "3.4"
 services:
   # https://docs.linuxserver.io/images/docker-plex
-  plex:
-    image: linuxserver/plex:1.43.0@sha256:79dfc89947410ec120a3e34cf68f746f6f154de20772e6f27b9998ca9bd65a5e
-    container_name: plex
-    restart: always
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - VERSION=docker
-    networks:
-      - sofa-squad
-    ports:
-      - 32400:32400/tcp
-      - 3005:3005/tcp
-      - 8324:8324/tcp
-      - 32469:32469/tcp
-      - 1900:1900/udp
-      - 32410:32410/udp
-      - 32412:32412/udp
-      - 32413:32413/udp
-      - 32414:32414/udp
-    volumes:
-      - ${CONFIG_ROOT}/config/plex/db:/config
-      - ${CONFIG_ROOT}/config/plex/transcode:/transcode
-      - ${MEDIA_ROOT}/complete:/data
+  # plex:
+  #   image: linuxserver/plex:1.43.0@sha256:79dfc89947410ec120a3e34cf68f746f6f154de20772e6f27b9998ca9bd65a5e
+  #   container_name: plex
+  #   restart: always
+  #   environment:
+  #     - PUID=${PUID}
+  #     - PGID=${PGID}
+  #     - TZ=${TZ}
+  #     - VERSION=docker
+  #   networks:
+  #     - sofa-squad
+  #   ports:
+  #     - 32400:32400/tcp
+  #     - 3005:3005/tcp
+  #     - 8324:8324/tcp
+  #     - 32469:32469/tcp
+  #     - 1900:1900/udp
+  #     - 32410:32410/udp
+  #     - 32412:32412/udp
+  #     - 32413:32413/udp
+  #     - 32414:32414/udp
+  #   volumes:
+  #     - ${CONFIG_ROOT}/config/plex/db:/config
+  #     - ${CONFIG_ROOT}/config/plex/transcode:/transcode
+  #     - ${MEDIA_ROOT}/complete:/data
   # https://docs.linuxserver.io/images/docker-sonarr
   sonarr:
     container_name: sonarr
@@ -134,34 +134,34 @@ services:
       - ${MEDIA_ROOT}/complete/movies:/movies
       - ${MEDIA_ROOT}/complete/tv:/tv
   # https://docs.linuxserver.io/images/docker-duckdns
-  duckdns:
-    image: linuxserver/duckdns:version-256b24bf@sha256:b9e271bf35238f7c843dd033a0c579dfb6b28f5a50b739cc4aba43e86bf0d586
-    container_name: duckdns
-    network_mode: host
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - SUBDOMAINS=${DUCK_DNS_SUBDOMAINS}
-      - TOKEN=${DUCK_DNS_TOKEN}
-      - UPDATE_IP=ipv4 #optional
-      - LOG_FILE=false #optional
-    volumes:
-      - ${CONFIG_ROOT}/config/duckdns:/config
-    restart: unless-stopped
+  # duckdns:
+  #   image: linuxserver/duckdns:version-256b24bf@sha256:b9e271bf35238f7c843dd033a0c579dfb6b28f5a50b739cc4aba43e86bf0d586
+  #   container_name: duckdns
+  #   network_mode: host
+  #   environment:
+  #     - PUID=${PUID}
+  #     - PGID=${PGID}
+  #     - TZ=${TZ}
+  #     - SUBDOMAINS=${DUCK_DNS_SUBDOMAINS}
+  #     - TOKEN=${DUCK_DNS_TOKEN}
+  #     - UPDATE_IP=ipv4 #optional
+  #     - LOG_FILE=false #optional
+  #   volumes:
+  #     - ${CONFIG_ROOT}/config/duckdns:/config
+  #   restart: unless-stopped
   # https://www.authelia.com/integration/deployment/docker
-  authelia:
-    container_name: authelia
-    image: authelia/authelia:4.39@sha256:d23ee3c721d465b4749cc58541cda4aebe5aa6f19d7b5ce0afebb44ebee69591
-    restart: unless-stopped
-    networks:
-      - sofa-squad
-    expose:
-      - 9091
-    volumes:
-      - ${CONFIG_ROOT}/config/authelia:/config
-    environment:
-      - TZ=${TZ}
+  # authelia:
+  #   container_name: authelia
+  #   image: authelia/authelia:4.39@sha256:d23ee3c721d465b4749cc58541cda4aebe5aa6f19d7b5ce0afebb44ebee69591
+  #   restart: unless-stopped
+  #   networks:
+  #     - sofa-squad
+  #   expose:
+  #     - 9091
+  #   volumes:
+  #     - ${CONFIG_ROOT}/config/authelia:/config
+  #   environment:
+  #     - TZ=${TZ}
   # https://docs.linuxserver.io/images/docker-sabnzbd/
   sabnzbd:
     image: linuxserver/sabnzbd:4.5.5@sha256:9b6662d5871518346655bfd3acb4c94e11f31c79c103ef04154558dab927c852
