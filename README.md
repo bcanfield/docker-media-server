@@ -7,17 +7,17 @@ Automated media management stack running on Docker. Handles requesting, download
 ```mermaid
 graph TD
     subgraph Media Server ["Media Server (Docker Compose)"]
-        Seerr["Seerr\n:5055\nMedia Requests"]
-        Sonarr["Sonarr\n:8989\nTV Management"]
-        Radarr["Radarr\n:7878\nMovie Management"]
-        SABnzbd["SABnzbd\n:8080\nUsenet Downloader"]
-        Bazarr["Bazarr\n:6767\nSubtitles"]
-        Recyclarr["Recyclarr\nQuality Profiles"]
-        Tautulli["Tautulli\n:8181\nMonitoring"]
+        Seerr["Seerr<br>Media Requests"]
+        Sonarr["Sonarr<br>TV Management"]
+        Radarr["Radarr<br>Movie Management"]
+        SABnzbd["SABnzbd<br>Usenet Downloader"]
+        Bazarr["Bazarr<br>Subtitles"]
+        Recyclarr["Recyclarr<br>Quality Profiles"]
+        Tautulli["Tautulli<br>Monitoring"]
     end
 
     subgraph Playback ["Separate Server / VM"]
-        Jellyfin["Jellyfin\nMedia Player"]
+        Jellyfin["Jellyfin<br>Media Player"]
     end
 
     User -->|Request Media| Seerr
@@ -32,7 +32,7 @@ graph TD
     Recyclarr -->|Sync Profiles| Sonarr
     Recyclarr -->|Sync Profiles| Radarr
     Tautulli -->|Monitor| Jellyfin
-    Jellyfin -->|Reads| MediaStorage[("Shared Media\nStorage")]
+    Jellyfin -->|Reads| MediaStorage[("Shared Media<br>Storage")]
     Sonarr -->|Writes| MediaStorage
     Radarr -->|Writes| MediaStorage
 ```
