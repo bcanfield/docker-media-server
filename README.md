@@ -2,6 +2,11 @@
 
 Automated media management stack running on Docker. Handles requesting, downloading, organizing, and subtitling media — with Jellyfin running on a separate server for playback.
 
+## Key Files
+
+- `docker-compose.yml` — all service definitions
+- `.env` / `.env.example` — Docker Compose environment variables (paths, PUID/PGID, timezone)
+
 ## Architecture
 
 ```mermaid
@@ -39,15 +44,15 @@ graph TD
 
 ## Services
 
-| Service | Port | Purpose |
-|---------|------|---------|
-| [Seerr](https://github.com/seerr-team/seerr) | 5055 | User-facing request portal for movies and TV |
-| [Sonarr](https://docs.linuxserver.io/images/docker-sonarr) | 8989 | TV show management and automation |
-| [Radarr](https://docs.linuxserver.io/images/docker-radarr) | 7878 | Movie management and automation |
-| [SABnzbd](https://docs.linuxserver.io/images/docker-sabnzbd/) | 8080 | Usenet download client |
-| [Bazarr](https://docs.linuxserver.io/images/docker-bazarr) | 6767 | Automatic subtitle downloading |
-| [Tautulli](https://docs.linuxserver.io/images/docker-tautulli) | 8181 | Playback monitoring and statistics |
-| [Recyclarr](https://recyclarr.dev/guide/installation/docker/) | — | Syncs TRaSH quality profiles to Sonarr/Radarr on a daily cron |
+| Service                                                        | Port | Purpose                                                       |
+| -------------------------------------------------------------- | ---- | ------------------------------------------------------------- |
+| [Seerr](https://github.com/seerr-team/seerr)                   | 5055 | User-facing request portal for movies and TV                  |
+| [Sonarr](https://docs.linuxserver.io/images/docker-sonarr)     | 8989 | TV show management and automation                             |
+| [Radarr](https://docs.linuxserver.io/images/docker-radarr)     | 7878 | Movie management and automation                               |
+| [SABnzbd](https://docs.linuxserver.io/images/docker-sabnzbd/)  | 8080 | Usenet download client                                        |
+| [Bazarr](https://docs.linuxserver.io/images/docker-bazarr)     | 6767 | Automatic subtitle downloading                                |
+| [Tautulli](https://docs.linuxserver.io/images/docker-tautulli) | 8181 | Playback monitoring and statistics                            |
+| [Recyclarr](https://recyclarr.dev/guide/installation/docker/)  | —    | Syncs TRaSH quality profiles to Sonarr/Radarr on a daily cron |
 
 ## Why Run Jellyfin on a Separate Server?
 
