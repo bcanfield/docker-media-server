@@ -36,13 +36,12 @@ services:
       - ${CONFIG_ROOT}/config/radarr:/config
       - ${MEDIA_ROOT}/complete/movies:/movies
       - ${MEDIA_ROOT}/downloads:/downloads
-  # https://github.com/Fallenbagel/jellyseerr
-  jellyseerr:
-    image: fallenbagel/jellyseerr:2.1.0
-    container_name: jellyseerr
+  # https://github.com/seerr-team/seerr
+  seerr:
+    image: ghcr.io/seerr-team/seerr:2.7.3
+    container_name: seerr
+    init: true
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
       - TZ=${TZ}
     networks:
       - sofa-squad
