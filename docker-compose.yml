@@ -103,7 +103,7 @@ services:
   # https://gethomepage.dev/installation/docker/
   homepage:
     container_name: homepage
-    image: ghcr.io/gethomepage/homepage:latest
+    image: ghcr.io/gethomepage/homepage:v1.11.0@sha256:b129cb0f674bd6d204e215bde2c2fc3f11d6ad0e82f6d20007cf80f74e1acbb1
     restart: unless-stopped
     environment:
       - PUID=${PUID}
@@ -119,7 +119,7 @@ services:
   # https://docs.maintainerr.info/Installation/
   maintainerr:
     container_name: maintainerr
-    image: ghcr.io/maintainerr/maintainerr:2.9.0
+    image: ghcr.io/maintainerr/maintainerr:3.0.1@sha256:91ea358e965c2693e18e1f21ce1e7df016610bfdfd50e94d1fa3cc8e5e1a53f4
     restart: unless-stopped
     user: ${PUID}:${PGID}
     environment:
