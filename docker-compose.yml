@@ -50,22 +50,6 @@ services:
     ports:
       - 5055:5055
     restart: unless-stopped
-
-  # https://docs.linuxserver.io/images/docker-tautulli
-  tautulli:
-    container_name: tautulli
-    image: linuxserver/tautulli:2.16.1@sha256:24594d6aed5f862f941349a6fa0d09d22d7a8386789aef954d3737c6b4dbb8c7
-    restart: unless-stopped
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    ports:
-      - 8181:8181
-    networks:
-      - sofa-squad
-    volumes:
-      - ${CONFIG_ROOT}/config/tautulli:/config
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
@@ -121,7 +105,6 @@ services:
     container_name: maintainerr
     image: ghcr.io/maintainerr/maintainerr:3.0.1@sha256:91ea358e965c2693e18e1f21ce1e7df016610bfdfd50e94d1fa3cc8e5e1a53f4
     restart: unless-stopped
-    user: ${PUID}:${PGID}
     environment:
       - TZ=${TZ}
     ports:
