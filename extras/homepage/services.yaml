@@ -54,6 +54,20 @@
           url: http://tautulli:8181
           key: your-tautulli-api-key
 
+- Audiobooks:
+    - LazyLibrarian:
+        icon: lazylibrarian.png
+        href: http://localhost:5299
+        description: Audiobook search & download
+    - Audiobookshelf:
+        icon: audiobookshelf.png
+        href: http://localhost:13378
+        description: Audiobook library & player
+        widget:
+          type: audiobookshelf
+          url: http://audiobookshelf:80
+          key: your-audiobookshelf-api-key
+
 - Maintenance:
     - Maintainerr:
         icon: maintainerr.png

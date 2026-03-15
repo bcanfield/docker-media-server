@@ -30,6 +30,39 @@ services:
       - sofa-squad
     volumes:
       - ${CONFIG_ROOT}/config/maintainerr:/opt/data
+  # https://docs.linuxserver.io/images/docker-lazylibrarian/
+  lazylibrarian:
+    container_name: lazylibrarian
+    image: lscr.io/linuxserver/lazylibrarian:latest@sha256:9b0b52274928f2802eee86c925ed794419e9d05c95b9f0afb728673df857e7e6
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - DOCKER_MODS=linuxserver/mods:lazylibrarian-ffmpeg
+    ports:
+      - 5299:5299
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/lazylibrarian:/config
+      - ${MEDIA_ROOT}/downloads:/downloads
+      - ${MEDIA_ROOT}/complete/audiobooks:/books
+  # https://www.audiobookshelf.org/docs
+  audiobookshelf:
+    container_name: audiobookshelf
+    image: ghcr.io/advplyr/audiobookshelf:latest@sha256:a684889944b68bb3e73bba09ff6549630d763c6b6f12aa2c0ecc7593a4debcde
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+    ports:
+      - 13378:80
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/audiobookshelf:/config
+      - ${MEDIA_ROOT}/complete/audiobooks:/audiobooks
+      - ${CONFIG_ROOT}/config/audiobookshelf/metadata:/metadata
 networks:
   sofa-squad:
     external: true

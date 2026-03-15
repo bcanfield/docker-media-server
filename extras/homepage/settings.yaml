@@ -12,6 +12,9 @@ layout:
   Requests & Monitoring:
     style: row
     columns: 2
+  Audiobooks:
+    style: row
+    columns: 2
   Maintenance:
     style: row
     columns: 1
