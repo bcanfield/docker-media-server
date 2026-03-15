@@ -16,6 +16,7 @@ services:
     volumes:
       - ${CONFIG_ROOT}/config/homepage:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ${MEDIA_ROOT}:/media:ro
   # https://docs.maintainerr.info/Installation/
   maintainerr:
     container_name: maintainerr
