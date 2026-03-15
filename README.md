@@ -4,7 +4,8 @@ Automated media management stack running on Docker. Handles requesting, download
 
 ## Key Files
 
-- `docker-compose.yml` — all service definitions
+- `docker-compose.yml` — core service definitions
+- `extras/docker-compose.yml` — optional services (dashboard, library maintenance)
 - `.env` / `.env.example` — Docker Compose environment variables (paths, PUID/PGID, timezone)
 
 ## Architecture
@@ -18,7 +19,9 @@ graph TD
         SABnzbd["SABnzbd<br>Usenet Downloader"]
         Bazarr["Bazarr<br>Subtitles"]
         Recyclarr["Recyclarr<br>Quality Profiles"]
-        Tautulli["Tautulli<br>Monitoring"]
+    end
+
+    subgraph Extras ["Extras (Optional)"]
         Homepage["Homepage<br>Dashboard"]
         Maintainerr["Maintainerr<br>Library Maintenance"]
     end
@@ -38,11 +41,9 @@ graph TD
     Bazarr -->|Fetch Subtitles| Radarr
     Recyclarr -->|Sync Profiles| Sonarr
     Recyclarr -->|Sync Profiles| Radarr
-    Tautulli -->|Monitor| Jellyfin
     Homepage -->|Status Widgets| Sonarr
     Homepage -->|Status Widgets| Radarr
     Homepage -->|Status Widgets| SABnzbd
-    Homepage -->|Status Widgets| Tautulli
     Maintainerr -->|Manage Library| Jellyfin
     Maintainerr -->|Manage Library| Sonarr
     Maintainerr -->|Manage Library| Radarr
@@ -51,7 +52,7 @@ graph TD
     Radarr -->|Writes| MediaStorage
 ```
 
-## Services
+## Core Services
 
 | Service                                                        | Port | Purpose                                                       |
 | -------------------------------------------------------------- | ---- | ------------------------------------------------------------- |
@@ -60,10 +61,14 @@ graph TD
 | [Radarr](https://docs.linuxserver.io/images/docker-radarr)     | 7878 | Movie management and automation                               |
 | [SABnzbd](https://docs.linuxserver.io/images/docker-sabnzbd/)  | 8080 | Usenet download client                                        |
 | [Bazarr](https://docs.linuxserver.io/images/docker-bazarr)     | 6767 | Automatic subtitle downloading                                |
-| [Tautulli](https://docs.linuxserver.io/images/docker-tautulli) | 8181 | Playback monitoring and statistics                            |
 | [Recyclarr](https://recyclarr.dev/guide/installation/docker/)  | —    | Syncs TRaSH quality profiles to Sonarr/Radarr on a daily cron |
-| [Homepage](https://gethomepage.dev/)                            | 3000 | YAML-configured dashboard with service widgets                |
-| [Maintainerr](https://docs.maintainerr.info/)                  | 6246 | Automated library maintenance based on rules                  |
+
+## Extras (Optional)
+
+| Service                                    | Port | Purpose                                        |
+| ------------------------------------------ | ---- | ---------------------------------------------- |
+| [Homepage](https://gethomepage.dev/)       | 3000 | YAML-configured dashboard with service widgets |
+| [Maintainerr](https://docs.maintainerr.info/) | 6246 | Automated library maintenance based on rules   |
 
 ## Why Run Jellyfin on a Separate Server?
 
@@ -93,28 +98,31 @@ PUID=1000                 # id $USER
 PGID=1000
 MEDIA_ROOT=/media         # Where downloads and organized media live
 CONFIG_ROOT=/mediaconfig  # Where app configs are stored
-HOMEPAGE_ALLOWED_HOSTS=localhost:3000  # Hostname used to access the dashboard
 ```
 
-3. Copy the Homepage starter config (edit API keys to match your services):
-
-```bash
-cp -r homepage/ ${CONFIG_ROOT}/config/homepage/
-```
-
-4. Start the stack:
+3. Start the core stack:
 
 ```bash
 docker compose up -d
 ```
 
-5. Configure each service through its web UI, wiring them together:
+4. Configure each service through its web UI, wiring them together:
    - Point Sonarr/Radarr to SABnzbd as the download client
    - Point Seerr to Sonarr/Radarr
    - Point Bazarr to Sonarr/Radarr for subtitle fetching
-   - Point Tautulli to your Jellyfin instance
-   - Point Maintainerr to Jellyfin, Sonarr, and Radarr
-   - Configure Homepage by editing YAML files in `${CONFIG_ROOT}/config/homepage/` (services.yaml, widgets.yaml, etc.)
+
+### Extras (Optional)
+
+To run the optional services alongside the core stack:
+
+```bash
+cd extras
+cp .env.example .env  # edit with your values
+cp -r homepage/ ${CONFIG_ROOT}/config/homepage/  # starter dashboard config
+docker compose --env-file ../.env --env-file .env up -d
+```
+
+The extras compose uses the same `sofa-squad` network as the core stack, so all services can communicate.
 
 ## Resources
 
