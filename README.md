@@ -98,6 +98,7 @@ PUID=1000                 # id $USER
 PGID=1000
 MEDIA_ROOT=/media         # Where downloads and organized media live
 CONFIG_ROOT=/mediaconfig  # Where app configs are stored
+SABNZBD_TEMP=/opt/sabnzbd-temp  # SSD-backed path for SABnzbd temp downloads
 ```
 
 3. Start the core stack:
