@@ -125,6 +125,31 @@ docker compose --env-file ../.env --env-file .env up -d
 
 The extras compose uses the same `sofa-squad` network as the core stack, so all services can communicate.
 
+## Backups
+
+`extras/backup/` backs up service configs to S3-compatible storage (e.g., DigitalOcean Spaces) using [restic](https://restic.net/). Safely snapshots SQLite databases before backup.
+
+```bash
+apt install -y restic sqlite3
+
+cd extras/backup
+cp .env.example .env   # fill in your S3 credentials and restic password
+
+# Initialize the restic repo (once)
+./backup-config.sh     # also runs: restic init (on first run, do it manually)
+source .env && export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY RESTIC_REPOSITORY RESTIC_PASSWORD && restic init
+
+# Schedule daily at 3 AM
+(crontab -l 2>/dev/null; echo "0 3 * * * $(pwd)/backup-config.sh >> /var/log/restic-backup.log 2>&1") | crontab -
+```
+
+Restore:
+```bash
+source extras/backup/.env && export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY RESTIC_REPOSITORY RESTIC_PASSWORD
+restic snapshots                             # list snapshots
+restic restore latest --target /tmp/restore  # restore latest
+```
+
 ## Resources
 
 - [LinuxServer.io](https://docs.linuxserver.io/) — maintains most of the Docker images used here
