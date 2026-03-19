@@ -2170,3 +2170,6 @@
 ## v3.727
 - Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 15b1220 (#760)
 
+## v3.728
+- Change: chore(deps): update linuxserver/sonarr docker tag to v4.0.17 (#90)
+
