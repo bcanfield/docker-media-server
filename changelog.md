@@ -2167,3 +2167,6 @@
 ## v3.726
 - Change: Update (#759)
 
+## v3.727
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 15b1220 (#760)
+
