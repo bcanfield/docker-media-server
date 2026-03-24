@@ -1,3 +1,7 @@
+## v5.5
+- Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to 1977b33 (#765)
+
+
 ## v5.4
 - Change: Merge branch 'main' of https://github.com/bcanfield/docker-media-server
 
