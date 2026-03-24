@@ -18,3 +18,9 @@ Setup guides for each service in the stack. See the [README](https://github.com/
 - [Maintainerr](Maintainerr) — library maintenance
 - [LazyLibrarian](LazyLibrarian) — book management
 - [Audiobookshelf](Audiobookshelf) — audiobook server
+
+## Guides
+
+- [Tailscale / Remote Access](Tailscale) — VPN setup for accessing services from anywhere
+- [Backups](Backups) — S3-compatible config backups with restic
+- [Usenet Indexers](Usenet-Indexers) — recommended indexers for Prowlarr

@@ -12,3 +12,8 @@
 - [Maintainerr](Maintainerr)
 - [LazyLibrarian](LazyLibrarian)
 - [Audiobookshelf](Audiobookshelf)
+
+**Guides**
+- [Tailscale / Remote Access](Tailscale)
+- [Backups](Backups)
+- [Usenet Indexers](Usenet-Indexers)
