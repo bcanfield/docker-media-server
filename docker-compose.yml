@@ -98,6 +98,21 @@ services:
       - CRON_SCHEDULE=@daily
     volumes:
       - ${CONFIG_ROOT}/config/recyclarr:/config
+  # https://docs.linuxserver.io/images/docker-prowlarr
+  prowlarr:
+    container_name: prowlarr
+    image: linuxserver/prowlarr:latest
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 9696:9696
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/prowlarr:/config
 networks:
   sofa-squad:
     name: sofa-squad
