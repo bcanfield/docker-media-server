@@ -1,0 +1,75 @@
+- Media Management:
+    - Sonarr:
+        icon: sonarr.png
+        href: http://localhost:8989
+        description: TV show management
+        widget:
+          type: sonarr
+          url: http://sonarr:8989
+          key: your-sonarr-api-key
+          fields: ["wanted", "queued", "series"]
+    - Radarr:
+        icon: radarr.png
+        href: http://localhost:7878
+        description: Movie management
+        widget:
+          type: radarr
+          url: http://radarr:7878
+          key: your-radarr-api-key
+          fields: ["wanted", "queued", "movies"]
+    - Bazarr:
+        icon: bazarr.png
+        href: http://localhost:6767
+        description: Subtitle management
+        widget:
+          type: bazarr
+          url: http://bazarr:6767
+          key: your-bazarr-api-key
+
+- Downloads:
+    - SABnzbd:
+        icon: sabnzbd.png
+        href: http://localhost:8080
+        description: Usenet downloader
+        widget:
+          type: sabnzbd
+          url: http://sabnzbd:8080
+          key: your-sabnzbd-api-key
+
+- Requests & Monitoring:
+    - Seerr:
+        icon: overseerr.png
+        href: http://localhost:5055
+        description: Media requests
+        widget:
+          type: overseerr
+          url: http://seerr:5055
+          key: your-seerr-api-key
+    - Tautulli:
+        icon: tautulli.png
+        href: http://localhost:8181
+        description: Playback monitoring
+        widget:
+          type: tautulli
+          url: http://tautulli:8181
+          key: your-tautulli-api-key
+
+- Audiobooks:
+    - LazyLibrarian:
+        icon: lazylibrarian.png
+        href: http://localhost:5299
+        description: Audiobook search & download
+    - Audiobookshelf:
+        icon: audiobookshelf.png
+        href: http://localhost:13378
+        description: Audiobook library & player
+        widget:
+          type: audiobookshelf
+          url: http://audiobookshelf:80
+          key: your-audiobookshelf-api-key
+
+- Maintenance:
+    - Maintainerr:
+        icon: maintainerr.png
+        href: http://localhost:6246
+        description: Library maintenance

@@ -1,0 +1,68 @@
+version: "3.4"
+services:
+  # https://gethomepage.dev/installation/docker/
+  homepage:
+    container_name: homepage
+    image: ghcr.io/gethomepage/homepage:v1.11.0@sha256:b129cb0f674bd6d204e215bde2c2fc3f11d6ad0e82f6d20007cf80f74e1acbb1
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - HOMEPAGE_ALLOWED_HOSTS=${HOMEPAGE_ALLOWED_HOSTS}
+    ports:
+      - 3000:3000
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/homepage:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ${MEDIA_ROOT}:/media:ro
+  # https://docs.maintainerr.info/Installation/
+  maintainerr:
+    container_name: maintainerr
+    image: ghcr.io/maintainerr/maintainerr:3.0.1@sha256:91ea358e965c2693e18e1f21ce1e7df016610bfdfd50e94d1fa3cc8e5e1a53f4
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+    ports:
+      - 6246:6246
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/maintainerr:/opt/data
+  # https://docs.linuxserver.io/images/docker-lazylibrarian/
+  lazylibrarian:
+    container_name: lazylibrarian
+    image: lscr.io/linuxserver/lazylibrarian:latest@sha256:9b0b52274928f2802eee86c925ed794419e9d05c95b9f0afb728673df857e7e6
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - DOCKER_MODS=linuxserver/mods:lazylibrarian-ffmpeg
+    ports:
+      - 5299:5299
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/lazylibrarian:/config
+      - ${MEDIA_ROOT}/downloads:/downloads
+      - ${MEDIA_ROOT}/complete/audiobooks:/books
+  # https://www.audiobookshelf.org/docs
+  audiobookshelf:
+    container_name: audiobookshelf
+    image: ghcr.io/advplyr/audiobookshelf:latest@sha256:a684889944b68bb3e73bba09ff6549630d763c6b6f12aa2c0ecc7593a4debcde
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+    ports:
+      - 13378:80
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/audiobookshelf:/config
+      - ${MEDIA_ROOT}/complete/audiobooks:/audiobooks
+      - ${CONFIG_ROOT}/config/audiobookshelf/metadata:/metadata
+networks:
+  sofa-squad:
+    external: true
