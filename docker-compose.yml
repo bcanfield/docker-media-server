@@ -79,7 +79,7 @@ services:
     volumes:
       - ${CONFIG_ROOT}/config/sabnzbd:/config
       - ${MEDIA_ROOT}/downloads:/downloads #optional
-      - ${SABNZBD_TEMP}:/downloads/intermediate
+      - ${SABNZBD_TEMP:-/tmp/sabnzbd-temp}:/downloads/intermediate
     ports:
       - 8080:8080
     restart: unless-stopped
