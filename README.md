@@ -11,54 +11,12 @@ Automated media management stack running on Docker. Handles requesting, download
 ## Architecture
 
 ```mermaid
-graph TD
-    subgraph Media Server ["Media Server (Docker Compose)"]
-        Seerr["Seerr<br>Media Requests"]
-        Sonarr["Sonarr<br>TV Management"]
-        Radarr["Radarr<br>Movie Management"]
-        SABnzbd["SABnzbd<br>Usenet Downloader"]
-        Bazarr["Bazarr<br>Subtitles"]
-        Prowlarr["Prowlarr<br>Indexer Manager"]
-        Recyclarr["Recyclarr<br>Quality Profiles"]
-        Tailscale["Tailscale<br>Remote Access VPN"]
-    end
-
-    subgraph Extras ["Extras (Optional)"]
-        Homepage["Homepage<br>Dashboard"]
-        Maintainerr["Maintainerr<br>Library Maintenance"]
-        LazyLibrarian["LazyLibrarian<br>Book Management"]
-        Audiobookshelf["Audiobookshelf<br>Audiobook Server"]
-    end
-
-    subgraph Playback ["Separate Server / VM"]
-        Jellyfin["Jellyfin<br>Media Player"]
-    end
-
-    User -->|Remote Access| Tailscale
-    User -->|Request Media| Seerr
+graph LR
     Seerr -->|TV| Sonarr
     Seerr -->|Movies| Radarr
-    Sonarr -->|Download| SABnzbd
-    Radarr -->|Download| SABnzbd
-    SABnzbd -->|Completed Files| Sonarr
-    SABnzbd -->|Completed Files| Radarr
-    Bazarr -->|Fetch Subtitles| Sonarr
-    Bazarr -->|Fetch Subtitles| Radarr
-    Prowlarr -->|Sync Indexers| Sonarr
-    Prowlarr -->|Sync Indexers| Radarr
-    Recyclarr -->|Sync Profiles| Sonarr
-    Recyclarr -->|Sync Profiles| Radarr
-    Homepage -->|Status Widgets| Sonarr
-    Homepage -->|Status Widgets| Radarr
-    Homepage -->|Status Widgets| SABnzbd
-    Maintainerr -->|Manage Library| Jellyfin
-    Maintainerr -->|Manage Library| Sonarr
-    Maintainerr -->|Manage Library| Radarr
-    LazyLibrarian -->|Download| SABnzbd
-    Audiobookshelf -->|Reads| MediaStorage
-    Jellyfin -->|Reads| MediaStorage[("Shared Media<br>Storage")]
-    Sonarr -->|Writes| MediaStorage
-    Radarr -->|Writes| MediaStorage
+    Sonarr & Radarr --> SABnzbd -->|Organize| Storage[("Storage")]
+    Bazarr -.->|Subtitles| Storage
+    Storage --> Jellyfin
 ```
 
 ## Core Services
