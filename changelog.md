@@ -1,3 +1,7 @@
+## v5.4
+- Change: Merge branch 'main' of https://github.com/bcanfield/docker-media-server
+
+
 ## v5.3
 - Change: Merge branch 'main' of https://github.com/bcanfield/docker-media-server
 
