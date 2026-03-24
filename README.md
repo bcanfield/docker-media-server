@@ -5,7 +5,7 @@ Automated media management stack running on Docker. Handles requesting, download
 ## Key Files
 
 - `docker-compose.yml` — core service definitions
-- `extras/docker-compose.yml` — optional services (dashboard, library maintenance)
+- `extras/docker-compose.yml` — optional services (dashboard, library maintenance, audiobooks)
 - `.env` / `.env.example` — Docker Compose environment variables (paths, PUID/PGID, timezone)
 
 ## Architecture
@@ -26,6 +26,8 @@ graph TD
     subgraph Extras ["Extras (Optional)"]
         Homepage["Homepage<br>Dashboard"]
         Maintainerr["Maintainerr<br>Library Maintenance"]
+        LazyLibrarian["LazyLibrarian<br>Book Management"]
+        Audiobookshelf["Audiobookshelf<br>Audiobook Server"]
     end
 
     subgraph Playback ["Separate Server / VM"]
@@ -52,6 +54,8 @@ graph TD
     Maintainerr -->|Manage Library| Jellyfin
     Maintainerr -->|Manage Library| Sonarr
     Maintainerr -->|Manage Library| Radarr
+    LazyLibrarian -->|Download| SABnzbd
+    Audiobookshelf -->|Reads| MediaStorage
     Jellyfin -->|Reads| MediaStorage[("Shared Media<br>Storage")]
     Sonarr -->|Writes| MediaStorage
     Radarr -->|Writes| MediaStorage
@@ -59,23 +63,25 @@ graph TD
 
 ## Core Services
 
-| Service                                                        | Port | Purpose                                                       |
-| -------------------------------------------------------------- | ---- | ------------------------------------------------------------- |
-| [Seerr](https://github.com/seerr-team/seerr)                   | 5055 | User-facing request portal for movies and TV                  |
-| [Sonarr](https://docs.linuxserver.io/images/docker-sonarr)     | 8989 | TV show management and automation                             |
-| [Radarr](https://docs.linuxserver.io/images/docker-radarr)     | 7878 | Movie management and automation                               |
-| [SABnzbd](https://docs.linuxserver.io/images/docker-sabnzbd/)  | 8080 | Usenet download client                                        |
-| [Bazarr](https://docs.linuxserver.io/images/docker-bazarr)     | 6767 | Automatic subtitle downloading                                |
-| [Prowlarr](https://docs.linuxserver.io/images/docker-prowlarr) | 9696 | Centralized indexer management, syncs to Sonarr/Radarr        |
-| [Recyclarr](https://recyclarr.dev/guide/installation/docker/)  | —    | Syncs TRaSH quality profiles to Sonarr/Radarr on a daily cron |
-| [Tailscale](https://tailscale.com/kb/1282/docker)             | —    | Private VPN for secure remote access without port forwarding   |
+| Service | Port | Purpose | Setup Guide |
+| --- | --- | --- | --- |
+| [Seerr](https://github.com/seerr-team/seerr) | 5055 | User-facing request portal for movies and TV | [docs/seerr.md](docs/seerr.md) |
+| [Sonarr](https://wiki.servarr.com/sonarr) | 8989 | TV show management and automation | [docs/sonarr.md](docs/sonarr.md) |
+| [Radarr](https://wiki.servarr.com/radarr) | 7878 | Movie management and automation | [docs/radarr.md](docs/radarr.md) |
+| [SABnzbd](https://sabnzbd.org/wiki/) | 8080 | Usenet download client | [docs/sabnzbd.md](docs/sabnzbd.md) |
+| [Bazarr](https://wiki.bazarr.media/) | 6767 | Automatic subtitle downloading | [docs/bazarr.md](docs/bazarr.md) |
+| [Prowlarr](https://wiki.servarr.com/prowlarr) | 9696 | Centralized indexer management, syncs to Sonarr/Radarr | [docs/prowlarr.md](docs/prowlarr.md) |
+| [Recyclarr](https://recyclarr.dev/) | — | Syncs TRaSH quality profiles to Sonarr/Radarr on a daily cron | [docs/recyclarr.md](docs/recyclarr.md) |
+| [Tailscale](https://tailscale.com/kb/1282/docker) | — | Private VPN for secure remote access without port forwarding | — |
 
 ## Extras (Optional)
 
-| Service                                    | Port | Purpose                                        |
-| ------------------------------------------ | ---- | ---------------------------------------------- |
-| [Homepage](https://gethomepage.dev/)       | 3000 | YAML-configured dashboard with service widgets |
-| [Maintainerr](https://docs.maintainerr.info/) | 6246 | Automated library maintenance based on rules   |
+| Service | Port | Purpose | Setup Guide |
+| --- | --- | --- | --- |
+| [Homepage](https://gethomepage.dev/) | 3000 | YAML-configured dashboard with service widgets | [docs/homepage.md](docs/homepage.md) |
+| [Maintainerr](https://docs.maintainerr.info/) | 6246 | Automated library maintenance based on rules | [docs/maintainerr.md](docs/maintainerr.md) |
+| [LazyLibrarian](https://lazylibrarian.gitlab.io/) | 5299 | Book/audiobook search and download management | [docs/lazylibrarian.md](docs/lazylibrarian.md) |
+| [Audiobookshelf](https://www.audiobookshelf.org/docs) | 13378 | Self-hosted audiobook server with mobile apps | [docs/audiobookshelf.md](docs/audiobookshelf.md) |
 
 ## Why Run Jellyfin on a Separate Server?
 
@@ -114,10 +120,11 @@ SABNZBD_TEMP=/opt/sabnzbd-temp  # SSD-backed path for SABnzbd temp downloads
 docker compose up -d
 ```
 
-4. Configure each service through its web UI, wiring them together:
+4. Configure each service through its web UI (see the [setup guides](docs/) for each service):
    - Point Sonarr/Radarr to SABnzbd as the download client
    - Point Seerr to Sonarr/Radarr
    - Point Bazarr to Sonarr/Radarr for subtitle fetching
+   - Add indexers in Prowlarr and sync to Sonarr/Radarr
 
 ### Extras (Optional)
 
@@ -163,14 +170,17 @@ docker compose up -d
 
 Once Tailscale is running on both your server and your client device, access services using your Tailscale hostname:
 
-| Service  | Remote URL                                |
-| -------- | ----------------------------------------- |
-| Seerr    | `http://media-server:5055`                |
-| Sonarr   | `http://media-server:8989`                |
-| Radarr   | `http://media-server:7878`                |
-| SABnzbd  | `http://media-server:8080`                |
-| Bazarr   | `http://media-server:6767`                |
-| Prowlarr | `http://media-server:9696`                |
+| Service | Remote URL |
+| --- | --- |
+| Seerr | `http://media-server:5055` |
+| Sonarr | `http://media-server:8989` |
+| Radarr | `http://media-server:7878` |
+| SABnzbd | `http://media-server:8080` |
+| Bazarr | `http://media-server:6767` |
+| Prowlarr | `http://media-server:9696` |
+| Homepage | `http://media-server:3000` |
+| LazyLibrarian | `http://media-server:5299` |
+| Audiobookshelf | `http://media-server:13378` |
 
 Replace `media-server` with whatever you set `TS_HOSTNAME` to. You can also use the Tailscale IP shown in the admin console.
 
@@ -221,7 +231,7 @@ restic restore latest --target /tmp/restore  # restore latest
 Managed via Prowlarr. Running multiple indexers improves coverage — each has different sources and retention depths. 2-3 indexers is the sweet spot.
 
 | Indexer | Registration | Cost | Strength |
-| ------- | ------------ | ---- | -------- |
+| --- | --- | --- | --- |
 | [NZBgeek](https://nzbgeek.info/) | Open | ~$12/year | Reliable all-rounder, great for current content |
 | [NZBPlanet](https://nzbplanet.net/) | Open (paid) | 8 EUR/year | Largest index (~3M NZBs), strong for older/obscure content |
 | [NZBFinder](https://nzbfinder.ws/) | Open | Free tier / ~15-35 EUR/year | Always-open registration, fast indexing, good free tier |
