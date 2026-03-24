@@ -1,3 +1,7 @@
+## v5.2
+- Change: fix: wiki
+
+
 ## v5.1
 - Change: Revise architecture diagram in README
 
