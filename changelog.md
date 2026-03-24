@@ -1,3 +1,7 @@
+## v4.1
+- Change: chore(deps): update ghcr.io/advplyr/audiobookshelf:latest docker digest to 5a8a20c (#764)
+
+
 ## v4.0
 - Change: major: 2026 UPDATE (#763)
 
