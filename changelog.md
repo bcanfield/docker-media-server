@@ -1,3 +1,7 @@
+## v5.0
+- Change: chore(deps): update actions/checkout action to v6 (#702)
+
+
 ## v4.1
 - Change: chore(deps): update ghcr.io/advplyr/audiobookshelf:latest docker digest to 5a8a20c (#764)
 
