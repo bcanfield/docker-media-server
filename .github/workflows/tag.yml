@@ -56,9 +56,8 @@ jobs:
     - name: Update changelog.md
       run: |
         COMMIT_MESSAGE=$(git log --format=%s -n 1 ${{ github.sha }})
-        echo "## v${{ steps.increment-version.outputs.new_version }}" >> changelog.md
-        echo "- Change: $COMMIT_MESSAGE" >> changelog.md
-        echo "" >> changelog.md
+        ENTRY="## v${{ steps.increment-version.outputs.new_version }}\n- Change: $COMMIT_MESSAGE\n"
+        printf "%b\n\n%s" "$ENTRY" "$(cat changelog.md)" > changelog.md
         git add changelog.md
         git commit -m "v${{ steps.increment-version.outputs.new_version }}"
         git push
