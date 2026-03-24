@@ -1,3 +1,7 @@
+## v5.1
+- Change: Revise architecture diagram in README
+
+
 ## v5.0
 - Change: chore(deps): update actions/checkout action to v6 (#702)
 
