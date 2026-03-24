@@ -1,0 +1,12 @@
+{
+  "services": {
+    "radarr": {
+      "url": "http://HOST:7878",
+      "apiKey": ""
+    },
+    "sonarr": {
+      "url": "http://HOST:8989",
+      "apiKey": ""
+    }
+  }
+}

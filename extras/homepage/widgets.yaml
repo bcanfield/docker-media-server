@@ -1,0 +1,6 @@
+- resources:
+    cpu: true
+    memory: true
+    disk:
+      - /
+      - /media

@@ -50,22 +50,6 @@ services:
     ports:
       - 5055:5055
     restart: unless-stopped
-
-  # https://docs.linuxserver.io/images/docker-tautulli
-  tautulli:
-    container_name: tautulli
-    image: linuxserver/tautulli:2.16.1@sha256:f7e8a00e81a216835d19d5f6219c31998ec844046d09326a682594c197911a75
-    restart: unless-stopped
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    ports:
-      - 8181:8181
-    networks:
-      - sofa-squad
-    volumes:
-      - ${CONFIG_ROOT}/config/tautulli:/config
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
@@ -95,6 +79,7 @@ services:
     volumes:
       - ${CONFIG_ROOT}/config/sabnzbd:/config
       - ${MEDIA_ROOT}/downloads:/downloads #optional
+      - ${SABNZBD_TEMP:-/tmp/sabnzbd-temp}:/downloads/intermediate
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -113,6 +98,38 @@ services:
       - CRON_SCHEDULE=@daily
     volumes:
       - ${CONFIG_ROOT}/config/recyclarr:/config
+  # https://docs.linuxserver.io/images/docker-prowlarr
+  prowlarr:
+    container_name: prowlarr
+    image: linuxserver/prowlarr:2.3.4-nightly@sha256:34e4438d0d91d7c246abcc89793750bb6762c39d53f89c6723052c4c47258f6a
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 9696:9696
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/prowlarr:/config
+  # https://tailscale.com/kb/1282/docker
+  tailscale:
+    container_name: tailscale
+    image: tailscale/tailscale:v1.82.5
+    restart: unless-stopped
+    hostname: ${TS_HOSTNAME:-media-server}
+    network_mode: host
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_EXTRA_ARGS=--advertise-exit-node
+    volumes:
+      - ${CONFIG_ROOT}/config/tailscale/state:/var/lib/tailscale
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+      - sys_module
 networks:
   sofa-squad:
     name: sofa-squad
