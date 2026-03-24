@@ -2164,3 +2164,15 @@
 ## v3.725
 - Change: chore(deps): update authelia/authelia:4.39 docker digest to edbce01 (#758)
 
+## v3.726
+- Change: Update (#759)
+
+## v3.727
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to 15b1220 (#760)
+
+## v3.728
+- Change: chore(deps): update linuxserver/sonarr docker tag to v4.0.17 (#90)
+
+## v3.729
+- Change: chore(deps): update linuxserver/tautulli:2.16.1 docker digest to f7e8a00 (#761)
+
