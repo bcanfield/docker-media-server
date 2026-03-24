@@ -1,3 +1,7 @@
+## v4.0
+- Change: major: 2026 UPDATE (#763)
+
+
 ## v3.729
 - Change: chore(deps): update linuxserver/tautulli:2.16.1 docker digest to f7e8a00 (#761)
 
