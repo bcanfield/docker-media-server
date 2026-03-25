@@ -1,3 +1,7 @@
+## v5.7
+- Change: chore(deps): update linuxserver/bazarr:1.5.6 docker digest to 9a63119 (#770)
+
+
 ## v5.6
 - Change: chore(deps): update ghcr.io/maintainerr/maintainerr docker tag to v3.1.0 (#766)
 
