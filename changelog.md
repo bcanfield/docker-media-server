@@ -1,3 +1,7 @@
+## v5.10
+- Change: chore(deps): update tailscale/tailscale docker tag to v1.94.2 (#767)
+
+
 ## v5.9
 - Change: chore(deps): update andrew-chen-wang/github-wiki-action action to v5 (#769)
 
