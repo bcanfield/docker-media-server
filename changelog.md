@@ -1,3 +1,7 @@
+## v5.11
+- Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to 1c58a42 (#771)
+
+
 ## v5.10
 - Change: chore(deps): update tailscale/tailscale docker tag to v1.94.2 (#767)
 
