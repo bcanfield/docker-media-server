@@ -1,3 +1,7 @@
+## v5.9
+- Change: chore(deps): update andrew-chen-wang/github-wiki-action action to v5 (#769)
+
+
 ## v5.8
 - Change: chore(deps): update actions/checkout action to v6 (#768)
 
