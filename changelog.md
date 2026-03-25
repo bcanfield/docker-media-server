@@ -1,3 +1,7 @@
+## v5.6
+- Change: chore(deps): update ghcr.io/maintainerr/maintainerr docker tag to v3.1.0 (#766)
+
+
 ## v5.5
 - Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to 1977b33 (#765)
 
