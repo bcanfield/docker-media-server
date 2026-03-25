@@ -1,3 +1,7 @@
+## v5.8
+- Change: chore(deps): update actions/checkout action to v6 (#768)
+
+
 ## v5.7
 - Change: chore(deps): update linuxserver/bazarr:1.5.6 docker digest to 9a63119 (#770)
 
