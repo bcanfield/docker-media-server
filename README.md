@@ -34,6 +34,7 @@ graph LR
 | [Maintainerr](https://docs.maintainerr.info/) | 6246 | Automated library maintenance | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/Maintainerr) |
 | [LazyLibrarian](https://lazylibrarian.gitlab.io/) | 5299 | Book/audiobook management | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/LazyLibrarian) |
 | [Audiobookshelf](https://www.audiobookshelf.org/docs) | 13378 | Audiobook server + mobile apps | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/Audiobookshelf) |
+| [Jellystat](https://github.com/CyferShepard/Jellystat) | 3100 | Jellyfin playback monitoring | — |
 
 ## Quick Start
 
@@ -49,10 +50,21 @@ Then configure each service through its web UI — see the [wiki](https://github
 ### Extras
 
 ```bash
-cd extras
-cp .env.example .env
-cp -r homepage/ ${CONFIG_ROOT}/config/homepage/
-docker compose --env-file ../.env --env-file .env up -d
+cp extras/.env.example extras/.env   # edit with extra service credentials
+cp -r extras/homepage/ ${CONFIG_ROOT}/config/homepage/
+```
+
+> **Note:** The extras compose file depends on variables from the root `.env`, so you must pass both env files when running it standalone:
+> ```bash
+> docker compose --env-file .env --env-file extras/.env -f extras/docker-compose.yml up -d
+> ```
+
+### Running Everything
+
+Use the convenience script to start both core and extras stacks at once:
+
+```bash
+./start.sh
 ```
 
 ## More
