@@ -1,3 +1,7 @@
+## v5.12
+- Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to 833eea0 (#772)
+
+
 ## v5.11
 - Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to 1c58a42 (#771)
 
