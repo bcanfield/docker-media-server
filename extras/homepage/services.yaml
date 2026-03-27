@@ -1,7 +1,7 @@
 - Media Management:
     - Sonarr:
         icon: sonarr.png
-        href: http://localhost:8989
+        href: http://media-server:8989
         description: TV show management
         widget:
           type: sonarr
@@ -10,7 +10,7 @@
           fields: ["wanted", "queued", "series"]
     - Radarr:
         icon: radarr.png
-        href: http://localhost:7878
+        href: http://media-server:7878
         description: Movie management
         widget:
           type: radarr
@@ -19,7 +19,7 @@
           fields: ["wanted", "queued", "movies"]
     - Bazarr:
         icon: bazarr.png
-        href: http://localhost:6767
+        href: http://media-server:6767
         description: Subtitle management
         widget:
           type: bazarr
@@ -29,39 +29,47 @@
 - Downloads:
     - SABnzbd:
         icon: sabnzbd.png
-        href: http://localhost:8080
+        href: http://media-server:8080
         description: Usenet downloader
         widget:
           type: sabnzbd
           url: http://sabnzbd:8080
           key: your-sabnzbd-api-key
+    - Prowlarr:
+        icon: prowlarr.png
+        href: http://media-server:9696
+        description: Indexer management
+        widget:
+          type: prowlarr
+          url: http://prowlarr:9696
+          key: your-prowlarr-api-key
 
 - Requests & Monitoring:
     - Seerr:
         icon: overseerr.png
-        href: http://localhost:5055
+        href: http://media-server:5055
         description: Media requests
         widget:
           type: overseerr
           url: http://seerr:5055
           key: your-seerr-api-key
-    - Tautulli:
-        icon: tautulli.png
-        href: http://localhost:8181
-        description: Playback monitoring
+    - Jellystat:
+        icon: jellystat.png
+        href: http://media-server:3100
+        description: Jellyfin playback monitoring
         widget:
-          type: tautulli
-          url: http://tautulli:8181
-          key: your-tautulli-api-key
+          type: jellystat
+          url: http://jellystat:3000
+          key: your-jellystat-api-key
 
 - Audiobooks:
     - LazyLibrarian:
         icon: lazylibrarian.png
-        href: http://localhost:5299
+        href: http://media-server:5299
         description: Audiobook search & download
     - Audiobookshelf:
         icon: audiobookshelf.png
-        href: http://localhost:13378
+        href: http://media-server:13378
         description: Audiobook library & player
         widget:
           type: audiobookshelf
@@ -71,5 +79,5 @@
 - Maintenance:
     - Maintainerr:
         icon: maintainerr.png
-        href: http://localhost:6246
+        href: http://media-server:6246
         description: Library maintenance

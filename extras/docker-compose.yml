@@ -63,6 +63,45 @@ services:
       - ${CONFIG_ROOT}/config/audiobookshelf:/config
       - ${MEDIA_ROOT}/complete/audiobooks:/audiobooks
       - ${CONFIG_ROOT}/config/audiobookshelf/metadata:/metadata
+  # https://github.com/CyferShepard/Jellystat
+  jellystat:
+    container_name: jellystat
+    image: cyfershepard/jellystat:1.1.8@sha256:1ad2f09a2253b4ecc47b8a51b870b5de4371f00d44356c8820e19c9e6736a33a
+    restart: unless-stopped
+    depends_on:
+      jellystat-db:
+        condition: service_healthy
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${JELLYSTAT_DB_PASSWORD}
+      - POSTGRES_IP=jellystat-db
+      - POSTGRES_PORT=5432
+      - JWT_SECRET=${JELLYSTAT_JWT_SECRET}
+      - TZ=${TZ}
+    ports:
+      - 3100:3000
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/jellystat/backup:/app/backend/backup-data
+  jellystat-db:
+    container_name: jellystat-db
+    image: postgres:17@sha256:827e1dd011a36ac64a7d413853223788c32aab4e82943261a15aef06a5e1e3ee
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${JELLYSTAT_DB_PASSWORD}
+      - POSTGRES_DB=jfstat
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/jellystat/db:/var/lib/postgresql/data
+    shm_size: '1gb'
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 networks:
   sofa-squad:
     external: true
