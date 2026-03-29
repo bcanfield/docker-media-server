@@ -1,3 +1,7 @@
+## v5.16
+- Change: chore(deps): update ghcr.io/maintainerr/maintainerr docker tag to v3.3.0 (#776)
+
+
 ## v5.15
 - Change: chore(deps): update linuxserver/prowlarr docker tag to v2.3.5 (#775)
 
