@@ -1,3 +1,7 @@
+## v5.15
+- Change: chore(deps): update linuxserver/prowlarr docker tag to v2.3.5 (#775)
+
+
 ## v5.14
 - Change: chore(deps): update ghcr.io/gethomepage/homepage docker tag to v1.12.1 (#774)
 
