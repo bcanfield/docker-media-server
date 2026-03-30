@@ -1,3 +1,7 @@
+## v5.17
+- Change: chore(deps): update linuxserver/radarr:6.0.4 docker digest to c8a55bd (#777)
+
+
 ## v5.16
 - Change: chore(deps): update ghcr.io/maintainerr/maintainerr docker tag to v3.3.0 (#776)
 
