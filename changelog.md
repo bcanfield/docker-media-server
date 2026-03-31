@@ -1,3 +1,7 @@
+## v5.20
+- Change: chore(deps): update ghcr.io/maintainerr/maintainerr:3.3.0 docker digest to 918e375 (#780)
+
+
 ## v5.19
 - Change: chore(deps): update linuxserver/prowlarr:2.3.5-nightly docker digest to 208473e (#779)
 
