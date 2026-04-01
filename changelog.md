@@ -1,3 +1,7 @@
+## v5.22
+- Change: chore(deps): update ghcr.io/gethomepage/homepage docker tag to v1.12.2 (#782)
+
+
 ## v5.21
 - Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to facd855 (#781)
 
