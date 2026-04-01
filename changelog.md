@@ -1,3 +1,7 @@
+## v5.21
+- Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to facd855 (#781)
+
+
 ## v5.20
 - Change: chore(deps): update ghcr.io/maintainerr/maintainerr:3.3.0 docker digest to 918e375 (#780)
 
