@@ -1,3 +1,7 @@
+## v5.23
+- Change: chore(deps): update ghcr.io/gethomepage/homepage docker tag to v1.12.3 (#783)
+
+
 ## v5.22
 - Change: chore(deps): update ghcr.io/gethomepage/homepage docker tag to v1.12.2 (#782)
 
