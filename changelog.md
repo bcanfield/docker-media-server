@@ -1,3 +1,7 @@
+## v5.24
+- Change: chore(deps): update linuxserver/sabnzbd:4.5.5 docker digest to f0abed8 (#784)
+
+
 ## v5.23
 - Change: chore(deps): update ghcr.io/gethomepage/homepage docker tag to v1.12.3 (#783)
 
