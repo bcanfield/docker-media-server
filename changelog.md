@@ -1,3 +1,7 @@
+## v5.26
+- Change: chore(deps): update linuxserver/prowlarr docker tag to v2.3.6 (#786)
+
+
 ## v5.25
 - Change: chore(deps): update linuxserver/radarr docker tag to v6.1.1 (#785)
 
