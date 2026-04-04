@@ -1,3 +1,7 @@
+## v5.27
+- Change: chore(deps): update linuxserver/sonarr:4.0.17 docker digest to b5670a3 (#787)
+
+
 ## v5.26
 - Change: chore(deps): update linuxserver/prowlarr docker tag to v2.3.6 (#786)
 
