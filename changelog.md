@@ -1,3 +1,7 @@
+## v5.28
+- Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to e241246 (#788)
+
+
 ## v5.27
 - Change: chore(deps): update linuxserver/sonarr:4.0.17 docker digest to b5670a3 (#787)
 
