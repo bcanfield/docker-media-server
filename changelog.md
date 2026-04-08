@@ -1,3 +1,7 @@
+## v5.31
+- Change: chore(deps): update linuxserver/bazarr:1.5.6 docker digest to 21a4813 (#792)
+
+
 ## v5.30
 - Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to d2c1840 (#790)
 
