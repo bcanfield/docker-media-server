@@ -1,3 +1,7 @@
+## v5.32
+- Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.4.1 (#791)
+
+
 ## v5.31
 - Change: chore(deps): update linuxserver/bazarr:1.5.6 docker digest to 21a4813 (#792)
 
