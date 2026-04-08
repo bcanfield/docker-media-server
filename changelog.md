@@ -1,3 +1,7 @@
+## v5.30
+- Change: chore(deps): update lscr.io/linuxserver/lazylibrarian:latest docker digest to d2c1840 (#790)
+
+
 ## v5.29
 - Change: chore(deps): update linuxserver/radarr:6.1.1 docker digest to cd70546 (#789)
 
