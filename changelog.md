@@ -1,3 +1,7 @@
+## v5.38
+- Change: Update linuxserver/prowlarr:2.3.6-nightly Docker digest to d7ca141 (#798)
+
+
 ## v5.37
 - Change: Update linuxserver/sonarr:4.0.17 Docker digest to 6854df9 (#797)
 
