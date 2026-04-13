@@ -1,3 +1,7 @@
+## v5.42
+- Change: Update ghcr.io/seerr-team/seerr Docker tag to v3.1.1 (#802)
+
+
 ## v5.41
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.6.0 (#801)
 
