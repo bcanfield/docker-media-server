@@ -1,3 +1,7 @@
+## v5.45
+- Change: Update linuxserver/bazarr:1.5.6 Docker digest to d736df5 (#805)
+
+
 ## v5.44
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.7.0 (#804)
 
