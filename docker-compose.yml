@@ -70,7 +70,7 @@ services:
       - ${MEDIA_ROOT}/complete/tv:/tv
   # https://docs.linuxserver.io/images/docker-sabnzbd/
   sabnzbd:
-    image: linuxserver/sabnzbd:4.5.5@sha256:e4573bab787c2ba9a9e6bbf5535da0bd9d4de8e247ac7fad6428319fadd2331d
+    image: linuxserver/sabnzbd:4.5.5@sha256:7ac6fe8a521c7099e1768af90529dfee5976b87c7dccffdcc9ced00149e1aedb
     container_name: sabnzbd
     environment:
       - PUID=${PUID}
