@@ -1,3 +1,7 @@
+## v5.48
+- Change: Update ghcr.io/seerr-team/seerr Docker tag to v3.2.0 (#808)
+
+
 ## v5.47
 - Change: Update linuxserver/sabnzbd:4.5.5 Docker digest to 7ac6fe8 (#807)
 
