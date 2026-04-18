@@ -1,3 +1,7 @@
+## v5.49
+- Change: Update linuxserver/sonarr:4.0.17 Docker digest to e6c9a09 (#809)
+
+
 ## v5.48
 - Change: Update ghcr.io/seerr-team/seerr Docker tag to v3.2.0 (#808)
 
