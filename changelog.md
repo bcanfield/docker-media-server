@@ -1,3 +1,7 @@
+## v5.50
+- Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to ecc1afa (#810)
+
+
 ## v5.49
 - Change: Update linuxserver/sonarr:4.0.17 Docker digest to e6c9a09 (#809)
 
