@@ -1,3 +1,7 @@
+## v5.57
+- Change: Update linuxserver/sabnzbd:4.5.5 Docker digest to 374051b (#817)
+
+
 ## v5.56
 - Change: Update linuxserver/prowlarr:2.3.6-nightly Docker digest to 375e4ec (#816)
 
