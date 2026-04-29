@@ -1,3 +1,7 @@
+## v5.63
+- Change: Update linuxserver/prowlarr:2.3.6-nightly Docker digest to ec3e199 (#824)
+
+
 ## v5.62
 - Change: Update linuxserver/bazarr:1.5.6 Docker digest to cb57afc (#822)
 
