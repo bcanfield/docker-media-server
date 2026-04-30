@@ -1,3 +1,7 @@
+## v5.64
+- Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.9.0 (#823)
+
+
 ## v5.63
 - Change: Update linuxserver/prowlarr:2.3.6-nightly Docker digest to ec3e199 (#824)
 
