@@ -1,3 +1,7 @@
+## v5.68
+- Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to 3eb0dc6 (#829)
+
+
 ## v5.67
 - Change: Update linuxserver/sonarr:4.0.17 Docker digest to bed3afb (#828)
 
