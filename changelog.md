@@ -1,3 +1,7 @@
+## v5.67
+- Change: Update linuxserver/sonarr:4.0.17 Docker digest to bed3afb (#828)
+
+
 ## v5.66
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.10.0 (#826)
 
