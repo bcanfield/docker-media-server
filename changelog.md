@@ -1,3 +1,7 @@
+## v5.71
+- Change: Update linuxserver/radarr:6.1.1 Docker digest to 659e5f2 (#832)
+
+
 ## v5.70
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.10.1 (#831)
 
