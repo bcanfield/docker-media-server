@@ -1,3 +1,7 @@
+## v5.79
+- Change: Update ghcr.io/gethomepage/homepage Docker tag to v1.13.0 (#839)
+
+
 ## v5.78
 - Change: Update linuxserver/sonarr:4.0.17 Docker digest to 60f3b6b (#840)
 
