@@ -1,3 +1,7 @@
+## v5.77
+- Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.10.2 (#838)
+
+
 ## v5.76
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to 9f7eaf5 (#837)
 
