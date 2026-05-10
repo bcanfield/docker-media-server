@@ -1,3 +1,7 @@
+## v5.81
+- Change: Update linuxserver/prowlarr Docker tag to v2.4.0 (#842)
+
+
 ## v5.80
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to fb7960d (#841)
 
