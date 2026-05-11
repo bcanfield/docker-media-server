@@ -1,3 +1,7 @@
+## v5.84
+- Change: Update ghcr.io/gethomepage/homepage Docker tag to v1.13.1 (#845)
+
+
 ## v5.83
 - Change: Update linuxserver/radarr:6.1.1 Docker digest to 15417a5 (#844)
 
