@@ -33,7 +33,7 @@ services:
   # https://docs.linuxserver.io/images/docker-lazylibrarian/
   lazylibrarian:
     container_name: lazylibrarian
-    image: lscr.io/linuxserver/lazylibrarian:latest@sha256:47fe098a17e6840094307281fcaaa9314cfe6531e507302521825c5c0932f9fd
+    image: lscr.io/linuxserver/lazylibrarian:latest@sha256:a6c2cdf1932e3462b8ed13d2feb64a74dfcce9752b3d35508f7de7830ffad38c
     restart: unless-stopped
     environment:
       - PUID=${PUID}
