@@ -1,3 +1,7 @@
+## v5.95
+- Change: Update ghcr.io/advplyr/audiobookshelf:latest Docker digest to 501b8ad (#856)
+
+
 ## v5.94
 - Change: Update linuxserver/radarr:6.1.1 Docker digest to 079e488 (#855)
 
