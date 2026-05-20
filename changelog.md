@@ -1,3 +1,7 @@
+## v5.96
+- Change: Update linuxserver/bazarr:1.5.6 Docker digest to 95f2769 (#857)
+
+
 ## v5.95
 - Change: Update ghcr.io/advplyr/audiobookshelf:latest Docker digest to 501b8ad (#856)
 
