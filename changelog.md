@@ -1,3 +1,7 @@
+## v5.99
+- Change: Update tailscale/tailscale Docker tag to v1.98.3 (#862)
+
+
 ## v5.98
 - Change: Update linuxserver/sonarr:4.0.17 Docker digest to 0b5c480 (#859)
 
