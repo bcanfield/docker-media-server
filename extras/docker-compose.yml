@@ -51,7 +51,7 @@ services:
   # https://www.audiobookshelf.org/docs
   audiobookshelf:
     container_name: audiobookshelf
-    image: ghcr.io/advplyr/audiobookshelf:latest@sha256:501b8add626d0641229782e0e7f5382a0b126a6508eecdd344789406c24521b8
+    image: ghcr.io/advplyr/audiobookshelf:latest@sha256:54a0f832278d5fbc10a038cfb9da26f227dfc6fa054f645699dbfa0ff0b97502
     restart: unless-stopped
     environment:
       - TZ=${TZ}
