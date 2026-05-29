@@ -1,3 +1,7 @@
+## v5.107
+- Change: Update linuxserver/prowlarr:2.4.0-nightly Docker digest to 794f284 (#868)
+
+
 ## v5.106
 - Change: Update ghcr.io/advplyr/audiobookshelf:latest Docker digest to 54a0f83 (#867)
 
