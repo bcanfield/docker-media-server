@@ -1,3 +1,7 @@
+## v5.111
+- Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.13.0 (#869)
+
+
 ## v5.110
 - Change: Update tailscale/tailscale Docker tag to v1.98.4 (#870)
 
