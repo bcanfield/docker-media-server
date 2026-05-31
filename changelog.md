@@ -1,3 +1,7 @@
+## v5.113
+- Change: Update linuxserver/prowlarr:2.4.0-nightly Docker digest to 9b45a46 (#875)
+
+
 ## v5.112
 - Change: Update linuxserver/prowlarr:2.4.0-nightly Docker digest to e3def6b (#873)
 
