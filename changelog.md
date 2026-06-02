@@ -1,3 +1,7 @@
+## v5.116
+- Change: Update ghcr.io/seerr-team/seerr Docker tag to v3.3.0 (#877)
+
+
 ## v5.115
 - Change: Update linuxserver/radarr:6.1.1 Docker digest to c0a4335 (#876)
 
