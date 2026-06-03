@@ -1,3 +1,7 @@
+## v5.117
+- Change: Update linuxserver/bazarr:1.5.6 Docker digest to 4b5e510 (#878)
+
+
 ## v5.116
 - Change: Update ghcr.io/seerr-team/seerr Docker tag to v3.3.0 (#877)
 
