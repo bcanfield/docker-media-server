@@ -1,3 +1,7 @@
+## v5.127
+- Change: Update ghcr.io/gethomepage/homepage Docker tag to v1.13.2 (#887)
+
+
 ## v5.126
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to 101561f (#886)
 
