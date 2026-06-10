@@ -1,3 +1,7 @@
+## v5.128
+- Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.15.0 (#888)
+
+
 ## v5.127
 - Change: Update ghcr.io/gethomepage/homepage Docker tag to v1.13.2 (#887)
 
