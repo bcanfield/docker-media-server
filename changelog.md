@@ -1,3 +1,7 @@
+## v5.129
+- Change: Update linuxserver/radarr Docker tag to v6.2.1 (#889)
+
+
 ## v5.128
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.15.0 (#888)
 
