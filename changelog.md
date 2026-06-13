@@ -1,3 +1,7 @@
+## v5.130
+- Change: Update linuxserver/sonarr:4.0.17 Docker digest to 02bc962 (#890)
+
+
 ## v5.129
 - Change: Update linuxserver/radarr Docker tag to v6.2.1 (#889)
 
