@@ -1,3 +1,7 @@
+## v5.134
+- Change: Update linuxserver/bazarr:1.5.6 Docker digest to 8e48a29 (#894)
+
+
 ## v5.133
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to c9cb020 (#893)
 
