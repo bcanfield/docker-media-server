@@ -1,3 +1,7 @@
+## v5.138
+- Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.15.2 (#899)
+
+
 ## v5.137
 - Change: Update linuxserver/prowlarr Docker tag to v2.5.0 (#897)
 
