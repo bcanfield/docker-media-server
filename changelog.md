@@ -1,3 +1,7 @@
+## v5.143
+- Change: Update linuxserver/prowlarr:2.5.0-nightly Docker digest to aa2f754 (#905)
+
+
 ## v5.142
 - Change: Update linuxserver/bazarr:1.5.6 Docker digest to aaaa087 (#904)
 
