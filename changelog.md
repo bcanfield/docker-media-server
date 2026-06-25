@@ -1,3 +1,7 @@
+## v5.146
+- Change: Update linuxserver/sonarr Docker tag to v4.0.18 (#907)
+
+
 ## v5.145
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to b798841 (#906)
 
