@@ -1,3 +1,7 @@
+## v5.150
+- Change: Update linuxserver/prowlarr:2.5.0-nightly Docker digest to ddc1354 (#911)
+
+
 ## v5.149
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to 6791de5 (#910)
 
