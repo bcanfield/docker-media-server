@@ -1,3 +1,7 @@
+## v5.157
+- Change: Update linuxserver/bazarr Docker tag to v1.6.0 (#918)
+
+
 ## v5.156
 - Change: Update linuxserver/sonarr:4.0.19 Docker digest to 633e0e6 (#917)
 
