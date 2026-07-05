@@ -20,7 +20,7 @@ services:
   # https://docs.maintainerr.info/Installation/
   maintainerr:
     container_name: maintainerr
-    image: ghcr.io/maintainerr/maintainerr:3.16.0@sha256:0829781eb442f93065edda051d4a87f343a1cf05f7ea03635e87306fc786f087
+    image: ghcr.io/maintainerr/maintainerr:3.17.0@sha256:59d0095f05ec11aef2d271812903ed4a0738338044f44bbb3f2165c89ebcd06e
     restart: unless-stopped
     environment:
       - TZ=${TZ}
