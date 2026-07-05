@@ -1,3 +1,7 @@
+## v5.160
+- Change: Update linuxserver/prowlarr:2.5.0-nightly Docker digest to 41cc846 (#921)
+
+
 ## v5.159
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.17.0 (#920)
 
