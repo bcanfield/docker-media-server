@@ -1,3 +1,7 @@
+## v5.163
+- Change: Update tailscale/tailscale Docker tag to v1.98.8 (#924)
+
+
 ## v5.162
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to dbccc0a (#923)
 
