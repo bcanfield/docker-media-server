@@ -1,3 +1,7 @@
+## v5.166
+- Change: Update linuxserver/sonarr:4.0.19 Docker digest to c4f53fe (#927)
+
+
 ## v5.165
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.17.1 (#926)
 
