@@ -1,3 +1,7 @@
+## v5.167
+- Change: Update linuxserver/prowlarr:2.5.1-nightly Docker digest to acdca4d (#928)
+
+
 ## v5.166
 - Change: Update linuxserver/sonarr:4.0.19 Docker digest to c4f53fe (#927)
 
