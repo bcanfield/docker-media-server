@@ -1,3 +1,7 @@
+## v5.172
+- Change: Update linuxserver/radarr:6.2.1 Docker digest to 549c4a0 (#933)
+
+
 ## v5.171
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to 796faac (#932)
 
