@@ -1,3 +1,7 @@
+## v5.173
+- Change: Update linuxserver/radarr Docker tag to v6.3.0 (#934)
+
+
 ## v5.172
 - Change: Update linuxserver/radarr:6.2.1 Docker digest to 549c4a0 (#933)
 
