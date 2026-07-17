@@ -1,3 +1,7 @@
+## v5.177
+- Change: Update tailscale/tailscale Docker tag to v1.98.9 (#938)
+
+
 ## v5.176
 - Change: Update linuxserver/prowlarr:2.5.1-nightly Docker digest to 430eb96 (#937)
 
