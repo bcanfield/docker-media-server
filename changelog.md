@@ -1,3 +1,7 @@
+## v5.183
+- Change: Update linuxserver/prowlarr:2.5.2-nightly Docker digest to fb85e23 (#944)
+
+
 ## v5.182
 - Change: Update linuxserver/prowlarr Docker tag to v2.5.2 (#942)
 
