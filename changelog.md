@@ -1,3 +1,7 @@
+## v5.187
+- Change: Update linuxserver/prowlarr Docker tag to v2.6.0 (#948)
+
+
 ## v5.186
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to de8f3a1 (#945)
 
