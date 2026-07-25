@@ -1,3 +1,7 @@
+## v5.190
+- Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to e1d3b86 (#951)
+
+
 ## v5.189
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to 6529206 (#950)
 
