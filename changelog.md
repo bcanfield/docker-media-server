@@ -1,3 +1,7 @@
+## v5.194
+- Change: Update ghcr.io/advplyr/audiobookshelf:latest Docker digest to e388e90 (#955)
+
+
 ## v5.193
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.19.0 (#954)
 
