@@ -1,3 +1,7 @@
+## v5.195
+- Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to 9b73d12 (#957)
+
+
 ## v5.194
 - Change: Update ghcr.io/advplyr/audiobookshelf:latest Docker digest to e388e90 (#955)
 
