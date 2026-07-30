@@ -1,3 +1,7 @@
+## v5.200
+- Change: Update ghcr.io/seerr-team/seerr Docker tag to v3.4.1 (#962)
+
+
 ## v5.199
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to 1440a90 (#960)
 
