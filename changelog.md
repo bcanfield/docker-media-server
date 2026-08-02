@@ -1,3 +1,7 @@
+## v5.205
+- Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.21.1 (#966)
+
+
 ## v5.204
 - Change: Update ghcr.io/maintainerr/maintainerr Docker tag to v3.21.0 (#965)
 
