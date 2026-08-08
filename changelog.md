@@ -1,3 +1,7 @@
+## v5.217
+- Change: Update linuxserver/sonarr:4.0.19 Docker digest to 373159b (#979)
+
+
 ## v5.216
 - Change: Update lscr.io/linuxserver/lazylibrarian:latest Docker digest to ea661df (#976)
 
