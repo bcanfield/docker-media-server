@@ -1,3 +1,7 @@
+## v5.219
+- Change: Update linuxserver/prowlarr:2.6.2-nightly Docker digest to c2eed3b (#981)
+
+
 ## v5.218
 - Change: Update tailscale/tailscale Docker tag to v1.102.2 (#978)
 
