@@ -101,7 +101,7 @@ services:
   # https://docs.linuxserver.io/images/docker-prowlarr
   prowlarr:
     container_name: prowlarr
-    image: linuxserver/prowlarr:2.6.2-nightly@sha256:c2eed3becd412e5df1d269e3892c96100d6589d484edee739208c1a50b149e55
+    image: linuxserver/prowlarr:2.6.2-nightly@sha256:cd6ad6404562c11b970cfec5b101ea2572136aa95da838583b6159340e5aa6c7
     restart: unless-stopped
     environment:
       - PUID=${PUID}
