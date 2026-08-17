@@ -38,7 +38,7 @@ custom formats — that is the whole direct-play guarantee.
 ## Repository Structure
 
 ```
-docker-compose.yml                  # Core: Sonarr, Radarr, Seerr, SABnzbd, Bazarr, Prowlarr, Recyclarr, Tailscale, cloudflared
+docker-compose.yml                  # Core: Sonarr, Radarr, Seerr, SABnzbd, Bazarr, Prowlarr, Recyclarr, Uptime Kuma, Tailscale, cloudflared
 docker-compose.override.yml.example # Copy to docker-compose.override.yml — the /data mount, see below
 backup/
   backup-config-local.sh            # Default: tarball to another local disk, no credentials
@@ -89,6 +89,7 @@ filesystems to the container and break hardlinks. Rationale is in its header.
 | SABnzbd  | 8080 | [sabnzbd.org/wiki/advanced/api](https://sabnzbd.org/wiki/advanced/api) |
 | Bazarr   | 6767 | [wiki.bazarr.media](https://wiki.bazarr.media/)                        |
 | Prowlarr | 9696 | [wiki.servarr.com/prowlarr/api](https://wiki.servarr.com/prowlarr/api) |
+| Uptime Kuma | 3001 | [github.com/louislam/uptime-kuma](https://github.com/louislam/uptime-kuma/wiki) |
 
 Env vars are documented in `.env.example`. `COMPOSE_PROFILES=cloudflare` plus `CF_TUNNEL_TOKEN`
 enables the tunnel; either alone does nothing.

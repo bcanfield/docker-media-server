@@ -33,6 +33,7 @@ restart long after you've forgotten it was configured.
 | SABnzbd  | `http://media-server:8080` |
 | Bazarr   | `http://media-server:6767` |
 | Prowlarr | `http://media-server:9696` |
+| Uptime Kuma | `http://media-server:3001` |
 
 Substitute your own `TS_HOSTNAME`. Short names work because
 [MagicDNS](https://tailscale.com/kb/1081/magicdns) is on by default.

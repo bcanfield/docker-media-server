@@ -11,6 +11,7 @@ Setup guides for each service in the stack. See the [README](https://github.com/
 - [Bazarr](Bazarr) — automatic subtitles
 - [Prowlarr](Prowlarr) — indexer management
 - [Recyclarr](Recyclarr) — quality profile sync
+- [Uptime Kuma](Uptime-Kuma) — monitoring and alerting
 
 ## Guides
 

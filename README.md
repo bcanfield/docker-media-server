@@ -26,6 +26,7 @@ graph LR
 | [Bazarr](https://wiki.bazarr.media/) | 6767 | Automatic subtitles | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/Bazarr) |
 | [Prowlarr](https://wiki.servarr.com/prowlarr) | 9696 | Indexer management | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/Prowlarr) |
 | [Recyclarr](https://recyclarr.dev/) | — | TRaSH quality profile sync | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/Recyclarr) |
+| [Uptime Kuma](https://github.com/louislam/uptime-kuma) | 3001 | Monitoring and alerting | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/Uptime-Kuma) |
 | [Tailscale](https://tailscale.com/kb/1282/docker) | — | VPN for remote access | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/Tailscale) |
 | [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) | — | Public hostnames, opt-in | [Wiki](https://github.com/bcanfield/docker-media-server/wiki/Cloudflared) |
 
