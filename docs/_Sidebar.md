@@ -12,5 +12,6 @@
 - [Tailscale / Remote Access](Tailscale)
 - [Cloudflare Tunnel](Cloudflared)
 - [Jellyfin Plugins](Jellyfin-Plugins)
+- [Notifications](Notifications)
 - [Backups](Backups)
 - [Usenet Indexers](Usenet-Indexers)
