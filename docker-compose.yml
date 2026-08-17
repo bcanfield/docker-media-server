@@ -101,7 +101,7 @@ services:
       - ${MEDIA_ROOT}/complete/tv:/tv
   # https://docs.linuxserver.io/images/docker-sabnzbd/
   sabnzbd:
-    image: linuxserver/sabnzbd:5.1.0@sha256:b0f9755d795913bd26ae3f3a12805668ab0681ab847a7624568559c573fc7cae
+    image: linuxserver/sabnzbd:5.1.0@sha256:e79d3fd9282b7fa51a3382cec9fdcc4cf736f46c9d43d188193e3ce1c7accbcd
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS 'http://localhost:8080/sabnzbd/api?mode=version' || exit 1"]
       interval: 30s
