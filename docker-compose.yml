@@ -162,6 +162,33 @@ services:
       - sofa-squad
     volumes:
       - ${CONFIG_ROOT}/config/prowlarr:/config
+  # https://github.com/louislam/uptime-kuma
+  #
+  # Watches the things in this setup that fail *silently*: Jellyfin (which runs
+  # outside this stack), the public tunnel hostname, and certificate/key expiry.
+  # A tunnel reports Healthy while its origin 502s, and a stopped media server
+  # looks identical to an idle one until someone tries to watch something.
+  #
+  # Blind spot worth knowing: it cannot monitor its own host. Running inside
+  # this stack means it stops when the stack stops, so it will never tell you
+  # the stack went down -- that check has to originate somewhere else. See
+  # docs/uptime-kuma.md.
+  uptime-kuma:
+    container_name: uptime-kuma
+    # The image ships its own HEALTHCHECK (extra/healthcheck, 180s start
+    # period); no need to restate a worse one here.
+    mem_limit: 512m
+    stop_grace_period: 30s
+    image: louislam/uptime-kuma:2.5.0@sha256:a8610b3b4c38077922ba51b036691e06887d7cefd91fe620fd3d6d23d03dc240
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+    ports:
+      - 3001:3001
+    networks:
+      - sofa-squad
+    volumes:
+      - ${CONFIG_ROOT}/config/uptime-kuma:/app/data
   # https://tailscale.com/kb/1282/docker
   tailscale:
     container_name: tailscale

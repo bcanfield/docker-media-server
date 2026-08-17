@@ -6,6 +6,7 @@
 - [Bazarr](Bazarr)
 - [Prowlarr](Prowlarr)
 - [Recyclarr](Recyclarr)
+- [Uptime Kuma](Uptime-Kuma)
 
 **Guides**
 - [Tailscale / Remote Access](Tailscale)
