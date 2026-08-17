@@ -1,8 +1,15 @@
-version: "3.4"
 services:
   # https://docs.linuxserver.io/images/docker-sonarr
   sonarr:
     container_name: sonarr
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8989/sonarr/ping || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+    mem_limit: 1g
+    stop_grace_period: 30s
     image: linuxserver/sonarr:4.0.19@sha256:373159ba768e23a3a1c497d9f2b936addf8fd5b1fdce7dd6a14080ac928bfda0
     restart: unless-stopped
     environment:
@@ -21,6 +28,14 @@ services:
   # https://docs.linuxserver.io/images/docker-radarr
   radarr:
     container_name: radarr
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:7878/radarr/ping || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+    mem_limit: 1g
+    stop_grace_period: 30s
     image: linuxserver/radarr:6.3.0@sha256:a45b5ab0f850f39edb4cc9c95bbd967b52ddc3d4574a4dfb45561177db6c88f4
     restart: unless-stopped
     environment:
@@ -39,6 +54,14 @@ services:
   # https://github.com/seerr-team/seerr
   seerr:
     image: ghcr.io/seerr-team/seerr:v3.4.1@sha256:f4768de5f616248d723e05891f3345a1402123775d03bf0890dbfedc0831bda1
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:5055/api/v1/status || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+    mem_limit: 1g
+    stop_grace_period: 30s
     container_name: seerr
     init: true
     environment:
@@ -53,6 +76,14 @@ services:
   # https://docs.linuxserver.io/images/docker-bazarr
   bazarr:
     container_name: bazarr
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:6767/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+    mem_limit: 1g
+    stop_grace_period: 30s
     image: linuxserver/bazarr:1.6.0@sha256:b3d44d324399152be4d50775ff639a364c0fa1cfda67f71b1f38264c4d0ca09f
     restart: unless-stopped
     environment:
@@ -70,7 +101,15 @@ services:
       - ${MEDIA_ROOT}/complete/tv:/tv
   # https://docs.linuxserver.io/images/docker-sabnzbd/
   sabnzbd:
-    image: linuxserver/sabnzbd:4.5.5@sha256:374051b90f64d107f8658dcd9b9065c28826afe14562647214f45057e119fc04
+    image: linuxserver/sabnzbd:5.1.0@sha256:b0f9755d795913bd26ae3f3a12805668ab0681ab847a7624568559c573fc7cae
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS 'http://localhost:8080/sabnzbd/api?mode=version' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+    mem_limit: 5g
+    stop_grace_period: 60s
     container_name: sabnzbd
     environment:
       - PUID=${PUID}
@@ -87,7 +126,9 @@ services:
       - sofa-squad
   # https://recyclarr.dev/guide/installation/docker/
   recyclarr:
-    image: ghcr.io/recyclarr/recyclarr:8
+    image: ghcr.io/recyclarr/recyclarr:8@sha256:73303ba5ee647b6492fee917d3a781c6e59b6cab08f9dfce9482a950846f564f
+    mem_limit: 512m
+    stop_grace_period: 30s
     container_name: recyclarr
     user: ${PUID}:${PGID}
     restart: unless-stopped
@@ -101,6 +142,14 @@ services:
   # https://docs.linuxserver.io/images/docker-prowlarr
   prowlarr:
     container_name: prowlarr
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:9696/ping || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+    mem_limit: 768m
+    stop_grace_period: 30s
     image: linuxserver/prowlarr:2.6.2-nightly@sha256:c2eed3becd412e5df1d269e3892c96100d6589d484edee739208c1a50b149e55
     restart: unless-stopped
     environment:
@@ -116,6 +165,8 @@ services:
   # https://tailscale.com/kb/1282/docker
   tailscale:
     container_name: tailscale
+    mem_limit: 256m
+    stop_grace_period: 30s
     image: tailscale/tailscale:v1.102.2
     restart: unless-stopped
     hostname: ${TS_HOSTNAME:-media-server}
@@ -130,6 +181,43 @@ services:
     cap_add:
       - net_admin
       - sys_module
+  # https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/
+  #
+  # Outbound-only tunnel to Cloudflare's edge — no inbound port forwarding, no
+  # firewall holes. Ingress rules (which hostname maps to which service) are
+  # NOT here: this is a remotely-managed tunnel, so they live in the Zero Trust
+  # dashboard and are delivered with the token. See docs/cloudflared.md.
+  #
+  # Services in this stack are reachable by container name (http://seerr:5055)
+  # because cloudflared shares the sofa-squad network with them. A service
+  # running outside Docker needs its host's LAN IP instead — in particular, if
+  # you run Docker Engine inside WSL and the service is on Windows, do NOT use
+  # host.docker.internal: it resolves to the WSL distro's own bridge, which is
+  # Linux, not Windows. See docs/cloudflared.md.
+  cloudflared:
+    container_name: cloudflared
+    mem_limit: 256m
+    stop_grace_period: 30s
+    image: cloudflare/cloudflared:2026.8.1@sha256:d9ff527dc19799e24d3689058161fb01e752a24be1823577bae54c9c2489275f
+    restart: unless-stopped
+    # Opt-in. An empty TUNNEL_TOKEN does not make cloudflared sit idle — it
+    # exits immediately and `restart: unless-stopped` turns that into a crash
+    # loop, which would break `docker compose up -d` for anyone cloning this
+    # repo without a Cloudflare account. The profile keeps it out of the
+    # default set; enable it by putting COMPOSE_PROFILES=cloudflare in .env,
+    # which keeps the plain `docker compose up -d` workflow intact.
+    profiles:
+      - cloudflare
+    # --no-autoupdate: the image is pinned by digest, so let Renovate bump it
+    # rather than having the binary silently replace itself inside the container.
+    command: tunnel --no-autoupdate run
+    environment:
+      - TZ=${TZ}
+      # `:-` default so Compose does not warn about an unset variable on every
+      # command for users who never enable the profile.
+      - TUNNEL_TOKEN=${CF_TUNNEL_TOKEN:-}
+    networks:
+      - sofa-squad
 networks:
   sofa-squad:
     name: sofa-squad

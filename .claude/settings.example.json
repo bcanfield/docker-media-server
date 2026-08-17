@@ -1,11 +1,41 @@
 {
   "services": {
-    "radarr": {
-      "url": "http://HOST:7878",
+    "sonarr": {
+      "url": "http://localhost:8989",
+      "urlBase": "/sonarr",
+      "apiVersion": "v3",
       "apiKey": ""
     },
-    "sonarr": {
-      "url": "http://HOST:8989",
+    "radarr": {
+      "url": "http://localhost:7878",
+      "urlBase": "/radarr",
+      "apiVersion": "v3",
+      "apiKey": ""
+    },
+    "prowlarr": {
+      "url": "http://localhost:9696",
+      "urlBase": "",
+      "apiVersion": "v1",
+      "apiKey": ""
+    },
+    "bazarr": {
+      "url": "http://localhost:6767",
+      "urlBase": "",
+      "apiKey": ""
+    },
+    "sabnzbd": {
+      "url": "http://localhost:8080",
+      "urlBase": "/sabnzbd",
+      "apiKey": ""
+    },
+    "seerr": {
+      "url": "http://localhost:5055",
+      "urlBase": "",
+      "apiKey": ""
+    },
+    "jellyfin": {
+      "url": "http://JELLYFIN_HOST:8096",
+      "urlBase": "",
       "apiKey": ""
     }
   }
