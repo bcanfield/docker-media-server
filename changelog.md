@@ -1,3 +1,7 @@
+## v5.233
+- Change: Split notifications into an alert channel and an activity channel
+
+
 ## v5.232
 - Change: Wire up ntfy alerting across the stack
 
