@@ -1,25 +1,30 @@
 # Seerr
 
-User-facing request portal. People browse and request movies/TV shows here, and Seerr routes requests to Radarr/Sonarr automatically.
+Request portal. People browse and request here; Seerr routes to Radarr/Sonarr.
 
 **Web UI:** `http://<host>:5055`
 
 ## First-Time Setup
 
-1. **Connect Jellyfin** — Enter your Jellyfin server URL and API key (found under Jellyfin > Dashboard > API Keys). This lets Seerr show what's already in your library.
-2. **Connect Radarr** — Enter hostname (`radarr`), port (`7878`), and API key. Select default quality profile and root folder.
-3. **Connect Sonarr** — Same as above with hostname (`sonarr`), port (`8989`), and API key.
-4. **User Management** — Settings > Users. Set default permissions (auto-approve requests, quality limits, etc.).
+1. **Connect Jellyfin** — server URL and an API key from Jellyfin > Dashboard > API Keys. This is how
+   Seerr knows what you already have.
+2. **Connect Radarr** — host `radarr`, port `7878`, API key. Pick a default quality profile and root
+   folder.
+3. **Connect Sonarr** — host `sonarr`, port `8989`, same idea.
+4. **User Management** — Settings > Users, for auto-approval and per-user limits.
+
+Use container names, never `localhost`.
 
 ## Things to Know
 
-- **Container networking** — Use container names (`radarr`, `sonarr`) not `localhost` when connecting services.
-- **Library sync** — Seerr syncs with Jellyfin to show available vs. missing content. This runs automatically.
-- **Notifications** — Configure Discord, email, or webhook alerts under Settings > Notifications.
-- **IPv6 issues** — If hostnames won't resolve, force IPv4 under Settings > Networking > Advanced.
+- **Behind a reverse proxy or tunnel, set two things** — Settings > General > *Enable Proxy Support*
+  (otherwise every request appears to come from the Docker bridge, making rate limiting and login
+  logs useless), and *Application URL*, so notification links aren't LAN addresses. Restart after.
+- **The config directory is `config/jellyseerr`**, a leftover of the rename. Any `overseerr/` or
+  `jellyseerr.bak/` siblings are stale.
+- **IPv6** — if hostnames won't resolve, force IPv4 under Settings > Networking > Advanced.
 
 ## Links
 
-- [Seerr Docs](https://docs.seerr.dev/)
+- [Seerr Docs](https://docs.seerr.dev/) · [Troubleshooting](https://docs.seerr.dev/troubleshooting)
 - [GitHub](https://github.com/seerr-team/seerr)
-- [Troubleshooting](https://docs.seerr.dev/troubleshooting)

@@ -1,0 +1,70 @@
+# Copy to docker-compose.override.yml (gitignored) to apply.
+#
+#     cp docker-compose.override.yml.example docker-compose.override.yml
+#
+# Compose merges this on top of docker-compose.yml automatically -- there is no
+# flag to pass. Keep host-specific tweaks here rather than editing the base
+# file, so `git pull` never conflicts with your local setup.
+services:
+  # ---------------------------------------------------------------------------
+  # One mount per service, rooted at ${MEDIA_ROOT}, so hardlinks work.
+  #
+  # Docker presents every bind mount as its own filesystem. Passing /tv and
+  # /downloads separately therefore makes them look like two different devices
+  # to the container even though both live on ${MEDIA_ROOT} outside it, and
+  # link() across them fails with EXDEV ("Cross-device link"). Sonarr/Radarr
+  # silently fall back to copying every import: double the space, and a
+  # full-size write for a file that never needed to move.
+  #
+  # Mounting the shared parent once as /data keeps everything on a single
+  # apparent filesystem, so imports become instant hardlinks. This is the
+  # layout TRaSH Guides recommends:
+  #   https://trash-guides.info/File-and-Folder-Structure/Hardlinks-and-Instant-Moves/
+  #
+  # Paths inside the containers:
+  #   /data/downloads/completed   SABnzbd finished, Sonarr/Radarr import from
+  #   /data/complete/tv           Sonarr root folder
+  #   /data/complete/movies       Radarr root folder
+  #
+  # Switching an existing install to this layout means updating each app's
+  # root folder and download-client remote path mapping to the new /data paths.
+  #
+  # SABnzbd's in-progress downloads deliberately stay OFF this mount, on
+  # ${SABNZBD_TEMP} (ideally an SSD). Unpacking there and moving to /data costs
+  # one copy, which is the point of the SSD staging; the Sonarr/Radarr import
+  # that follows is then a free hardlink.
+  #
+  # `volumes` is re-declared with `!override` because Compose merges volume
+  # lists by appending - the base file's entries cannot be removed otherwise.
+  # This also drops the base file's /etc/localtime bind, which is redundant:
+  # TZ=${TZ} is already set and is what the LinuxServer images actually use.
+  # Keep in sync with docker-compose.yml if its volume lists ever change.
+  # ---------------------------------------------------------------------------
+  sonarr:
+    volumes: !override
+      - ${CONFIG_ROOT}/config/sonarr:/config
+      - ${MEDIA_ROOT}:/data
+
+  radarr:
+    volumes: !override
+      - ${CONFIG_ROOT}/config/radarr:/config
+      - ${MEDIA_ROOT}:/data
+
+  bazarr:
+    volumes: !override
+      - ${CONFIG_ROOT}/config/bazarr:/config
+      - ${MEDIA_ROOT}:/data
+
+  sabnzbd:
+    volumes: !override
+      - ${CONFIG_ROOT}/config/sabnzbd:/config
+      - ${MEDIA_ROOT}:/data
+      - ${SABNZBD_TEMP:-/tmp/sabnzbd-temp}:/incomplete
+
+  # Example of the other thing this file is good for: advertising the LAN
+  # subnet through Tailscale so remote devices reach the whole network, not
+  # just this host. Adjust the CIDR to your own LAN, or delete the block.
+  #
+  # tailscale:
+  #   environment:
+  #     - TS_EXTRA_ARGS=--advertise-exit-node --advertise-routes=192.168.0.0/24

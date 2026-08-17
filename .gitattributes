@@ -1,0 +1,19 @@
+# Normalise to LF on commit and on checkout, on every platform.
+#
+# Everything in this repo is consumed inside Linux containers or by bash on the
+# host. A CRLF introduced by a Windows git client does not fail loudly -- it
+# fails at runtime, as `bad interpreter: /bin/bash^M` on the backup scripts, or
+# as a YAML value with a trailing \r that Compose passes through into a
+# container environment variable. Pin the behaviour here rather than depend on
+# every clone having core.autocrlf set correctly.
+#
+# Note this cannot protect the executable bit; only a git client that can see
+# Unix file modes does that. See the WSL setup notes in the README.
+* text=auto eol=lf
+
+# The ones that actually break, stated explicitly so intent survives edits.
+*.sh   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.md   text eol=lf

@@ -1,49 +1,52 @@
 # Recyclarr
 
-Syncs TRaSH Guide quality profiles and custom formats to Sonarr/Radarr on a daily schedule. Keeps your quality settings up to date without manual tweaking.
+Syncs TRaSH Guide quality profiles and custom formats into Sonarr/Radarr daily.
 
-**No web UI** — runs as a scheduled cron job inside the container.
+**No web UI** — a cron loop inside the container, on `@daily`.
 
 ## First-Time Setup
 
-1. **Create Config** — Run inside the container:
-   ```bash
-   docker compose run --rm recyclarr config create
-   ```
-   This generates `recyclarr.yml` in the config volume.
+```bash
+docker compose run --rm recyclarr config create        # writes recyclarr.yml to the config volume
+docker compose run --rm recyclarr config list templates
+```
 
-2. **Pick Templates** — List available TRaSH Guide templates:
-   ```bash
-   docker compose run --rm recyclarr config list templates
-   ```
-   Common choices: `hd-bluray-web` for 1080p, `uhd-bluray-web` for 4K.
+Then edit `recyclarr.yml`:
 
-3. **Edit Config** — Update `recyclarr.yml` with your Sonarr/Radarr URLs and API keys:
-   ```yaml
-   sonarr:
-     instance:
-       base_url: http://sonarr:8989
-       api_key: your-sonarr-api-key
-   radarr:
-     instance:
-       base_url: http://radarr:7878
-       api_key: your-radarr-api-key
-   ```
+```yaml
+sonarr:
+  my-sonarr:                      # names must be unique across BOTH blocks
+    base_url: http://sonarr:8989
+    api_key: your-sonarr-api-key
+radarr:
+  my-radarr:
+    base_url: http://radarr:7878
+    api_key: your-radarr-api-key
+```
 
-4. **Sync** — Test manually:
-   ```bash
-   docker compose run --rm recyclarr sync
-   ```
-   After this, the container runs on `@daily` automatically.
+Sync manually once to check it, after which the container handles it:
+
+```bash
+docker compose run --rm recyclarr sync
+```
 
 ## Things to Know
 
-- **Sync is idempotent.** Safe to run as often as you want.
-- **Templates are complete.** Resist over-customizing unless you have a specific reason.
-- **Check Sonarr/Radarr** after syncing to verify new profiles and custom formats appeared.
-- **`delete_old_custom_formats: true`** — Optional setting to clean up deprecated TRaSH formats.
+- **⚠ Instance names must be globally unique across `sonarr:` and `radarr:`.** Calling both
+  `instance` — as most examples do — makes v8 abort at config load with only a `DBG`-level
+  `Duplicate instances:` line. No `[ERR]`, no `[WRN]`, and the cron wrapper still logs
+  `job succeeded`, so nothing syncs, silently, for as long as it takes you to notice. Per-service
+  runs (`sync sonarr`) scope to one block and never trigger it. Verify with
+  `docker exec recyclarr recyclarr sync --preview` — it must print **both** servers.
+- **Template names differ per app.** Sonarr has `web-1080p` / `web-2160p`; Radarr has
+  `hd-bluray-web` / `uhd-bluray-web`. There is no `hd-bluray-web` for Sonarr.
+- **Blu-ray templates conflict with a direct-play library.** Disc sources are where PGS image
+  subtitles live, and those force a full video transcode. Prefer WEB-only profiles.
+- **Sync is idempotent** — safe to run at any time.
+- **Quality definitions are MB-per-minute.** A series whose provider metadata has `runtime: 0` makes
+  the size check uncomputable, so *every* release is rejected regardless of score. Fix the runtime
+  upstream; do not drop `minSize`, which recyclarr will revert on the next sync anyway.
 
 ## Links
 
-- [Recyclarr Docs](https://recyclarr.dev/) — official docs
-- [TRaSH Guides](https://trash-guides.info/) — the quality profiles Recyclarr syncs
+- [Recyclarr Docs](https://recyclarr.dev/) · [TRaSH Guides](https://trash-guides.info/)

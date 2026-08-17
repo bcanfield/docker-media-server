@@ -2,3 +2,16 @@
 .DS_Store
 .claude/settings.json
 proxmox_mcp.log
+
+# --- Machine-specific, never committed -------------------------------------
+# This repo is public. Anything that describes one particular host -- LAN IPs,
+# drive letters, hardware, library contents, provider accounts -- belongs in
+# here rather than in a tracked file.
+#
+#   local/            scratch space: audits, API dumps, one-off notes
+#   CLAUDE.local.md   personal agent instructions, auto-loaded alongside CLAUDE.md
+#   docker-compose.override.yml
+#                     your own Compose tweaks; start from the .example
+local/
+CLAUDE.local.md
+docker-compose.override.yml

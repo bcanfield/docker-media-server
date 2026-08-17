@@ -1,55 +1,53 @@
 # Remote Access with Tailscale
 
-[Tailscale](https://tailscale.com/) creates a private VPN (tailnet) between your devices, letting you securely access all your services from anywhere — no port forwarding or exposing anything to the public internet.
+[Tailscale](https://tailscale.com/) builds a private network between your devices, so you can reach
+every service from anywhere with no port forwarding and nothing exposed publicly.
 
 ## Setup
 
-1. **Create a Tailscale account** at [tailscale.com](https://tailscale.com/) (free for personal use, up to 100 devices).
+1. Create an account at [tailscale.com](https://tailscale.com/) (free for personal use).
+2. Install Tailscale on your client devices.
+3. Generate a **reusable** auth key at
+   [Admin Console > Settings > Keys](https://login.tailscale.com/admin/settings/keys) — reusable so
+   the container re-authenticates after restarts.
+4. Add it to `.env`:
 
-2. **Install Tailscale on your client devices** (phone, laptop, etc.) from [tailscale.com/download](https://tailscale.com/download).
+   ```env
+   TS_AUTHKEY=tskey-auth-your-key-here
+   TS_HOSTNAME=media-server
+   ```
 
-3. **Generate an auth key** at [Admin Console > Settings > Keys](https://login.tailscale.com/admin/settings/keys). Use a **reusable** key so the container can re-authenticate after restarts.
+5. `docker compose up -d`, then approve the node in the
+   [admin console](https://login.tailscale.com/admin/machines) if prompted.
 
-4. **Add the key to your `.env`:**
+**Auth keys expire** — 90 days by default. Note the date, or the container drops off the tailnet on a
+restart long after you've forgotten it was configured.
 
-```env
-TS_AUTHKEY=tskey-auth-your-key-here
-TS_HOSTNAME=media-server
-```
+## Accessing Services
 
-5. **Start (or restart) the stack:**
+| Service  | Remote URL                 |
+| -------- | -------------------------- |
+| Seerr    | `http://media-server:5055` |
+| Sonarr   | `http://media-server:8989` |
+| Radarr   | `http://media-server:7878` |
+| SABnzbd  | `http://media-server:8080` |
+| Bazarr   | `http://media-server:6767` |
+| Prowlarr | `http://media-server:9696` |
 
-```bash
-docker compose up -d
-```
+Substitute your own `TS_HOSTNAME`. Short names work because
+[MagicDNS](https://tailscale.com/kb/1081/magicdns) is on by default.
 
-6. **Approve the node** in the [Tailscale Admin Console](https://login.tailscale.com/admin/machines) if prompted.
+## Options Already Set
 
-## Accessing Services Remotely
+The container runs with `--advertise-exit-node`, so you can route all traffic from a remote device
+through this host — enable it per-device in the admin console. It uses `network_mode: host`, which is
+why it sees the other services directly.
 
-Once Tailscale is running on both your server and your client device, access services using your Tailscale hostname:
+To reach your whole LAN rather than just this host, add `--advertise-routes` in
+`docker-compose.override.yml` (there's a commented example) and approve the route in the admin
+console.
 
-| Service        | Remote URL                  |
-| -------------- | --------------------------- |
-| Seerr          | `http://media-server:5055`  |
-| Sonarr         | `http://media-server:8989`  |
-| Radarr         | `http://media-server:7878`  |
-| SABnzbd        | `http://media-server:8080`  |
-| Bazarr         | `http://media-server:6767`  |
-| Prowlarr       | `http://media-server:9696`  |
-| Homepage       | `http://media-server:3000`  |
-| LazyLibrarian  | `http://media-server:5299`  |
-| Audiobookshelf | `http://media-server:13378` |
+## HTTPS (Optional)
 
-Replace `media-server` with whatever you set `TS_HOSTNAME` to. You can also use the Tailscale IP shown in the admin console.
-
-## Enabling HTTPS (Optional)
-
-Tailscale can provision [automatic HTTPS certificates](https://tailscale.com/kb/1153/enabling-https) for your tailnet:
-
-1. Enable HTTPS in [Admin Console > DNS](https://login.tailscale.com/admin/dns).
-2. Access services at `https://media-server.your-tailnet.ts.net:<port>`.
-
-## Enabling MagicDNS
-
-With [MagicDNS](https://tailscale.com/kb/1081/magicdns) enabled (on by default), you can use short hostnames like `media-server` instead of full IPs across your tailnet.
+Enable HTTPS in [Admin Console > DNS](https://login.tailscale.com/admin/dns), then reach services at
+`https://media-server.your-tailnet.ts.net:<port>`.
