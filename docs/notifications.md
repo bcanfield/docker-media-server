@@ -1,44 +1,49 @@
 # Notifications
 
-Alerting for the stack, via [ntfy](https://ntfy.sh/) — phone push with priority levels, natively
-supported almost everywhere here, and free without an account.
+Two channels: [ntfy](https://ntfy.sh/) for anything that means something is wrong, Discord for
+everything else.
 
-## Why ntfy rather than Discord
+## Why two
 
-Discord has the broadest native support: Uptime Kuma, Sonarr, Radarr, Prowlarr and Seerr all ship a
-Discord connector, and Bazarr and SABnzbd reach it through their bundled Apprise. It is a perfectly
-reasonable pick.
+Either one alone covers the whole stack. Discord has the broadest *native* support — Uptime Kuma,
+Sonarr, Radarr, Prowlarr and Seerr all ship a connector, and Bazarr and SABnzbd reach it through
+their bundled Apprise — and every one of those has a native ntfy option too.
 
-ntfy is chosen here because coverage is effectively identical — every one of those has a native ntfy
-option too — while the delivery suits *alerts*. Discord notifications are the ones people mute, and
-a mute is indistinguishable from working software until the media server has been down for eight
-hours. ntfy pushes with a priority level and nothing else competes in the channel.
+Splitting them is the point. A channel that pings on every grab, import and subtitle download trains
+you to ignore it, and an ignored channel is indistinguishable from working software until the media
+server has been down for eight hours. Routing the ~5 events that need a human to ntfy, at High
+priority, keeps that signal out of the stream you scroll past.
 
-The split that matters more than the vendor: **send alerts and send activity to different places, or
-send only alerts.** A channel that pings on every grab, import and subtitle download trains you to
-ignore it, which costs more than having no alerting at all.
+ntfy takes the alert side because it pushes with a priority level to a channel containing nothing
+else. Discord takes the activity side because that content genuinely is chat.
 
-## What is configured
+## Two channels, split by urgency
 
-Only failure and health events. Grabs, imports, upgrades, renames, application updates and
-"download complete" are deliberately off.
+**ntfy carries alerts. Discord carries activity.** The trigger sets never overlap, so nothing is sent
+twice and neither channel becomes the one you mute.
 
-| Service | Events | Route |
-| ------- | ------ | ----- |
-| Sonarr | Health issue, health restored, manual interaction required | Native ntfy connector, priority High |
-| Radarr | Health issue, health restored, manual interaction required | Native ntfy connector, priority High |
-| Prowlarr | Health issue, health restored | Native ntfy connector, priority High |
-| SABnzbd | Failed, disk full, error, quota, new login | Bundled Apprise, `ntfys://` URL |
-| Uptime Kuma | Down / up on every monitor | Native ntfy notification |
+| Service | → ntfy (alerts) | → Discord (activity) |
+| ------- | --------------- | -------------------- |
+| Sonarr | health issue/restored, manual interaction required | grab, import, upgrade |
+| Radarr | health issue/restored, manual interaction required | grab, import, upgrade, movie added |
+| Prowlarr | health issue/restored | — |
+| SABnzbd | failed, disk full, error, quota, new login | download complete |
+| Bazarr | — | subtitle downloaded |
+| Seerr | — | request pending/approved/available/failed, issue created |
+| Uptime Kuma | down / up on every monitor | — |
 
-**Manual interaction required** is worth keeping on: it fires when an import needs a human, which is
-how a wanted film sits in an `_UNPACK_` folder for weeks looking like residue. See [Radarr](Radarr).
+The *arrs take two connectors side by side — one ntfy, one Discord — which is the whole mechanism.
+Prowlarr gets no Discord connector because it has no activity stream; its events are health and
+application updates.
 
-**SABnzbd's `complete` event is off on purpose** — it is enabled by default and fires on every
-finished download. `disk_full` and `error` are on, which are the ones that mean something.
+**Manual interaction required** is worth keeping on the alert channel: it fires when an import needs
+a human, which is how a wanted film sits in an `_UNPACK_` folder for weeks looking like residue. See
+[Radarr](Radarr).
 
-Not configured: Bazarr (subtitle events are noise) and Seerr (request notifications are a per-user
-setting, not an operator alert).
+**SABnzbd routes per event.** Its default `apprise_urls` points at ntfy while
+`apprise_target_complete` overrides just completions to Discord — so the split needs no second
+integration. Note `complete` ships *enabled*, and left on the default URL it would fire on every
+finished download.
 
 ## Setup
 
@@ -62,15 +67,28 @@ setting, not an operator alert).
    Leave "Include Health Warnings" off to start — warnings include transient indexer blips.
 
 4. **SABnzbd** — Config > Notifications > Apprise. SABnzbd has **no native ntfy or Discord option**;
-   its bundled Apprise is the route for both. URL format:
+   its bundled Apprise is the route for both, and it supports a per-event override:
 
    ```
-   ntfys://ntfy.sh/<topic>?priority=high
+   Default URL         ntfys://ntfy.sh/<topic>?priority=high
+   Completed override  discord://<webhook-id>/<webhook-token>
    ```
 
-   Then untick *Completed* and tick *Failed*, *Disk full*, *Errors*, *Quota*, *New login*.
+   Tick *Failed*, *Disk full*, *Errors*, *Quota*, *New login* — those use the default URL — and leave
+   *Completed* ticked with the Discord override in its own box.
 
-5. **Uptime Kuma** — Settings > Notifications > Setup Notification > ntfy. Server `https://ntfy.sh`,
+5. **Discord** — Server Settings > Integrations > Webhooks > New Webhook, copy the URL. The *arrs and
+   Seerr take it as-is; Bazarr and SABnzbd need it as an Apprise URL, which is the same two path
+   segments rearranged:
+
+   ```
+   https://discord.com/api/webhooks/<id>/<token>   →   discord://<id>/<token>
+   ```
+
+   The webhook URL is a credential — anyone with it can post to that channel. Keep it in
+   `CLAUDE.local.md`, not the repo.
+
+6. **Uptime Kuma** — Settings > Notifications > Setup Notification > ntfy. Server `https://ntfy.sh`,
    your topic, priority 4-5. Tick "Apply on all existing monitors" and "Default enabled" so new
    monitors inherit it.
 
