@@ -61,10 +61,11 @@ running successfully while syncing nothing. See the duplicate-instance trap in
 
 ## Notifications
 
-Configure at least one before relying on any of this — Settings > Notifications. ntfy, Gotify,
-Discord, Telegram, email and ~90 others. A monitor with no notification is a dashboard you will not be
-looking at when it matters, and ~1-minute detection is the main thing Kuma offers over checking by
-hand.
+Configure one before relying on any of this — a monitor with no notification is a dashboard you will
+not be looking at when it matters, and ~1-minute detection is the main thing Kuma offers over
+checking by hand. Settings > Notifications, and tick *Apply on all existing monitors* plus *Default
+enabled* so new monitors inherit it. See [Notifications](Notifications) for the channel this stack
+uses and why.
 
 ## Expiry, not just availability
 
