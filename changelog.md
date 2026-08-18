@@ -1,3 +1,7 @@
+## v5.234
+- Change: Update linuxserver/sabnzbd:5.1.0 Docker digest to e79d3fd (#996)
+
+
 ## v5.233
 - Change: Split notifications into an alert channel and an activity channel
 
