@@ -1,3 +1,7 @@
+## v5.237
+- Change: Update linuxserver/bazarr:1.6.0 Docker digest to ac284d3 (#994)
+
+
 ## v5.236
 - Change: Update linuxserver/sabnzbd Docker tag to v5.1.1 (#827)
 
