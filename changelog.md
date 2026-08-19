@@ -1,3 +1,7 @@
+## v5.236
+- Change: Update linuxserver/sabnzbd Docker tag to v5.1.1 (#827)
+
+
 ## v5.235
 - Change: Update cloudflare/cloudflared Docker tag to v2026.8.2 (#997)
 
