@@ -194,7 +194,7 @@ services:
     container_name: tailscale
     mem_limit: 256m
     stop_grace_period: 30s
-    image: tailscale/tailscale:v1.102.2
+    image: tailscale/tailscale:v1.102.3
     restart: unless-stopped
     hostname: ${TS_HOSTNAME:-media-server}
     network_mode: host
