@@ -1,3 +1,7 @@
+## v5.244
+- Change: Update linuxserver/prowlarr:2.6.2-nightly Docker digest to ff4007d (#1004)
+
+
 ## v5.243
 - Change: Update louislam/uptime-kuma Docker tag to v2.5.3 (#1003)
 
