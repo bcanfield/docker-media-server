@@ -1,3 +1,7 @@
+## v5.245
+- Change: Update linuxserver/radarr:6.3.0 Docker digest to 119aaa4 (#1005)
+
+
 ## v5.244
 - Change: Update linuxserver/prowlarr:2.6.2-nightly Docker digest to ff4007d (#1004)
 
