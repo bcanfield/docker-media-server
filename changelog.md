@@ -1,3 +1,7 @@
+## v5.248
+- Change: Update linuxserver/sabnzbd:5.1.2 Docker digest to 13d4404 (#1008)
+
+
 ## v5.247
 - Change: Update linuxserver/bazarr:1.6.0 Docker digest to 3a82037 (#1007)
 
