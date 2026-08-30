@@ -1,3 +1,7 @@
+## v5.252
+- Change: Update linuxserver/prowlarr:2.6.3-nightly Docker digest to d999f0d (#1012)
+
+
 ## v5.251
 - Change: Update linuxserver/prowlarr Docker tag to v2.6.3 (#1011)
 
