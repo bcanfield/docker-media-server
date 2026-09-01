@@ -1,3 +1,7 @@
+## v5.254
+- Change: Update linuxserver/prowlarr:2.6.3-nightly Docker digest to 880e445 (#1014)
+
+
 ## v5.253
 - Change: Update cloudflare/cloudflared Docker tag to v2026.8.3 (#1013)
 
