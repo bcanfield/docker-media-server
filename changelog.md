@@ -1,3 +1,7 @@
+## v5.255
+- Change: Update linuxserver/bazarr:1.6.0 Docker digest to a20fb11 (#1015)
+
+
 ## v5.254
 - Change: Update linuxserver/prowlarr:2.6.3-nightly Docker digest to 880e445 (#1014)
 
