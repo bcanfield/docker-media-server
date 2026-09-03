@@ -1,3 +1,7 @@
+## v5.256
+- Change: Update ghcr.io/recyclarr/recyclarr:8 Docker digest to 6e69e00 (#1016)
+
+
 ## v5.255
 - Change: Update linuxserver/bazarr:1.6.0 Docker digest to a20fb11 (#1015)
 
