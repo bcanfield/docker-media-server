@@ -1,3 +1,7 @@
+## v5.261
+- Change: Update linuxserver/radarr:6.3.0 Docker digest to 95ba080 (#1021)
+
+
 ## v5.260
 - Change: Update linuxserver/prowlarr Docker tag to v2.6.4 (#1020)
 
