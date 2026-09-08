@@ -1,3 +1,7 @@
+## v5.262
+- Change: Update linuxserver/sabnzbd Docker tag to v5.1.3 (#1022)
+
+
 ## v5.261
 - Change: Update linuxserver/radarr:6.3.0 Docker digest to 95ba080 (#1021)
 
