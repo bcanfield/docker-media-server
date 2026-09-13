@@ -1,3 +1,7 @@
+## v5.269
+- Change: Update linuxserver/prowlarr Docker tag to v2.6.5 (#1030)
+
+
 ## v5.268
 - Change: Update linuxserver/sonarr:4.0.19 Docker digest to 82172b3 (#1028)
 
