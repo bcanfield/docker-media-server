@@ -1,3 +1,7 @@
+## v5.271
+- Change: Update linuxserver/bazarr Docker tag to v1.6.1 (#1032)
+
+
 ## v5.270
 - Change: Update linuxserver/radarr:6.3.0 Docker digest to fe05141 (#1031)
 
