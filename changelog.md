@@ -1,3 +1,7 @@
+## v5.272
+- Change: Update linuxserver/sonarr Docker tag to v4.0.20 (#1033)
+
+
 ## v5.271
 - Change: Update linuxserver/bazarr Docker tag to v1.6.1 (#1032)
 
