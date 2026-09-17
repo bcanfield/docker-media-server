@@ -1,3 +1,7 @@
+## v5.273
+- Change: Update louislam/uptime-kuma Docker tag to v2.5.5 (#1035)
+
+
 ## v5.272
 - Change: Update linuxserver/sonarr Docker tag to v4.0.20 (#1033)
 
