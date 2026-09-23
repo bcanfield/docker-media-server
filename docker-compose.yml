@@ -84,7 +84,7 @@ services:
       start_period: 90s
     mem_limit: 1g
     stop_grace_period: 30s
-    image: linuxserver/bazarr:1.6.1@sha256:d24bd0048c759a468970989e9df11a6b96a7628d556d00f923e60a35ba59237b
+    image: linuxserver/bazarr:1.6.1@sha256:762f802274598da27255b2e5778f262b2b71b355a23e3812d9ee1520f8dbe37c
     restart: unless-stopped
     environment:
       - PUID=${PUID}
