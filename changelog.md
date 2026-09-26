@@ -1,3 +1,7 @@
+## v5.281
+- Change: Update linuxserver/sonarr:4.0.20 Docker digest to f247545 (#1043)
+
+
 ## v5.280
 - Change: Update cloudflare/cloudflared Docker tag to v2026.9.3 (#1041)
 
