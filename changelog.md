@@ -1,3 +1,7 @@
+## v5.280
+- Change: Update cloudflare/cloudflared Docker tag to v2026.9.3 (#1041)
+
+
 ## v5.279
 - Change: Update linuxserver/sabnzbd:5.1.3 Docker digest to 4f7ee6c (#1040)
 
