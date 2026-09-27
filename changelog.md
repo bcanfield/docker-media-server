@@ -1,3 +1,7 @@
+## v5.283
+- Change: Update tailscale/tailscale Docker tag to v1.102.5 (#1042)
+
+
 ## v5.282
 - Change: Update linuxserver/bazarr Docker tag to v1.6.2 (#1044)
 
