@@ -1,3 +1,7 @@
+## v5.284
+- Change: Update ghcr.io/seerr-team/seerr Docker tag to v3.5.0 (#1045)
+
+
 ## v5.283
 - Change: Update tailscale/tailscale Docker tag to v1.102.5 (#1042)
 
