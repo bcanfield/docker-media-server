@@ -1,3 +1,7 @@
+## v5.287
+- Change: Update linuxserver/radarr:6.4.4 Docker digest to 7dfd049 (#1048)
+
+
 ## v5.286
 - Change: Update linuxserver/prowlarr:2.6.5-nightly Docker digest to 8cba602 (#1047)
 
