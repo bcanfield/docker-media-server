@@ -1,3 +1,7 @@
+## v5.289
+- Change: Update ghcr.io/recyclarr/recyclarr:8 Docker digest to 9c6c74d (#1050)
+
+
 ## v5.288
 - Change: Update cloudflare/cloudflared Docker tag to v2026.10.0 (#1049)
 
