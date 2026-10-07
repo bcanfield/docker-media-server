@@ -1,3 +1,7 @@
+## v5.290
+- Change: Update linuxserver/bazarr:1.6.2 Docker digest to c167381 (#1051)
+
+
 ## v5.289
 - Change: Update ghcr.io/recyclarr/recyclarr:8 Docker digest to 9c6c74d (#1050)
 
