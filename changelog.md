@@ -1,3 +1,7 @@
+## v5.294
+- Change: Update louislam/uptime-kuma Docker tag to v2.5.6 (#1055)
+
+
 ## v5.293
 - Change: Update linuxserver/prowlarr:2.6.5-nightly Docker digest to 5e93080 (#1054)
 
