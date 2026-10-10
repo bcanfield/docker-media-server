@@ -1,3 +1,7 @@
+## v5.295
+- Change: Update linuxserver/sonarr:4.0.20 Docker digest to dffc730 (#1056)
+
+
 ## v5.294
 - Change: Update louislam/uptime-kuma Docker tag to v2.5.6 (#1055)
 
