@@ -1,3 +1,7 @@
+## v5.296
+- Change: Update linuxserver/radarr:6.4.4 Docker digest to cfbc4fa (#1057)
+
+
 ## v5.295
 - Change: Update linuxserver/sonarr:4.0.20 Docker digest to dffc730 (#1056)
 
