@@ -1,3 +1,7 @@
+## v5.298
+- Change: Update linuxserver/sonarr:4.0.20 Docker digest to 0deb8db (#1059)
+
+
 ## v5.297
 - Change: Update linuxserver/prowlarr:2.6.5-nightly Docker digest to 985761d (#1058)
 
