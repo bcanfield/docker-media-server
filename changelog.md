@@ -1,3 +1,7 @@
+## v5.297
+- Change: Update linuxserver/prowlarr:2.6.5-nightly Docker digest to 985761d (#1058)
+
+
 ## v5.296
 - Change: Update linuxserver/radarr:6.4.4 Docker digest to cfbc4fa (#1057)
 
