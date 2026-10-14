@@ -1,3 +1,7 @@
+## v5.302
+- Change: Update ghcr.io/recyclarr/recyclarr:8 Docker digest to b1fbb92 (#1064)
+
+
 ## v5.301
 - Change: Update linuxserver/prowlarr:2.6.5-nightly Docker digest to 5944ab8 (#1063)
 
