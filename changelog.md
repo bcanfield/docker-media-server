@@ -1,3 +1,7 @@
+## v5.303
+- Change: Update linuxserver/sabnzbd:5.1.3 Docker digest to 7a13af9 (#1065)
+
+
 ## v5.302
 - Change: Update ghcr.io/recyclarr/recyclarr:8 Docker digest to b1fbb92 (#1064)
 
