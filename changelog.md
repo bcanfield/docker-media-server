@@ -1,3 +1,7 @@
+## v5.304
+- Change: Update tailscale/tailscale Docker tag to v1.104.1 (#1061)
+
+
 ## v5.303
 - Change: Update linuxserver/sabnzbd:5.1.3 Docker digest to 7a13af9 (#1065)
 
