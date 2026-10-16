@@ -1,3 +1,7 @@
+## v5.305
+- Change: Update linuxserver/radarr:6.4.4 Docker digest to ea6822c (#1067)
+
+
 ## v5.304
 - Change: Update tailscale/tailscale Docker tag to v1.104.1 (#1061)
 
