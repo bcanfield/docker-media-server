@@ -1,3 +1,7 @@
+## v5.308
+- Change: Update linuxserver/radarr:6.4.4 Docker digest to ff4430f (#1069)
+
+
 ## v5.307
 - Change: Update cloudflare/cloudflared Docker tag to v2026.10.1 (#1066)
 
