@@ -1,3 +1,7 @@
+## v5.311
+- Change: Update linuxserver/radarr:6.4.4 Docker digest to fc0ae3c (#1072)
+
+
 ## v5.310
 - Change: Update linuxserver/bazarr:1.6.2 Docker digest to 946dc8c (#1074)
 
