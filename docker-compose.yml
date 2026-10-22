@@ -225,7 +225,7 @@ services:
     container_name: cloudflared
     mem_limit: 256m
     stop_grace_period: 30s
-    image: cloudflare/cloudflared:2026.10.1@sha256:a15a3b50b8dabd57ac2090e9484c0247dba9dfa1f0df4d298d4317f9d69eb2d5
+    image: cloudflare/cloudflared:2026.10.3@sha256:faa8e0a1475f137c910be6025f43c8e4092fdd35461b31e19fd1390657a1ff39
     restart: unless-stopped
     # Opt-in. An empty TUNNEL_TOKEN does not make cloudflared sit idle — it
     # exits immediately and `restart: unless-stopped` turns that into a crash
