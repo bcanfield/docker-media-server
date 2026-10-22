@@ -1,3 +1,7 @@
+## v5.313
+- Change: Update cloudflare/cloudflared Docker tag to v2026.10.3 (#1071)
+
+
 ## v5.312
 - Change: Update linuxserver/sonarr:4.0.20 Docker digest to 889dcc5 (#1073)
 
