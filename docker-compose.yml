@@ -10,7 +10,7 @@ services:
       start_period: 90s
     mem_limit: 1g
     stop_grace_period: 30s
-    image: linuxserver/sonarr:4.0.20@sha256:889dcc58c6aea859033985894b519b2e6b1e55d92527ed123f9f52e42ae7c97b
+    image: linuxserver/sonarr:4.0.20@sha256:48e36b608b461273b9dae857725cd0561a127f2c694b687318f6d0c5ce63e5c9
     restart: unless-stopped
     environment:
       - PUID=${PUID}
