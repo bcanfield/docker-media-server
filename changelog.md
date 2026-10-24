@@ -1,3 +1,7 @@
+## v5.317
+- Change: Update tailscale/tailscale Docker tag to v1.104.2 (#1075)
+
+
 ## v5.316
 - Change: Update louislam/uptime-kuma Docker tag to v2.5.7 (#1078)
 
