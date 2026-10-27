@@ -1,3 +1,7 @@
+## v5.322
+- Change: Update cloudflare/cloudflared Docker tag to v2026.10.4 (#1083)
+
+
 ## v5.321
 - Change: Update linuxserver/radarr:6.4.4 Docker digest to 084b3b2 (#1082)
 
