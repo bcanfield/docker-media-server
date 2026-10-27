@@ -150,7 +150,7 @@ services:
       start_period: 90s
     mem_limit: 768m
     stop_grace_period: 30s
-    image: linuxserver/prowlarr:2.6.6-nightly@sha256:5fd454ff793dbbeb78ebb1efbec6e90f880f43e8464d87dbf3aa461596d34f25
+    image: linuxserver/prowlarr:2.7.0-nightly@sha256:fe653acffa654a661c37754f9bea7314bb3c98711c9c71ab256242e6b5080ec2
     restart: unless-stopped
     environment:
       - PUID=${PUID}
