@@ -1,3 +1,7 @@
+## v5.324
+- Change: Update linuxserver/prowlarr Docker tag to v2.7.0 (#1085)
+
+
 ## v5.323
 - Change: Update louislam/uptime-kuma Docker tag to v2.5.8 (#1084)
 
