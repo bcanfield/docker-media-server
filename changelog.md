@@ -1,3 +1,7 @@
+## v5.323
+- Change: Update louislam/uptime-kuma Docker tag to v2.5.8 (#1084)
+
+
 ## v5.322
 - Change: Update cloudflare/cloudflared Docker tag to v2026.10.4 (#1083)
 
