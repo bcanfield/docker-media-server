@@ -1,3 +1,7 @@
+## v5.325
+- Change: Update cloudflare/cloudflared Docker tag to v2026.10.5 (#1086)
+
+
 ## v5.324
 - Change: Update linuxserver/prowlarr Docker tag to v2.7.0 (#1085)
 
