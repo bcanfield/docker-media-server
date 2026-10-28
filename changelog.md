@@ -1,3 +1,7 @@
+## v5.326
+- Change: Update linuxserver/bazarr:1.6.2 Docker digest to 9a62588 (#1088)
+
+
 ## v5.325
 - Change: Update cloudflare/cloudflared Docker tag to v2026.10.5 (#1086)
 
