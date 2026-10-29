@@ -1,3 +1,7 @@
+## v5.328
+- Change: Update tailscale/tailscale Docker tag to v1.104.4 (#1090)
+
+
 ## v5.327
 - Change: Update ghcr.io/recyclarr/recyclarr:8 Docker digest to 3e9c41b (#1089)
 
