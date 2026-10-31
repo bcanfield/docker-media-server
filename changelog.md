@@ -1,3 +1,7 @@
+## v5.331
+- Change: Update cloudflare/cloudflared Docker tag to v2026.10.7 (#1093)
+
+
 ## v5.330
 - Change: Update cloudflare/cloudflared Docker tag to v2026.10.6 (#1092)
 
