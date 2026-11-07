@@ -1,3 +1,7 @@
+## v5.337
+- Change: Update linuxserver/sonarr:4.0.20 Docker digest to 3b8c947 (#1099)
+
+
 ## v5.336
 - Change: Update linuxserver/sabnzbd:5.1.3 Docker digest to 693c208 (#1098)
 
