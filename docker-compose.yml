@@ -36,7 +36,7 @@ services:
       start_period: 90s
     mem_limit: 1g
     stop_grace_period: 30s
-    image: linuxserver/radarr:6.4.4@sha256:ade5937813c6ae415b29db729386e53fea3ecf067a019849bafbe2d2a6ec02ba
+    image: linuxserver/radarr:6.4.4@sha256:51a9ac2a9eb47afc833541e5fd6c11b86eb9f810694c22fa2429e3078e9194b2
     restart: unless-stopped
     environment:
       - PUID=${PUID}
