@@ -1,3 +1,7 @@
+## v5.343
+- Change: Update louislam/uptime-kuma Docker tag to v2.5.11 (#1103)
+
+
 ## v5.342
 - Change: Update ghcr.io/seerr-team/seerr Docker tag to v3.5.2 (#1105)
 
