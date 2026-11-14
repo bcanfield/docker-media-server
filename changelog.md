@@ -1,3 +1,7 @@
+## v5.345
+- Change: Update cloudflare/cloudflared Docker tag to v2026.11.0 (#1106)
+
+
 ## v5.344
 - Change: Update tailscale/tailscale Docker tag to v1.104.7 (#1107)
 
