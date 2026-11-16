@@ -1,3 +1,7 @@
+## v5.347
+- Change: Update linuxserver/radarr:6.4.4 Docker digest to 7a20f20 (#1109)
+
+
 ## v5.346
 - Change: Update linuxserver/sonarr:4.0.20 Docker digest to c7d1df2 (#1108)
 
