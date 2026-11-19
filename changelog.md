@@ -1,3 +1,7 @@
+## v5.350
+- Change: Update louislam/uptime-kuma Docker tag to v2.5.12 (#1112)
+
+
 ## v5.349
 - Change: Update linuxserver/bazarr:1.6.2 Docker digest to e0c5d45 (#1113)
 
