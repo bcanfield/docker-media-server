@@ -1,3 +1,7 @@
+## v5.351
+- Change: Update linuxserver/sabnzbd:5.1.3 Docker digest to d225bba (#1114)
+
+
 ## v5.350
 - Change: Update louislam/uptime-kuma Docker tag to v2.5.12 (#1112)
 
