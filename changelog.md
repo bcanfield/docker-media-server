@@ -1,3 +1,7 @@
+## v5.355
+- Change: Update linuxserver/sabnzbd:5.1.3 Docker digest to cc7abee (#1118)
+
+
 ## v5.354
 - Change: Update linuxserver/bazarr:1.6.2 Docker digest to b3db424 (#1117)
 
